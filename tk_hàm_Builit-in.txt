@@ -1,0 +1,39 @@
+Các hàm  về built-in  
+     1. Alert       : in ra  một bảng kết quả
+     2. Confirm     : xác nhận độ tuổi     
+     3. Consele     :in ra kết quả
+               Consele.log  :thường được sử dụng nhiều : nó in  ra kết quả  bình thường
+               Consele.warn : hàm này cũng để in  ra nhưng nó  sẽ cảnh báo
+               Consele.error: hàm này cũng để in ra nhưng nó  in  ra kết  quả lỗi
+     4. Prompt      :xác nhận  độ tuổi và nhập  dòng input
+     5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
+     6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần 
+##############################################################################################################################################################
+
+PHÉP TOÁN TỬ:
+     +              Phép toán cộng
+     -              Phép toán trừ 
+     *              Phép toán nhân
+     **             Phép toán Nhân mũ
+     /              Phép  toán chia
+     %              Phép  toán lấy số  dư
+     >              Phép  toán so sánh lớn hơn
+     =              Phép  toán so sánh bằng
+     <              Phép  toán so sánh nhỏ hơn
+     !=             Phép  toán so sánh không bằng
+     >=             Phép  toán so sánh lớn hơn hoặc bằng
+     >==            Phép  toán so sánh lớn hơn hoặc bằng so  sánh cả kiểu dữ liệu
+     <=             Phép  toán so sánh nhỏ hơn
+     <==            Phép  toán so sánh nhỏ hơn hoặc bằng so  sánh cả kiểu dữ liệu
+     ==             Phép  toán so sánh bằng
+     ===            Phép  toán so sánh bằng hoặc bằng so  sánh cả kiểu dữ liệu
+
+##############################################################################################################################################################
+SỬ LÝ CHUỖI ( STRING)
+
+          ESC6: Khi viết nhiều thứ khi  in  ra ta cũng có thể in ra như sau:
+               var tung= 'thanhtung';
+               var ten='ten';
+               Consele.log('toi la  tung ${ten} ${tung}')
+
+##############################################################################################################################################################
