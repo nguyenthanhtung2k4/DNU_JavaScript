@@ -1,5 +1,9 @@
 Kiểm tra kiểu dữ liệu:
           typeof(tung)
+Kiểm tra các dữ liệu  có đúng hay không
+          Mảng      : tung.isArray()
+          Object    : tung.isObject()
+          Nan       : tung.isNan()
 ##############################################################################################################################################################
 Các hàm  về built-in  
           1. Alert       : in ra  một bảng kết quả
@@ -88,3 +92,43 @@ SỬ LÝ CHUỖI ( STRING)
                     ==> kết quả trả về: e
 
 ##############################################################################################################################################################
+Sử lý  Số:
+          Chuyển số thành  chuỗi: toString
+               vd: 
+                    var so =10;
+                    console.log(so.toString());
+
+                    ==> kết quả trả về:  10
+                    Nhưng nó là kiểu dữ liệu  string k còn là kiểu number nữa!
+          Làm tròn ,  lấy  số thập  phân: fixed
+               var so=10.3345634643;
+               console.log(so.toFixed(2)) ;
+               ==>kết quả trả về: 10.33
+##############################################################################################################################################################
+Làm việc  với Mảng:
+          Cách khởi tạo:
+                         vd:
+                              var array=['tung',thanh','nguyen'];
+          Truy xuất Mảng:
+                         vd:
+                              var array=['tung',thanh','nguyen'];
+                              console.log(array[0],array.length)
+
+                              ==>kết quả trả về: tung 3
+          Các kiểu dữ liệu  trong Mảng:
+               length    : đếm các phần tử trong mảng
+               toString  : Chuyển sang kiểu dữ liệu  STRING
+               join      : Lấy tất cả các mảng chuyển thành string ngoài ra ta cũng có thể ngăn cách các phần tử.
+                         vd:
+                                   var array=['tung',thanh','nguyen'];
+                                   console.log(array.join('-'));
+                                   ===>>kết quả trả về: tung-thanh-nguyen
+
+               pop       : Xóa phần tử cuối mảng và in phần tử bị  xóa
+               push      : Thêm phần tử mới vào trong  mảng
+                         vd:
+                                   var array=['tung',thanh','nguyen'];
+                                   array.push('dao');
+                                   console.log(array);
+                                   ==>kết quả trả về: ['tung', 'thanh', 'nguyen', 'dao']
+                              
