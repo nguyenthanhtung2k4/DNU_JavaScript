@@ -1,13 +1,16 @@
+Kiểm tra kiểu dữ liệu:
+          typeof(tung)
+##############################################################################################################################################################
 Các hàm  về built-in  
-     1. Alert       : in ra  một bảng kết quả
-     2. Confirm     : xác nhận độ tuổi     
-     3. Consele     :in ra kết quả
-               Consele.log  :thường được sử dụng nhiều : nó in  ra kết quả  bình thường
-               Consele.warn : hàm này cũng để in  ra nhưng nó  sẽ cảnh báo
-               Consele.error: hàm này cũng để in ra nhưng nó  in  ra kết  quả lỗi
-     4. Prompt      :xác nhận  độ tuổi và nhập  dòng input
-     5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
-     6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần 
+          1. Alert       : in ra  một bảng kết quả
+          2. Confirm     : xác nhận độ tuổi     
+          3. Consele     :in ra kết quả
+                    Consele.log  :thường được sử dụng nhiều : nó in  ra kết quả  bình thường
+                    Consele.warn : hàm này cũng để in  ra nhưng nó  sẽ cảnh báo
+                    Consele.error: hàm này cũng để in ra nhưng nó  in  ra kết  quả lỗi
+          4. Prompt      :xác nhận  độ tuổi và nhập  dòng input
+          5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
+          6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần  theo chu kỳ  thời gian đã cho
 ##############################################################################################################################################################
 
 PHÉP TOÁN TỬ:
@@ -35,5 +38,53 @@ SỬ LÝ CHUỖI ( STRING)
                var tung= 'thanhtung';
                var ten='ten';
                Consele.log('toi la  tung ${ten} ${tung}')
+          Tìm chuỗi index: 
+               vd:
+                    var  tung="tung dang hoc javascript"
+                    console.log(tung.index0f('tung'))
+               ==>  tung.index({tim_chuoi,so_thu_tu})
+          Tìm chuỗi bằng search: 
+               vd:
+                    var str ="Hello world!";
+                    Console.log(str.search("world"));
+               ==> tung.search({tim_chuoi})
+          ==>  Tìm kiếm bằng search KHÔNG HỖ TRỢ  TÌM  KIẾM THEO  KÍ TỰ
+                        index  HỖ  TRỢ TÌM KIẾM BẰNG KÍ  TỰ  ĐƯỢC.
+          
+          Cắt chuỗi: string.slice
+               vd:
+                    var str ="Hello world!";
+                    console.log(str.slice(0,5));
+                    -->  Kết quả trả về là: world!
+
+          Chèn chuỗi: string
+               vd:
+                    var str ="Hello  tung world! tung";
+                    console.log(str.replace({chu_muon_thay},{chu_thay_the}))
+          * Lưu ý :Khi  ta muốn  thay  thế  ta  có  thê thay  thế bằng cách thay  một chữ  hoặc  nhiều  chữ.
+               -Thay  thế  một  chữ  ta có thể thay như  sau: {chu_muon_thay},{chu_thay_the}
+               -Thay  thế  một  chữ  tất  cả giống nhau ta có thể thay  như  sau: /{chu_muon_the}/g ,{chu_muon_the}
+          Chữ  in hoa ,  in thường:
+               toUpperCase() :  Chữ in hoa
+               toLowerCase() :  Chữ in thường
+          Loại bỏ khoảng trắng: trim
+               vd: 
+                    var str ="  Hello world!   ";
+                    console.str.trim()
+          Tạo  ra mảng  slpit():
+               vd:
+                    var str = "tung,thanh,nguye";
+                    console.log(str.split(','));
+                ==>kết quả trả về:[tung, thanh, nguye]
+
+          Thay  thế  vị trí: charAt hoặc  []
+               vd:
+                    var str ="Hello world!";
+                    console.log(str.charAt(1));
+                    ==> kết quả trả về: e
+               hoặc :
+                    var str ="Hello world!";
+                    console.log(str[1]);
+                    ==> kết quả trả về: e
 
 ##############################################################################################################################################################
