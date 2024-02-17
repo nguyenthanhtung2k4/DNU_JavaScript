@@ -92,7 +92,7 @@ SỬ LÝ CHUỖI ( STRING)
                     ==> kết quả trả về: e
 
 ##############################################################################################################################################################
-Sử lý  Số:
+SỬ LÝ CHUỐI(STRING):
           Chuyển số thành  chuỗi: toString
                vd: 
                     var so =10;
@@ -105,7 +105,8 @@ Sử lý  Số:
                console.log(so.toFixed(2)) ;
                ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
-Làm việc  với Mảng:
+LÀM VIỆC VỚI MẢNG:
+
           Cách khởi tạo:
                          vd:
                               var array=['tung',thanh','nguyen'];
@@ -124,11 +125,34 @@ Làm việc  với Mảng:
                                    console.log(array.join('-'));
                                    ===>>kết quả trả về: tung-thanh-nguyen
 
-               pop       : Xóa phần tử cuối mảng và in phần tử bị  xóa
-               push      : Thêm phần tử mới vào trong  mảng
+               shift()   : Xóa phần tử ĐẦU MẢNG và in phần tử bị  xóa
+               pop()     : Xóa phần tử CUỐI MẢNG và in phần tử bị  xóa
+               push({pt_muon_them},{})      : Thêm phần tử mới vào trong  mảng Ở CUỐI MẢNG
+               unshift({pt_muon_them},{})   : Thêm phần tử mới vào trong  mảng Ở ĐẦU MẢNG
                          vd:
                                    var array=['tung',thanh','nguyen'];
                                    array.push('dao');
                                    console.log(array);
                                    ==>kết quả trả về: ['tung', 'thanh', 'nguyen', 'dao']
-                              
+                         vd:  unshift làm tương tự như  vậy.
+               splice({vitri_con_tro},{so_lg_xoa_pt},{string_them_phan_tu}) 
+                         ==> Nó sẽ giúp bạn  đặt vị trí con trỏ và xóa đi  bất  kì pt nào,  cx có them  phân tu  moi  vao  mang do.
+                         vd:
+                              var tung=['thanh','tung','nguyen']; 
+                              console.log(tung.splice(1,1,'cuacace'));
+                              --> Kết quả: ['tung','cuacace','nguyen]
+               slice({vitri_dau},{vitri_cuoi}) : Nó sẽ cắt từ phần tử này đến pt kia
+                         vd:
+                              var tung=['tung','thanh','nguyen']; 
+                              console.log(tung.slice(1,2));
+                              ==>Kết quả: ['thanh']
+
+               concat    :  Kết hợp 2  mảng lại vs nhau thành  1 mảng
+                         vd: 
+                         var tung=['tung','thanh','nguyen'];
+                         var tung2=['tung','thanh','nguyen'];
+                         console.log(tung.concat(tung2))
+                         ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
+##############################################################################################################################################################
+HÀM JAVASCRIPT:
+               
