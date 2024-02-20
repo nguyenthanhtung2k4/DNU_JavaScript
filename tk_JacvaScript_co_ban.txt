@@ -1,3 +1,7 @@
+TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+          https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript
 Kiểm tra kiểu dữ liệu:
           typeof(tung)
 Kiểm tra các dữ liệu  có đúng hay không
@@ -155,7 +159,7 @@ LÀM VIỆC VỚI MẢNG:
                          console.log(tung.concat(tung2))
                          ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
 ##############################################################################################################################################################
-HÀM JAVASCRIPT: function  giông như def(python)  hay void(c++)
+HÀM JAVASCRIPT: FUNCTION()  giông như def(python)  hay void(c++)
      ------------------------------------------------
           return : {giá_trị} --> Nó sẽ trả về bất kì kiểu dữ liệu  gì nó sẽ phụ thuôcj  vào ta định  dạng nó.
           arguments : cho  phép  bạn  sử dụng  chuyền dữ liệu  vào function và trả về dạng  arr 
@@ -181,11 +185,11 @@ HÀM JAVASCRIPT: function  giông như def(python)  hay void(c++)
                }
                tesst('a','b',123,true,'c')
 ##############################################################################################################################################################
-polyfill:  cách nó kiểu tra xem  các trình duyệt có hỗ trợ chạy  đc code không
+POLYFILL:  cách nó kiểu tra xem  các trình duyệt có hỗ trợ chạy  đc code không
         Link  tham khảo: https://youtu.be/zFO-sSfReFs?si=-GoHzrA7LeHj16iO
         ==>  xem để hiểu dõ hơn về Polyfill  trong Js.
 ##############################################################################################################################################################
-Làm việc  với object: giống như json(python) 
+Làm việc  với OBJECT: giống như json(python) 
           - Tạo  ra một object:
                          vd:
                               var object={
@@ -225,4 +229,95 @@ Làm việc  với object: giống như json(python)
                               }   
                           }
                     *Lưu ý:  Khi ta dùng Function  thì ta lên sử dụng  THIS.{GIÁ_TRỊ_oBJECT}  TRONG FUNCTION()
-                             Thay  vì dùng tung.name trong function thì ta nên dùng THIS
+                             Thay  vì dùng tung.name trong function thì ta nên dùng THIS ví dụ  bên trên
+               
+          Tham khảo thêm : https://www.youtube.com/watch?v=FO1OMbT_k2w&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=32&pp=iAQB
+          Tham khảo thêm  file : tk_function.js
+
+     =================================================================================================================================
+     OBJECT-conSTRUCTOR: nó  giống như  struc(C++) gần như  vậy:
+               vd:
+                    function struct(name,age,avata){
+                    this.name=name;
+                    this.age=age;
+                    this.avata=avata;
+                    }
+                    var admin= new struct('admin','20','jusst')
+                    admin.bien_new='new_admin'
+                    var canhan= new struct('canhan','20','tung')
+                    canhan.bien_canhan='new_canhan'
+                    console.log(admin,canhan)
+
+               ===>  KẾT QUẢ TRẢ VỀ:
+                    struct {
+                    name: 'admin',
+                    age: '20',
+                    avata: 'jusst',
+                    bien_new: 'new_admin'
+                    } struct {
+                    name: 'canhan',
+                    age: '20',
+                    avata: 'tung',
+                    bien_canhan: 'new_canhan'
+                    }
+               //  VớiViệc tạo ra như  z nó sẽ làm cho  ta  tối ưu hóa việc  viết code cx  như chuyên nghiệp  hơn.
+     =================================================================================================================================
+     OBJECT-PROTOTYPE: Nó cho  phép  bạn thực hiện ở bên ngoài để khởi tạo giá trị cho  OBJECT-CONSTRUCTOR:
+                    VD:
+                         function struct(name,age,avata){
+                         this.name=name;
+                         this.age=age;
+                         this.avata=avata;
+                         }
+                         struct.prototype.thanh='tung';
+                         var admin= new struct('admin','20','jusst')
+                         var canhan= new struct('canhan','20','tung')
+
+                         console.log(admin.thanh,canhan.thanh)
+                    -->  KẾT QUẢ TRẢ VỀ: tung tung
+
+               * CHÚ Ý: Khi  dùng prototype  thì object chính sẽ thêm vào một biến và tất cả các thằng Object phụ sẽ thêm  vào biến đó :
+##############################################################################################################################################################
+ĐỐI TƯỢNG DATE: LẤY GIÁ TRỊ THỜI GIAN
+          date=new Date()          :Khai  báo Date khi  dùng New
+          date= Date()             :Khai báo Date khi k  dùng New 
+          //  Khi ta không dùng NEW Date  thì nó sẽ lấy thời gian hiện tại của máy chính lúc nó chạy
+          //  Khi ta       dùng NEW thì ta có thể điều chỉnh thời gian được.
+
+          date.getFullYear()       :Lấy thời gian năm
+          date.getMonth()          :Lấy thời gian tháng
+          date.getDate()           :Lấy thời gian ngày
+          date.getHours()          :Lấy thời gian giờ
+          date.getMinutes()        :Lấy thời gian phút
+          date.getSeconds()        :Lấy thời gian giây
+
+          //  getFulYear: lấy 4 chữ số làm năm 0-9999
+          //  setFulYear: lấy 2 chữ số cuối làm năm 0-99
+          //  Tham khảo thêm  ở đây:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+##############################################################################################################################################################
+IF VS ELES :Sử dụng giống như  C++ 
+          vd:
+               var tung=1;
+               if (tung===1){
+               console.log('tung day')
+               }else if(tung===2){
+               console.log('tung day')
+               }else{
+               console.log('khong phai tung')
+               }
+##############################################################################################################################################################
+HAM SWITCH: 
+          VD:
+               var tung=9;
+               switch (tung){
+                    case 9:
+                         console.log("thang sinh cua tung la thang "+tung);
+                         break;
+                    case 1,2,3,4,5,6,7,8,10,11,12:
+                         console.log("khong phai thang sinh cua tung");
+                         break;
+                    default:
+                         console.log('khong co thang nao  trong nay');
+                         break;
+               }
+##############################################################################################################################################################
