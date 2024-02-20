@@ -41,7 +41,8 @@ SỬ LÝ CHUỖI ( STRING)
           ESC6: Khi viết nhiều thứ khi  in  ra ta cũng có thể in ra như sau:
                var tung= 'thanhtung';
                var ten='ten';
-               Consele.log('toi la  tung ${ten} ${tung}')
+               Consele.log(`toi la  tung ${ten} ${tung}`)
+     * lưu ý:  khi  chèn các biến vào sử dụng  $ thì phải dùng dấu mũ nghiên ` 
           Tìm chuỗi index: 
                vd:
                     var  tung="tung dang hoc javascript"
@@ -154,5 +155,74 @@ LÀM VIỆC VỚI MẢNG:
                          console.log(tung.concat(tung2))
                          ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
 ##############################################################################################################################################################
-HÀM JAVASCRIPT:
-               
+HÀM JAVASCRIPT: function  giông như def(python)  hay void(c++)
+     ------------------------------------------------
+          return : {giá_trị} --> Nó sẽ trả về bất kì kiểu dữ liệu  gì nó sẽ phụ thuôcj  vào ta định  dạng nó.
+          arguments : cho  phép  bạn  sử dụng  chuyền dữ liệu  vào function và trả về dạng  arr 
+
+     -------------------ĐỊNH  DẠNG BÊN DƯỚI-----------------------------
+               function {ten_bien}() {
+                    /// code cua ban
+               }
+     -------------------VD-----------------------------
+          VD:
+               function Arguments() {
+                    console.log(arguments)
+               }
+               /// chay function
+               function Arguments('tung','thanh','nguyen');
+          vd khác:
+               function tesst() {
+                    var so='';
+                    for (var tung of  arguments) {
+                    so +=`${tung} : `
+                    }
+                    console.log(so);
+               }
+               tesst('a','b',123,true,'c')
+##############################################################################################################################################################
+polyfill:  cách nó kiểu tra xem  các trình duyệt có hỗ trợ chạy  đc code không
+        Link  tham khảo: https://youtu.be/zFO-sSfReFs?si=-GoHzrA7LeHj16iO
+        ==>  xem để hiểu dõ hơn về Polyfill  trong Js.
+##############################################################################################################################################################
+Làm việc  với object: giống như json(python) 
+          - Tạo  ra một object:
+                         vd:
+                              var object={
+                                   name:'tung',
+                                   'full-name':'nguyen thanh tung',
+                              }
+                              // Truy cập vào property của Object
+                              console.log(object.name)
+                              console.log(object['full-name'])
+
+                                             Kết_quả_trả_về-->tung
+                                             Kết_quả_trả_về-->nguyen thanh tung
+          - Thêm Property vào Object:
+                            vd:
+                                object.age=25;
+                                console.log(object.age)
+
+                                        Kết_quả_trả_về-->==>25
+          - Xóa Property của Object:
+                             delete object.age;
+                             console.log(object.age)
+                                        Kết_quả_trả_về--->undefined
+          - Sửa Value của Property:
+                               object.name='thanh';
+                               console.log(object.name)
+                                        Kết_quả_trả_về-->==>'thanh'
+          - Tạo mảng trong Object:
+                           Object.defineProperty(object,"arr",{value:[1,2,3]})
+                           console.log(object.arr) 
+                                        Kết_quả_trả_về-->[1,2,3]
+          - Tạo function  trong Object:
+                          var tung{
+                              name:'tung',
+                              age: 20,
+                              t: function{
+                                   'toi la  nguyen'+this.name+'toi nam nay '+this.age;
+                              }   
+                          }
+                    *Lưu ý:  Khi ta dùng Function  thì ta lên sử dụng  THIS.{GIÁ_TRỊ_oBJECT}  TRONG FUNCTION()
+                             Thay  vì dùng tung.name trong function thì ta nên dùng THIS
