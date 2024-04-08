@@ -1,0 +1,70 @@
+<!--  bai 1
+     nhap vao  1 so  tu ban phim. in ra so  so la so am hay duong     
+-->
+<!-- bai2 tim min/max2 so float nhap  vao ban phim in ket qua bang alert -->
+<!-- bai3 tim min max 4 so  a,b,c ,d  kieu so nguyen nhap  ao  man hinh  tu ban phim  -->
+<!--  bai4 kiem ra a,b co phai la so  k 
+neu k thi nhap lai 
+neu 2 canh !=  tinh chu vi  dien tich -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <!-- <script>
+          var so=parseFloat(prompt("Nhap so  vao"))
+          if(so>=1){
+               alert('so  nguyen')
+          }else{
+               alert('so  am ')
+          }
+     </script> -->
+     <!-- <script>
+          var a,b
+          a=parseFloat(prompt('Nhap so1: '))
+          b=parseFloat(prompt('Nhap so2: '))
+          if(a>b){
+               alert('Max:\n'+a+'>'+b)
+          }else{
+               
+               alert('Min:\n'+a+'<'+b)
+          } -->
+     <!-- <script>
+          var so=[3];
+          var min=so[0],max=so[0];
+          for(var i=0;i<4;i++){
+               so[i]=parseFloat(prompt('Nhap so '+(i+1)+': '));
+          }
+          for(var i=0;i<4;i++){
+               if(so[i]>max){
+                    max=so[i]
+               }
+               if(so[i]<min){
+                    min=so[i]
+               }
+          }
+          alert('Max: '+max)
+          alert('Min: '+min)
+     </script> -->
+     <script>
+          var a,b,chuvi,dientich;
+          do{
+               a=prompt('nhap a: ')
+          }while(isNaN(a))
+          do{
+               b=prompt('nhap b: ')
+          }while(isNaN(b))
+          if(parseFloat(a)<=0 || parseFloat(b)<=0 ){
+               alert("khong hop le")
+          }else{
+                    chuvi=(parseFloat(a)+parseFloat(b))*2;
+                    dientich=parseFloat(a)*parseFloat(b);
+                    document.write("<h1>Chu vi hinh chu nhat la: "+chuvi+"</h1>");
+                    document.write("<h1>Dien tich hinh chu nhat la: "+dientich+"</h1>");
+          }
+     </script>
+</body>
+</html>

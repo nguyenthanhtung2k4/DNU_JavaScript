@@ -1,3 +1,11 @@
+* LUƯ Ý: 
+          KHI THỰC HIỆN GỌI CÁC BIẾN KHÁC DÙNG DẤU +
+                    VD: 
+                         var tung=10;
+                         string="so la: "+tung;
+
+====================================================================================================================================
+
 TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
           https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
           https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
@@ -8,6 +16,12 @@ Kiểm tra các dữ liệu  có đúng hay không
           Mảng      : tung.isArray()
           Object    : tung.isObject()
           Nan       : tung.isNan()
+          parseFloat :  trả về số thực
+          parseInt :  trả về số nguyên
+               vd: 
+                    var a;
+                    a=parseFloat(prompt("number"))
+
 ##############################################################################################################################################################
 Các hàm  về built-in  
           1. Alert       : in ra  một bảng kết quả
@@ -16,7 +30,16 @@ Các hàm  về built-in
                     Consele.log  :thường được sử dụng nhiều : nó in  ra kết quả  bình thường
                     Consele.warn : hàm này cũng để in  ra nhưng nó  sẽ cảnh báo
                     Consele.error: hàm này cũng để in ra nhưng nó  in  ra kết  quả lỗi
-          4. Prompt      :xác nhận  độ tuổi và nhập  dòng input
+          4. Prompt      :Nhập  vào input
+                         vd:
+                                   <script>
+                                        var so=parseFloat(prompt("Nhap so  vao"))
+                                        if(so>=1){
+                                             alert('so  nguyen')
+                                        }else{
+                                             alert('so  am ')
+                                        }
+                                   </script>
           5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
           6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần  theo chu kỳ  thời gian đã cho
 ##############################################################################################################################################################
@@ -123,6 +146,11 @@ LÀM VIỆC VỚI MẢNG:
                               ==>kết quả trả về: tung 3
           Các kiểu dữ liệu  trong Mảng:
                length    : đếm các phần tử trong mảng
+               substring(a,b) : Lấy kí tự thứ a đến b
+                          vd: 
+                              var str="tung thanh nguyen"
+                              alert(str.substring(1,2))
+                              ==>kết quả trả về: u
                toString  : Chuyển sang kiểu dữ liệu  STRING
                join      : Lấy tất cả các mảng chuyển thành string ngoài ra ta cũng có thể ngăn cách các phần tử.
                          vd:

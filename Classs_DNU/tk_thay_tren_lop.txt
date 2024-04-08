@@ -1,0 +1,36 @@
+// CÁC LỆNH DÙNG ĐỂ GẮN LINK ,  CHẠY FUNCTION TRÊN  HTML
+               <script type="text/javascript" language="javascript">
+                         function tung(){
+                         }
+               </script>
+     ==> LỆNH TRÊN CHẠY TRỰC TIẾP TRÊN HTML
+               <script type="text/javascript" src="link_js"></script>
+     ==> LỆNH CHẠY  NGOÀI HTML
+---------------------------------------------------------------------------------
+dounment.write("text")   : Dùng để sử lý text  trên trang web
+dounment.alert("text")   : Dùng để in ra   thanh kết quả tra ve
+
+// KIỂU DỮ LIỆU 
+-isNaN : kiểu dữ liệu số 
+-parseFloat :  trả về số thực
+-parseInt :  trả về số nguyên
+-prompt : Nhập dữ liệu vào.
+          vd:  
+                    <script type="text/javascript" languge="javascript">
+                         var a,b,c
+                         a=parseFloat(prompt('so A: '))
+                         b=parseFloat(prompt('so B: '))
+                         c=a+b;
+                         document.write('<h1>Tong la : '+c+'</h1>')
+                    </script>
+
+//Lớp toán
+-Math.random
+-Math.abd(x)
+-
+
+
+// string()
+\b :  dấu cách
+\n : xuống dòng
+\t :Lùi đầu dòng
