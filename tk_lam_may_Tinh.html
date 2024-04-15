@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tinh Toan</title>
+     <style>
+          h1{
+               text-align: center;
+          }
+          .mayTinh{
+               width: 500px;
+               height: auto;
+               border: 2px solid black;
+               padding: 20px;
+               text-align: center;
+               margin: 0 auto;
+               border-radius: 10px;
+
+          }
+          .nhapmayTinh{
+               padding-top: 20px;
+               margin-top: 20px;
+          }
+          input{
+               margin-top: 10px;
+          }
+          .nhapmayTinh2{
+               padding: 5px;
+               margin-bottom: 10px;
+          }
+          .tinh:hover{
+               background-color: black;
+               color: white;
+          }
+     </style>
+</head>
+<body>
+     <h1>May tinh bassic</h1>
+     <div class="mayTinh">
+          <div class="nhapmayTinh">
+               <label for="a">Nhap a</label>
+               <input type="number" id="a"><br>
+               <label for="b">Nhap b</label>
+               <input type="number" id="b"><br>
+               <input type="reset" value="Reset">
+          </div>
+          <div class="nhapmayTinh2">
+               <label for="tinh" id="cong">Ket qua la</label>
+               <p class="tinh" id="cong"></p>
+               <p class="tinh" id="tru"></p>
+               <p class="tinh" id="nhan"></p>
+               <p class="tinh" id="chia"></p>
+          </div>
+          <button class="tinh"  onclick="tinhToan('cong')">Cong</button>
+          <button  class="tinh" onclick="tinhToan('tru')">Tru</button>
+          <button  class="tinh" onclick="tinhToan('nhan')">Nhan</button>
+          <button  class="tinh" onclick="tinhToan('chia')">Chia</button><br>
+     </div>
+</body>
+</html>
+<script>
+     function tinhToan(operation) {
+          var a = parseInt(document.getElementById('a').value);
+          var b = parseInt(document.getElementById('b').value);
+          var result;
+          switch (operation) {
+               case 'cong':
+                    result = a + b;
+                    document.getElementById('cong').innerHTML = 'Tong: ' + result;
+                    break;
+               case 'tru':
+                    result = a - b;
+                    document.getElementById('tru').innerHTML = 'Hieu: ' + result;
+                    break;
+               case 'nhan':
+                    result = a * b;
+                    document.getElementById('nhan').innerHTML = 'Tich: ' + result;
+                    break;
+               case 'chia':
+                    if (b !== 0) {
+                         result = a / b;
+                         document.getElementById('chia').innerHTML = 'Thuong: ' + result;
+                    } else {
+                         document.getElementById('chia').innerHTML = 'Khong the chia cho 0';
+                    }
+                    break;
+               default:
+                    break;
+          }
+     }
+</script>

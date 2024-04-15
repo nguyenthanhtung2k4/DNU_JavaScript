@@ -1,3 +1,6 @@
+NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
+
+==========================================================================================
 * LUƯ Ý: 
           KHI THỰC HIỆN GỌI CÁC BIẾN KHÁC DÙNG DẤU +
                     VD: 
@@ -10,12 +13,44 @@ TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
           https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
           https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
           https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Biến:
+var: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG HÀM MÀ NÓ ĐƯỢC KHAI BÁO( FUNCTION)
+let: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO ( IF ,FOR)
+const: dùng để khai báo các biến trong js:NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO GIỐNG LET (IF ,FOR)
+
+in: (for in) không hẳn là biến: NHƯNG ĐƯỢC HIỂU NÓ DÙNG ĐỂ KIỂU TRA THUỘC TÍNH ĐÓ CÓ TỒN TẠI HAY KHÔNG
+               VD:
+                    const person = {
+                    name: 'John',
+                    age: 30,
+                    city: 'New York'
+                    };
+                    console.log('name' in person); // Kết quả: true
+                    console.log('gender' in person); // Kết quả: false
+               VD2:
+                    var Object={
+                    name:'tung',
+                    age:20,
+                    adreest:'ha nam'
+               }
+               for(var key in Object){
+                    console.log(key);// dung de lay name Object
+                    console.log(Object[key]); // dung de lay  value Object
+               }
+of: (for of) không hẳn là biến: NHƯNG ĐƯỢC HIỂU NÓ DÙNG TRONG FOR OF--> dÙNG ĐỂ LẶP QUA CÁC PHẦN TỬ
+               VD:
+                    const arr = [1, 2, 3, 4, 5];
+                    for (const element of arr) {
+                    console.log(element); // Lặp qua và in ra từng phần tử của mảng arr
+                    }
+
 Kiểm tra kiểu dữ liệu:
           typeof(tung)
 Kiểm tra các dữ liệu  có đúng hay không
           Mảng      : tung.isArray()
           Object    : tung.isObject()
-          Nan       : tung.isNan()
+          Nan       : tung.isNaN()   ==>>  kieu  ta du lieu true la so ; false : la chu
           parseFloat :  trả về số thực
           parseInt :  trả về số nguyên
                vd: 
@@ -40,6 +75,47 @@ Các hàm  về built-in
                                              alert('so  am ')
                                         }
                                    </script>
+          5. document    : Để nó tương tác với nọi dung của trang web
+               
+               -Truy cập phần tử HTML:
+                    getElementById() ===>  Trả về phần tử HTML với id cụ thể.
+                    getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
+                    getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
+                    querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
+              
+               -Thao tác với nội dung và thuộc tính HTML:
+                    document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
+                                        vd:
+                                             document.write('<h1>thanhtung</h1>')
+
+                    document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                    document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
+                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
+                    document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
+               
+               -Tạo và xóa phần tử HTML mới:
+
+                    createElement(): Tạo một phần tử HTML mới với tên thẻ được chỉ định.
+                    appendChild(): Thêm một phần tử con vào cuối danh sách các phần tử con của một phần tử cha.
+                    removeChild(): Xóa một phần tử con khỏi phần tử cha.
+               
+               -Xử lý sự kiện:
+                    addEventListener(): Gắn một bộ xử lý sự kiện cho một phần tử.
+                    removeEventListener(): Loại bỏ một bộ xử lý sự kiện đã được gắn với một phần tử.
+               
+               -Cookie:
+                    cookie: Thuộc tính của document cho phép bạn đọc và ghi các cookie.
+               
+               -Định vị và cuộn trang:
+                    scrollTo(): Cuộn trang đến vị trí được chỉ định.
+                    scrollBy(): Cuộn trang theo một số lượng cụ thể.
+               
+               -Thông tin trang:
+                    document.URL: Trả về URL của trang hiện tại.
+                    document.title: Trả về hoặc đặt tiêu đề của trang.
+
           5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
           6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần  theo chu kỳ  thời gian đã cho
 ##############################################################################################################################################################
@@ -61,7 +137,12 @@ PHÉP TOÁN TỬ:
      <==            Phép  toán so sánh nhỏ hơn hoặc bằng so  sánh cả kiểu dữ liệu
      ==             Phép  toán so sánh bằng
      ===            Phép  toán so sánh bằng hoặc bằng so  sánh cả kiểu dữ liệu
-
+//////// Lớp toán:
+                    Math.random() : lam ran dom cac so
+                    Math.min()    : tim so min trong tat cac so min
+                    Math.max()    : tim so max trong tat cac  so
+                    Math.sqrt()   : tinh so  căn 
+                    Math.pow()    : so mu
 ##############################################################################################################################################################
 SỬ LÝ CHUỖI ( STRING)
 
@@ -99,6 +180,7 @@ SỬ LÝ CHUỖI ( STRING)
           Chữ  in hoa ,  in thường:
                toUpperCase() :  Chữ in hoa
                toLowerCase() :  Chữ in thường
+          
           Loại bỏ khoảng trắng: trim
                vd: 
                     var str ="  Hello world!   ";
@@ -214,8 +296,9 @@ HÀM JAVASCRIPT: FUNCTION()  giông như def(python)  hay void(c++)
                tesst('a','b',123,true,'c')
 ##############################################################################################################################################################
 POLYFILL:  cách nó kiểu tra xem  các trình duyệt có hỗ trợ chạy  đc code không
-        Link  tham khảo: https://youtu.be/zFO-sSfReFs?si=-GoHzrA7LeHj16iO
-        ==>  xem để hiểu dõ hơn về Polyfill  trong Js.
+                         Link  tham khảo: https://youtu.be/zFO-sSfReFs?si=-GoHzrA7LeHj16iO
+                         ==>  xem để hiểu dõ hơn về Polyfill  trong Js.
+
 ##############################################################################################################################################################
 Làm việc  với OBJECT: giống như json(python) 
           - Tạo  ra một object:
@@ -263,52 +346,58 @@ Làm việc  với OBJECT: giống như json(python)
           Tham khảo thêm  file : tk_function.js
 
      =================================================================================================================================
-     OBJECT-conSTRUCTOR: nó  giống như  struc(C++) gần như  vậy:
-               vd:
-                    function struct(name,age,avata){
-                    this.name=name;
-                    this.age=age;
-                    this.avata=avata;
-                    }
-                    var admin= new struct('admin','20','jusst')
-                    admin.bien_new='new_admin'
-                    var canhan= new struct('canhan','20','tung')
-                    canhan.bien_canhan='new_canhan'
-                    console.log(admin,canhan)
-
-               ===>  KẾT QUẢ TRẢ VỀ:
-                    struct {
-                    name: 'admin',
-                    age: '20',
-                    avata: 'jusst',
-                    bien_new: 'new_admin'
-                    } struct {
-                    name: 'canhan',
-                    age: '20',
-                    avata: 'tung',
-                    bien_canhan: 'new_canhan'
-                    }
-               //  VớiViệc tạo ra như  z nó sẽ làm cho  ta  tối ưu hóa việc  viết code cx  như chuyên nghiệp  hơn.
-     =================================================================================================================================
-     OBJECT-PROTOTYPE: Nó cho  phép  bạn thực hiện ở bên ngoài để khởi tạo giá trị cho  OBJECT-CONSTRUCTOR:
-                    VD:
+          OBJECT-conSTRUCTOR: nó  giống như  struc(C++) gần như  vậy:
+                    vd:
                          function struct(name,age,avata){
                          this.name=name;
                          this.age=age;
                          this.avata=avata;
                          }
-                         struct.prototype.thanh='tung';
                          var admin= new struct('admin','20','jusst')
+                         admin.bien_new='new_admin'
                          var canhan= new struct('canhan','20','tung')
+                         canhan.bien_canhan='new_canhan'
+                         console.log(admin,canhan)
 
-                         console.log(admin.thanh,canhan.thanh)
-                    -->  KẾT QUẢ TRẢ VỀ: tung tung
+                    ===>  KẾT QUẢ TRẢ VỀ:
+                         struct {
+                         name: 'admin',
+                         age: '20',
+                         avata: 'jusst',
+                         bien_new: 'new_admin'
+                         } struct {
+                         name: 'canhan',
+                         age: '20',
+                         avata: 'tung',
+                         bien_canhan: 'new_canhan'
+                         }
+                    //  VớiViệc tạo ra như  z nó sẽ làm cho  ta  tối ưu hóa việc  viết code cx  như chuyên nghiệp  hơn.
+     =================================================================================================================================
+          OBJECT-PROTOTYPE: Nó cho  phép  bạn thực hiện ở bên ngoài để khởi tạo giá trị cho  OBJECT-CONSTRUCTOR:
+                              NÓ GIỐNG NHƯ LÀ STRUCT TRONG C++,  XEM CHI TIẾT VÍ DỤ BÊN DƯỚI.
+                         VD:
+                              function struct(name,age,avata){
+                              this.name=name;
+                              this.age=age;
+                              this.avata=avata;
+                              }
+                              struct.prototype.thanh='tung';
+                              var admin= new struct('admin','20','jusst')
+                              var canhan= new struct('canhan','20','tung')
 
-               * CHÚ Ý: Khi  dùng prototype  thì object chính sẽ thêm vào một biến và tất cả các thằng Object phụ sẽ thêm  vào biến đó :
+                              console.log(admin.thanh,canhan.thanh)
+                         -->  KẾT QUẢ TRẢ VỀ: tung tung
+
+                    * CHÚ Ý: Khi  dùng prototype  thì object chính sẽ thêm vào một biến và tất cả các thằng Object phụ sẽ thêm  vào biến đó 
+                              ->> xem link tham khao phia duoi
+               
+               
+               LINK THAM KHAO: https://www.youtube.com/watch?v=FO1OMbT_k2w&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=32
+
 ##############################################################################################################################################################
 ĐỐI TƯỢNG DATE: LẤY GIÁ TRỊ THỜI GIAN
-          date=new Date()          :Khai  báo Date khi  dùng New
-          date= Date()             :Khai báo Date khi k  dùng New 
+          date=new Date()          :Khai  báo Date khi  dùng New để lấy giá trị ngày tháng năm
+          date= Date()             :Khai báo Date khi k  dùng New không lấy được giá trị (trả về kiểu string)
           //  Khi ta không dùng NEW Date  thì nó sẽ lấy thời gian hiện tại của máy chính lúc nó chạy
           //  Khi ta       dùng NEW thì ta có thể điều chỉnh thời gian được.
 
@@ -349,3 +438,22 @@ HAM SWITCH:
                          break;
                }
 ##############################################################################################################################################################
+TOÁN TỬ 3 NGÔI : Cách viết tắt của if , else:
+               vd: khi không viết tắt :
+
+                    var a,b;
+                    a=1;b=2;
+                    if(a>0 ){
+                         console.log(a)
+                    }else{console.log(b)}
+
+               vd: khi viết tắt: 
+                    var a,b,c;
+                    a=1;b=2;
+                    c=a>0?a:b
+          ===> Trong trường hợp viết tắt if , else là khi các câu lệnh bên trong if,else đơn giản thì lên sử dụng
+          ===> Trong trường hợp các câu lệnh bên trong if ,else phức tạp phải viết hẩn ra.
+
+##############################################################################################################################################################
+onclick
+onLoad

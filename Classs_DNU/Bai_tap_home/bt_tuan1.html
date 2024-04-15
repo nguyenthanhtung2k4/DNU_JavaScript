@@ -1,0 +1,116 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>BT_Tuan1</title>
+     <style>
+          body{
+               text-align:center;
+          }
+          button{
+               border: 2px solid  white;
+               border-radius: 10px;
+               color: aqua;
+               background: black;
+               padding: 5px;
+               cursor:pointer;
+          }
+     </style>
+</head>
+<body>
+     <div class="pt">
+          <h1>Giai phuong trinh bat nhat</h1>
+          <button  onclick="nhat()">bat nhat</button>
+          <h1>Giai phuong trinh bat hai</h1>
+          <button onclick="hai()">bat hai</button>
+     </div>
+</body>
+</html>
+<script>
+     function nhat(){
+          // ax+b=0
+          var a,b,tinh;
+          a=parseFloat(prompt('Nhap Pt dang: ax+b=0\nNhap a:')); 
+          b=parseFloat(prompt('Nhap Pt dang: ax+b=0\nNhap b:')); 
+          if(a!=0){
+               tinh=-b/a;
+               alert('x='+tinh);
+          }else{
+               document.write("Pt ax+b=0 \n Khong phai la Pt bat nhat");
+               document.write('<br><a href="bt_tuan1.html">Quay lai</a>');
+          }
+     }
+     function hai(){
+          var a,b,c,benta,tinh1,tinh2;
+          a=parseFloat(prompt('Nhap Pt dang: ax^2+bx+c=0\nNhap a:'));
+          b=parseFloat(prompt('Nhap Pt dang: ax^2+bx+c=0\nNhap b:'));
+          c=parseFloat(prompt('Nhap Pt dang: ax^2+bx+c=0\nNhap c:'));
+          if(a!=0){
+               benta=b*b-4*a*c;
+               if(benta>0){
+                    tinh1=(-b+Math.sqrt(benta))/(2*a);  
+                    tinh2=(-b-Math.sqrt(benta))/(2*a);  
+                    alert('x1='+tinh1+'\nx2='+tinh2);
+               }
+               else if(benta==0){
+                    tinh1= -b/(2*a);
+                    alert('x1= x2=\n'+'x='+tinh1);
+               } else {
+                    alert('Pt vo nghiem');
+               }
+          }
+          else{     
+               document.write("<p>Khong co Pt bat hai</p>");
+               document.write('<br><a href="bt_tuan1.html">Quay lai</a>');
+          }
+     }
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Giai phuong trinh bac hai</title>
+</head>
+<body>
+     <div class="pt">
+          <h1>Giai phuong trinh bac hai</h1>
+          <label for="a">Nhap a:</label>
+          <input type="number" id="a"><br><br>
+          <label for="b">Nhap b:</label>
+          <input type="number" id="b"><br><br>
+          <label for="c">Nhap c:</label>
+          <input type="number" id="c"><br><br>
+          <button onclick="giai">Giai</button><br><br>
+          <div id="ketqua"></div>
+     </div>
+</body>
+</html>
+<script>
+     function giai(){
+          var a = parseFloat(document.getElementById("a").value);
+          var b = parseFloat(document.getElementById("b").value);
+          var c = parseFloat(document.getElementById("c").value);
+          var delta = b * b - 4 * a * c;
+          var x1, x2;
+
+          if (a == 0) {
+               document.getElementById("ketqua").innerHTML = "Phuong trinh khong phai la phuong trinh bac hai.";
+          } else {
+               if (delta > 0) {
+                    x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                    x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                    document.getElementById("ketqua").innerHTML = "Phuong trinh co 2 nghiem:<br>x1 = " + x1 + "<br>x2 = " + x2;
+               } else if (delta == 0) {
+                    x1 = -b / (2 * a);
+                    document.getElementById("ketqua").innerHTML = "Phuong trinh co nghiem kep:<br>x1 = x2 = " + x1;
+               } else {
+                    document.getElementById("ketqua").innerHTML = "Phuong trinh vo nghiem.";
+               }
+          }
+     }
+</script>
+
