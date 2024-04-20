@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Object</title>
+</head>
+<body>
+     <script>
+          var object={
+               name:'thanh tung',
+               age:'20',
+               adrees:'hanam',
+               color:'blue',
+               diem :{
+                    diemToan:10,
+                    diemLy:8,
+                    diemHoa:7,
+                    diemVan:9,
+                    diemAnh:8,
+               },
+               diemtb: function(){
+                    return (this.diem.diemToan+this.diem.diemLy+this.diem.diemHoa+this.diem.diemVan+this.diem.diemAnh)/5;
+               }
+          
+          }
+          document.write(`<h1>Object: </h1> <br>`)
+          document.write(`<h1>Name: ${object.name}</h1><br>`)
+          document.write(`<h1>Age: ${object.age} </h1><br>`)
+          document.write(`<h1>Adrees: ${object.adrees} </h1><br>`)
+          document.write(`<h1>Color: ${object.color} </h1><br>`)
+          document.write(`<h1>Diem tb: ${object.diemtb().toFixed(1)}diem </h1><br>`)
+          document.write('<h1> cac diem: </h1><br>')
+          var so= Object.values(object.diem);
+               for(let j in  object.diem){
+                    document.write(`<h1> ${j}`)
+                    var i=0;
+                    document.write(`<h1>${so[i]} </h1><br>`)
+                    i++
+               }
+     </script>
+</body>
+</html>

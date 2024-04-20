@@ -56,7 +56,19 @@ Kiểm tra các dữ liệu  có đúng hay không
                vd: 
                     var a;
                     a=parseFloat(prompt("number"))
+          this :  là đại diện cho  một đối tượng trong object--> nó giống như con trỏ trỏ đến object ==> VD bên dưới:
+               vd:
+                    function Person(){
+                        this.name="Tung";
+                        this.age=27;
+                    }
+                    var p=new Person();
+                    alert(p.name);
 
+                    ==> this đại diện cho thằng Person()
+
+          Object.values({Giá_trị_truyền_vào}) ==> Nó sẽ chuyển Object thành Arr ==> VD bên dưới
+          
 ##############################################################################################################################################################
 Các hàm  về built-in  
           1. Alert       : in ra  một bảng kết quả
@@ -143,6 +155,11 @@ PHÉP TOÁN TỬ:
                     Math.max()    : tim so max trong tat cac  so
                     Math.sqrt()   : tinh so  căn 
                     Math.pow()    : so mu
+                    toFixed({tham_so}) :
+                         vd: 
+                                   var so=10.3345634643;
+                                   console.log(so.toFixed(2)) ;
+                                   ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
 SỬ LÝ CHUỖI ( STRING)
 
@@ -200,6 +217,29 @@ SỬ LÝ CHUỖI ( STRING)
                     var str ="Hello world!";
                     console.log(str[1]);
                     ==> kết quả trả về: e
+          Sắp xếp các Chữ-Số: sort()
+                    vd: sap xep cac text:
+                                   var  mau=new Array('do','vang','cam','tim','hong');
+                                   document.write('<br><h2>mang dau: </h3><br><h2>');
+                                   document.write(mau+"<h2>",)
+                                   document.write('<br> mang duoc sap xep:  <br>')
+                                   document.write(mau.sort()+", ")
+                    vd: sap xep cac so bằng function():
+                                   ar so=[140,35,57,25,234,65,3];
+                                   document.write('mang so ban dau: </h3><br><h2>')
+                                   document.write('<br>'+so);
+                                   document.write('<br>Mang sap xep')
+
+                                   so.sort(function(a,b){return a-b})
+                                   document.write('<br>'+so)
+                              
+                              ==> Sắp xếp bằng sort() cũng có thể sắp xếp các số min max bang sort
+                              ==> Sử dụng thằng sort(function(a,b){return a-b})
+          Sắp xếp từ dưới lên: revese()
+                    vd:
+                              var  mau=new Array('do','vang','cam','tim','hong');
+                              document.write('<br> mang duoc reverse():  <br>')
+                              document.write(mau.reverse()+", ")
 
 ##############################################################################################################################################################
 SỬ LÝ CHUỐI(STRING):
@@ -339,6 +379,24 @@ Làm việc  với OBJECT: giống như json(python)
                                    'toi la  nguyen'+this.name+'toi nam nay '+this.age;
                               }   
                           }
+          - Lấy giá trị  tất cả bằng For Object.values({Tên_object}):
+               vd:
+                         var object={
+                              name:'thanh tung',
+                              diem :{
+                                   diemToan:10,
+                                   diemLy:8,
+                                   diemHoa:7,
+                                   diemVan:9,
+                                   diemAnh:8,
+                              },
+                         }
+                         for(var so in Object.values(object.diem)){
+                              document.write(`<h1> ${so}</h1>`)
+                         }
+                    --> Object.values : LÀ CHUYỂN OBJECT THÀNH ARR 
+
+
                     *Lưu ý:  Khi ta dùng Function  thì ta lên sử dụng  THIS.{GIÁ_TRỊ_oBJECT}  TRONG FUNCTION()
                              Thay  vì dùng tung.name trong function thì ta nên dùng THIS ví dụ  bên trên
                

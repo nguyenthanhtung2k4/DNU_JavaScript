@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Object</title>
+</head>
+<body>
+     <script>
+          var name=prompt("Name: ")
+          var age=parseInt(prompt("Age: "))
+          var Adrees=prompt("Adrees: ")
+          var Claas=prompt("Claas: ")
+          do{
+               var DiemToan=prompt("Toan: ")
+               var DiemVan=prompt("Van: ")
+               var DiemAnh=prompt("Anh: ")
+          }while(DiemAnh.isNaN()||DiemToan.isNaN()||DiemVan.isNaN() || DiemAnh>=0 || DiemAnh<=10 || DiemVan>=0  || DiemVan<=10 || DiemToan>=0 ||DiemToan<=10)
+          var object={
+               name:name,
+               age:age,
+               Adrees:Adrees,
+               Claas:Claas,
+               DiemToan:DiemToan,
+               DiemVan:DiemVan,
+               DiemAnh:DiemAnh,
+               diemtb: function(){
+                    return (this.DiemToan+this.DiemVan+this.DiemAnh)/3;
+               },
+               diem: function(){
+                    return (this.DiemToan+this.DiemVan+this.DiemAnh);
+               }
+
+          }
+          var Ob=Object.values(object)
+          let so=0;
+          for(var i in object){
+               document.write(`<h1>${Ob[so]}<br>`)
+               so++;
+          }
+
+     </script>
+</body>
+</html>

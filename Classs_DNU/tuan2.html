@@ -5,13 +5,16 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>login</title>
      <style>
+          h1{
+               font-size: 40px;
+          }
           body{
                text-decoration: double;
           }
           input{
                border: 1px solid black;
                border-radius: 3px;
-               box-shadow: inset(1,2);
+               box-shadow: 1px 2px 2px black;
                padding: 10px;
                margin-top: 10px;
                display: inline-block;
@@ -29,21 +32,40 @@
              
           }
           button{
-               width: 100px;
-               height:  40px;
-               background-color: rgb(52, 208, 52);
+               width: 150px;
+               height:  50px;
+               background-color: rgb(27, 229, 5);
                color: white;
                border-radius: 5px;
+               font-size: 20px;
+               font-weight: bold;
+               transition: 0.5s;
+          }
+          .year{
+               margin-top: 15px;
           }
           form{
-               
+               text-decoration: solid;
+               width:auto;
+          }
+          .text{
+               width: 325px;
+               height: auto;
+               font-size: 16px;
+               font-weight: bold;
+          }
+          .bam:hover{
+               cursor: pointer;
+               opacity: 0.8;
+               color:rgb(27, 229, 5); 
+               background-color: white;
           }
      </style>
 </head>
 <body>
      <form action="login">
-          <h1>Đăng nhập</h1>
-          <p>Miễn phí và sẽ luôn như vậy.</p>
+          <h1>Đăng Ký</h1>
+          <p class="text">Miễn phí và sẽ luôn như vậy.</p>
           <div>
                <input class='name'type="text" placeholder="Họ">
                <input class='name'type="text" placeholder="Tên">
@@ -51,8 +73,8 @@
           <input class="nametext" type="text" placeholder="Email hoặc số điện thoại"><br>
           <input class="nametext" type="text" placeholder="Nhập email hoặc số điện thoại"><br>
           <input class="nametext" type="text" placeholder="Mật khẩu mới">
-          <div>
-               <i>Ngày sinh</i>
+          <div class="year">
+               <i class="text">Ngày sinh</i>
                <select>
                     <option value="ngay">Ngay</option>
                     <option value="ngay">1</option>
@@ -71,7 +93,7 @@
                     
                </select>
                <select>
-                    <option value="ngay">thang</option>
+                    <option value="ngay">Thang</option>
                     <option value="thang">1</option>
                     <option value="thang">1</option>
                     <option value="thang">1</option>
@@ -88,7 +110,7 @@
                     
                </select>
                <select>
-                    <option value="ngay">nam</option>
+                    <option value="ngay">Nam</option>
                     <option value="nam">1</option>
                     <option value="nam">1</option>
                     <option value="nam">1</option>
@@ -117,7 +139,7 @@
                của chúng tôi, bao gồm
                <a href="https://facebook.con">sử dụng cookie.</a>
           </div>
-          <button>Đăng ký</button>
+          <button class="bam">Đăng ký</button>
 
      </form>
 </body>
