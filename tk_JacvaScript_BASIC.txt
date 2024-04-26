@@ -14,6 +14,11 @@ TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
           https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
           https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
+Duyệt mã:
+console: duyệt mã
+console.log() : là kết quả trả về
+console.table() : là kết quả trả về một bảng giống như  word.
+
 Biến:
 var: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG HÀM MÀ NÓ ĐƯỢC KHAI BÁO( FUNCTION)
 let: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO ( IF ,FOR)
@@ -102,7 +107,8 @@ Các hàm  về built-in
                                              document.write('<h1>thanhtung</h1>')
 
                     document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
-                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                    document.innerText  ===> Lấy hoặc đặt văn bản của một phần tử và lấy các phần tử mẹ
+                    document.textContent===> Lấy các phần tử trong thẻ.
                     document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
                     document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
                     document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
@@ -255,7 +261,7 @@ SỬ LÝ CHUỐI(STRING):
                console.log(so.toFixed(2)) ;
                ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
-LÀM VIỆC VỚI MẢNG:
+LÀM VIỆC VỚI MẢNG (arr):
 
           Cách khởi tạo:
                          vd:
@@ -308,6 +314,87 @@ LÀM VIỆC VỚI MẢNG:
                          var tung2=['tung','thanh','nguyen'];
                          console.log(tung.concat(tung2))
                          ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
+               
+          Các phương thức trong mảng:
+               forEach() :  Gọi từng hàm cho  từng phần tử.
+                         vd:
+                                   <p id="demo"></p>
+                                   <script>
+                                        let text = "";
+                                        const fruits = ["apple", "orange", "cherry"];
+                                        fruits.forEach(myFunction);
+                                        document.getElementById("demo").innerHTML = text;
+                                        function myFunction(item, index) {
+                                        text += index + ": " + item + "<br>"; }
+                                   </script>
+
+                         KQ==>     0: apple
+                                   1: orange
+                                   2: cherry
+                         link: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49 | s3scholl
+
+               every() : Kiểm tra TẤT CẢ các phần tử trong mảng có cùng giá trị không(có: true, không:false)
+                         vd:
+                                   var  arr=[
+                                   {name1:'tung',age:'1'},{name2:'tung',age:'1'},{name3:'tung',age:'1'},{name4:'tung',age:'1'},
+                                   ]
+                                   var tim= arr.every(function(arr,index){
+                                        console.log(index)
+                                        return arr.age == 1;
+                                   })
+                                   console.log(tim)
+                         KQ==> true
+                         link: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49 | s3scholl
+
+               some() : Kiểm tra phần tử nếu một phần tử đúng sẽ trả về true(Ngược lại với every()--> Bên trên)
+                         vd:
+                                   var  arr=[
+                                   {name1:'tung',age:'1'},{name2:'tung',age:'2'},{name3:'tung',age:'1'},{name4:'tung',age:'1'},
+                                   ]
+                                   var tim= arr.some(function(arr,index){
+                                        console.log(index)
+                                        return arr.age == 2;
+                                   })
+                                   console.log(tim)
+                         KQ==> true
+                         link: tham khảo bên trên
+                    
+               find() : Tìm phần tử trong mảng( chỉ trả về 1 kết quả duy nhất )
+                         vd:
+                                   var  arr=[
+                                   {name:'tung',age:'1'},{name:'tung',age:'1'},{name:'tung',age:'1'},{name:'tung',age:'1'},
+                                   ]
+                                   var tim= arr.find(function(arr,index){
+                                        console.log(index)
+                                        return arr.name == 'tung';
+                                   })
+                                   console.log(tim)
+                         KQ==> 0
+                              { name: 'tung', age: '1' }
+
+               * Lưu ý: Nếu nó tìm thấy phần tử ở đầu thì nó sẽ không tìm tiếp các phần tử sau nữa!
+
+               filter : Tìm phần tử nhưng nó sẽ khác find() là nó sẽ trả về tất cả phần tử thỏa mãn.
+                         vd:
+                                   var  arr=[
+                                        {name:'tung',age:'1'},{name:'tung',age:'12'},{name:'tung',age:'15'},
+                                   ]
+                                   var tim= arr.filter(function(arr,index){
+                                        return arr.name == 'tung';
+                                   })
+                                   console.log(tim)
+
+                         KQ==>[
+                              { name: 'tung', age: '1' },
+                              { name: 'tung', age: '12' },
+                              { name: 'tung', age: '15' }
+                              ]
+
+               * lưu ý nó cũng hoạt động như find() chỉ là nó sẽ trả về tất cả phần tử thoản mãn nó.
+
+               map :  chèn kí tự vào 
+
+               
 ##############################################################################################################################################################
 HÀM JAVASCRIPT: FUNCTION()  giông như def(python)  hay void(c++)
      ------------------------------------------------
@@ -513,5 +600,123 @@ TOÁN TỬ 3 NGÔI : Cách viết tắt của if , else:
           ===> Trong trường hợp các câu lệnh bên trong if ,else phức tạp phải viết hẩn ra.
 
 ##############################################################################################################################################################
-onclick
-onLoad
+THAY ĐỔI SỰ KIỆN TRONG HTML : 
+          -reload()   : Link  tham  khao  : https://www.w3schools.com/jsref/met_loc_replace.asp
+          -onclick             : Được kích hoạt khi nhấn vào chuột element          
+          -onLoad &  Unload    : Dược kích hoạt khi ngươif dùng vào hoaej  thaots khoải  chương tunhf
+          -on Focus  & onBlur & onchange : 
+                    onFocus   :
+                    onBlur    :
+                    onChange  :
+          -onMouseOver & onMouseout      :
+                    onMouseout:
+
+
+
+
+
+##############################################################################################################################################################
+                         JS NÂNG CAO 
+
+
+
+document    : Để nó tương tác với nọi dung của trang web
+               -DOM (DATA OBJECT MODEL):  DÙNG DOM ĐỂ  LẤY DATA  TRONG  HTML
+               -Truy cập phần tử HTML:
+                    getElementById() ===>  Trả về phần tử HTML với id cụ thể.
+                    getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
+                    getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
+                    querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
+              
+               -Thao tác với nội dung và thuộc tính HTML:
+                    document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
+                                        vd:
+                                             document.write('<h1>thanhtung</h1>')
+
+                    document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                    document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
+                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
+                    document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
+                              VD: 
+                                   var tung=document.getElementById("tung");
+                                   tung.innerHTML= `<p>thanh tung</p>`;
+                                   
+               -Tạo và xóa phần tử HTML mới:
+
+                    createElement(): Tạo một phần tử HTML mới với tên thẻ được chỉ định.
+                    appendChild(): Thêm một phần tử con vào cuối danh sách các phần tử con của một phần tử cha.
+                    removeChild(): Xóa một phần tử con khỏi phần tử cha.
+               
+               -Xử lý sự kiện:
+                    addEventListener(): Gắn một bộ xử lý sự kiện cho một phần tử.
+                    removeEventListener(): Loại bỏ một bộ xử lý sự kiện đã được gắn với một phần tử.
+               
+               -Cookie:
+                    cookie: Thuộc tính của document cho phép bạn đọc và ghi các cookie.
+               
+               -Định vị và cuộn trang:
+                    scrollTo(): Cuộn trang đến vị trí được chỉ định.
+                    scrollBy(): Cuộn trang theo một số lượng cụ thể.
+               
+               -Thông tin trang:
+                    document.URL: Trả về URL của trang hiện tại.
+                    document.title: Trả về hoặc đặt tiêu đề của trang.
+
+
+removeChild:
+
+
+addEventListener()  : Hiểu một cách đơn giản nó là phương pháp được đề xuất để quảnlys trình sử lý:
+               - keyup: sử lý phím được nhấn và sau đó đc thả ra trên bàn phím.
+               - click: Sự kiện này xảy ra khi một phần tử được nhấn (click) bởi người dùng.
+               - mouseover và mouseout: Sự kiện mouseover xảy ra khi con trỏ chuột đi vào phần tử, trong khi sự kiện mouseout xảy ra khi con trỏ chuột rời khỏi phần tử đó.
+               - change: Sự kiện này xảy ra khi giá trị của một phần tử input, select, hoặc textarea thay đổi.
+               - submit: Sự kiện này xảy ra khi một form được gửi đi (submit).
+               - keydown và keypress: Sự kiện keydown xảy ra khi một phím được nhấn xuống, trong khi sự kiện keypress xảy ra khi một phím được nhấn và giữ (nhưng chưa thả ra).
+               - focus và blur: Sự kiện focus xảy ra khi một phần tử nhận được focus, trong khi sự kiện blur xảy ra khi một phần tử mất focus.
+
+                    VD:
+                         // Lắng nghe sự kiện "click" trên một nút
+                         document.getElementById("clickButton").addEventListener("click", function() {
+                         alert("Nút đã được nhấn!");
+                         });
+
+                         // Lắng nghe sự kiện "mouseover" trên một phần tử
+                         document.getElementById("mouseOverDiv").addEventListener("mouseover", function() {
+                         this.style.backgroundColor = "lightblue";
+                         });
+
+                         // Lắng nghe sự kiện "change" trên một trường input
+                         document.getElementById("textInput").addEventListener("change", function() {
+                         alert("Giá trị đã thay đổi thành: " + this.value);
+                         });
+
+                         // Lắng nghe sự kiện "submit" trên một form
+                         document.getElementById("testForm").addEventListener("submit", function(event) {
+                         event.preventDefault(); // Ngăn chặn hành động mặc định của form
+                         alert("Form đã được gửi đi!");
+                         });
+
+                         // Lắng nghe sự kiện "keydown" trên trang
+                         document.addEventListener("keydown", function(event) {
+                         console.log("Phím " + event.key + " đã được nhấn xuống.");
+                         });
+
+                         // Lắng nghe sự kiện "keypress" trên trang
+                         document.addEventListener("keypress", function(event) {
+                         console.log("Phím " + event.key + " đã được nhấn và giữ.");
+                         });
+
+                         // Lắng nghe sự kiện "focus" trên một trường input
+                         document.getElementById("focusInput").addEventListener("focus", function() {
+                         this.style.backgroundColor = "lightgreen";
+                         });
+
+                         // Lắng nghe sự kiện "blur" trên một trường input
+                         document.getElementById("blurInput").addEventListener("blur", function() {
+                         this.style.backgroundColor = "white";
+                         });
+
+
