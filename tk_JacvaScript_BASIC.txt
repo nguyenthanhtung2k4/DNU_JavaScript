@@ -14,11 +14,6 @@ TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
           https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
           https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-Duyệt mã:
-console: duyệt mã
-console.log() : là kết quả trả về
-console.table() : là kết quả trả về một bảng giống như  word.
-
 Biến:
 var: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG HÀM MÀ NÓ ĐƯỢC KHAI BÁO( FUNCTION)
 let: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO ( IF ,FOR)
@@ -61,19 +56,7 @@ Kiểm tra các dữ liệu  có đúng hay không
                vd: 
                     var a;
                     a=parseFloat(prompt("number"))
-          this :  là đại diện cho  một đối tượng trong object--> nó giống như con trỏ trỏ đến object ==> VD bên dưới:
-               vd:
-                    function Person(){
-                        this.name="Tung";
-                        this.age=27;
-                    }
-                    var p=new Person();
-                    alert(p.name);
 
-                    ==> this đại diện cho thằng Person()
-
-          Object.values({Giá_trị_truyền_vào}) ==> Nó sẽ chuyển Object thành Arr ==> VD bên dưới
-          
 ##############################################################################################################################################################
 Các hàm  về built-in  
           1. Alert       : in ra  một bảng kết quả
@@ -107,8 +90,7 @@ Các hàm  về built-in
                                              document.write('<h1>thanhtung</h1>')
 
                     document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
-                    document.innerText  ===> Lấy hoặc đặt văn bản của một phần tử và lấy các phần tử mẹ
-                    document.textContent===> Lấy các phần tử trong thẻ.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
                     document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
                     document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
                     document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
@@ -161,11 +143,6 @@ PHÉP TOÁN TỬ:
                     Math.max()    : tim so max trong tat cac  so
                     Math.sqrt()   : tinh so  căn 
                     Math.pow()    : so mu
-                    toFixed({tham_so}) :
-                         vd: 
-                                   var so=10.3345634643;
-                                   console.log(so.toFixed(2)) ;
-                                   ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
 SỬ LÝ CHUỖI ( STRING)
 
@@ -223,29 +200,6 @@ SỬ LÝ CHUỖI ( STRING)
                     var str ="Hello world!";
                     console.log(str[1]);
                     ==> kết quả trả về: e
-          Sắp xếp các Chữ-Số: sort()
-                    vd: sap xep cac text:
-                                   var  mau=new Array('do','vang','cam','tim','hong');
-                                   document.write('<br><h2>mang dau: </h3><br><h2>');
-                                   document.write(mau+"<h2>",)
-                                   document.write('<br> mang duoc sap xep:  <br>')
-                                   document.write(mau.sort()+", ")
-                    vd: sap xep cac so bằng function():
-                                   ar so=[140,35,57,25,234,65,3];
-                                   document.write('mang so ban dau: </h3><br><h2>')
-                                   document.write('<br>'+so);
-                                   document.write('<br>Mang sap xep')
-
-                                   so.sort(function(a,b){return a-b})
-                                   document.write('<br>'+so)
-                              
-                              ==> Sắp xếp bằng sort() cũng có thể sắp xếp các số min max bang sort
-                              ==> Sử dụng thằng sort(function(a,b){return a-b})
-          Sắp xếp từ dưới lên: revese()
-                    vd:
-                              var  mau=new Array('do','vang','cam','tim','hong');
-                              document.write('<br> mang duoc reverse():  <br>')
-                              document.write(mau.reverse()+", ")
 
 ##############################################################################################################################################################
 SỬ LÝ CHUỐI(STRING):
@@ -261,7 +215,7 @@ SỬ LÝ CHUỐI(STRING):
                console.log(so.toFixed(2)) ;
                ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
-LÀM VIỆC VỚI MẢNG (arr):
+LÀM VIỆC VỚI MẢNG:
 
           Cách khởi tạo:
                          vd:
@@ -314,87 +268,6 @@ LÀM VIỆC VỚI MẢNG (arr):
                          var tung2=['tung','thanh','nguyen'];
                          console.log(tung.concat(tung2))
                          ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
-               
-          Các phương thức trong mảng:
-               forEach() :  Gọi từng hàm cho  từng phần tử.
-                         vd:
-                                   <p id="demo"></p>
-                                   <script>
-                                        let text = "";
-                                        const fruits = ["apple", "orange", "cherry"];
-                                        fruits.forEach(myFunction);
-                                        document.getElementById("demo").innerHTML = text;
-                                        function myFunction(item, index) {
-                                        text += index + ": " + item + "<br>"; }
-                                   </script>
-
-                         KQ==>     0: apple
-                                   1: orange
-                                   2: cherry
-                         link: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49 | s3scholl
-
-               every() : Kiểm tra TẤT CẢ các phần tử trong mảng có cùng giá trị không(có: true, không:false)
-                         vd:
-                                   var  arr=[
-                                   {name1:'tung',age:'1'},{name2:'tung',age:'1'},{name3:'tung',age:'1'},{name4:'tung',age:'1'},
-                                   ]
-                                   var tim= arr.every(function(arr,index){
-                                        console.log(index)
-                                        return arr.age == 1;
-                                   })
-                                   console.log(tim)
-                         KQ==> true
-                         link: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49 | s3scholl
-
-               some() : Kiểm tra phần tử nếu một phần tử đúng sẽ trả về true(Ngược lại với every()--> Bên trên)
-                         vd:
-                                   var  arr=[
-                                   {name1:'tung',age:'1'},{name2:'tung',age:'2'},{name3:'tung',age:'1'},{name4:'tung',age:'1'},
-                                   ]
-                                   var tim= arr.some(function(arr,index){
-                                        console.log(index)
-                                        return arr.age == 2;
-                                   })
-                                   console.log(tim)
-                         KQ==> true
-                         link: tham khảo bên trên
-                    
-               find() : Tìm phần tử trong mảng( chỉ trả về 1 kết quả duy nhất )
-                         vd:
-                                   var  arr=[
-                                   {name:'tung',age:'1'},{name:'tung',age:'1'},{name:'tung',age:'1'},{name:'tung',age:'1'},
-                                   ]
-                                   var tim= arr.find(function(arr,index){
-                                        console.log(index)
-                                        return arr.name == 'tung';
-                                   })
-                                   console.log(tim)
-                         KQ==> 0
-                              { name: 'tung', age: '1' }
-
-               * Lưu ý: Nếu nó tìm thấy phần tử ở đầu thì nó sẽ không tìm tiếp các phần tử sau nữa!
-
-               filter : Tìm phần tử nhưng nó sẽ khác find() là nó sẽ trả về tất cả phần tử thỏa mãn.
-                         vd:
-                                   var  arr=[
-                                        {name:'tung',age:'1'},{name:'tung',age:'12'},{name:'tung',age:'15'},
-                                   ]
-                                   var tim= arr.filter(function(arr,index){
-                                        return arr.name == 'tung';
-                                   })
-                                   console.log(tim)
-
-                         KQ==>[
-                              { name: 'tung', age: '1' },
-                              { name: 'tung', age: '12' },
-                              { name: 'tung', age: '15' }
-                              ]
-
-               * lưu ý nó cũng hoạt động như find() chỉ là nó sẽ trả về tất cả phần tử thoản mãn nó.
-
-               map :  chèn kí tự vào 
-
-               
 ##############################################################################################################################################################
 HÀM JAVASCRIPT: FUNCTION()  giông như def(python)  hay void(c++)
      ------------------------------------------------
@@ -466,24 +339,6 @@ Làm việc  với OBJECT: giống như json(python)
                                    'toi la  nguyen'+this.name+'toi nam nay '+this.age;
                               }   
                           }
-          - Lấy giá trị  tất cả bằng For Object.values({Tên_object}):
-               vd:
-                         var object={
-                              name:'thanh tung',
-                              diem :{
-                                   diemToan:10,
-                                   diemLy:8,
-                                   diemHoa:7,
-                                   diemVan:9,
-                                   diemAnh:8,
-                              },
-                         }
-                         for(var so in Object.values(object.diem)){
-                              document.write(`<h1> ${so}</h1>`)
-                         }
-                    --> Object.values : LÀ CHUYỂN OBJECT THÀNH ARR 
-
-
                     *Lưu ý:  Khi ta dùng Function  thì ta lên sử dụng  THIS.{GIÁ_TRỊ_oBJECT}  TRONG FUNCTION()
                              Thay  vì dùng tung.name trong function thì ta nên dùng THIS ví dụ  bên trên
                
