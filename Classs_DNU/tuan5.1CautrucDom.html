@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>baitap them node</title>
+</head>
+<body>
+     <div id="domNode">
+          <h1 id="h">< Dom node < /h1 ></h1>
+          <!-- <h2></h2> -->
+          <p id="p1">tim hieu ve Dom NOde html</p>
+          <a href="tung.com">trang chu  tung.com</a>
+     </div>
+     <br>
+     <button type="button" onclick="themNodeMoi()">Them Node</button>
+     <button type="button" onclick="chenNodeMoi()">Chen Node</button>
+     <button type="button" onclick="xoaNode1()">Xoa Node</button>
+     <button type="button" onclick="xoaNode2()">Xoa Node2</button>
+     <button type="button" onclick="thaytheNode()">Thay the Node</button>
+     <p id="ketqua"></p>
+     <script>
+          function themNodeMoi(){
+               var themNode=document.createElement('h2')
+               var textNode=document.createTextNode("tao la tung dang hoc js DNU")
+               themNode.appendChild(textNode)
+               var nodeDiv=document.getElementById('domNode')
+               nodeDiv.appendChild(themNode);
+          }
+          function chenNodeMoi(){
+               var themNode=document.createElement('h2')
+               var textNode=document.createTextNode(" chen vao tao la tung dang hoc js DNU")
+               themNode.style.color='blue'
+               themNode.appendChild(textNode)
+               var nodeDiv=document.getElementById('domNode')
+               var nodeBiChen=document.getElementById('p1')
+               nodeDiv.insertBefore(themNode,nodeBiChen)
+          }
+          /* xóa các  phần tử HTML hiện có
+          để xóa phần từ html  sử dụng  phương thức remove() trong các trình duyệt mới
+          ví dụ xóa thẻ p*/
+
+          function xoaNode1(){
+               var nodeBiXoa1=document.getElementById('p1')
+               nodeBiXoa1.remove();
+          }
+          /*Xóa cac phần tử HTML hiện có 
+          sử dụng các phương thức removeChilld() trong các trình suyệt mới có
+          ví dụ  xóa thẻ p
+          */
+          function xoaNode2(){
+               var nodeDiv=document.getElementById('domNode')
+               var xoaNodeH1=document.getElementById('h')
+               nodeDiv.removeChild(xoaNodeH1)
+          }
+          /*Thay thế1 phần tử HTMl bnagwf 1 phần tử HTMl mới .replanceChilld(Node cũ,  Node mới)
+          để  thêm một ohaanf tử mouws vào HTML DOM  trước tiên bạn phải tạo phần tử (Nút phần tử)
+          sau đó thay thế nó cho  phần tử hiện có.
+          */     
+          function thaytheNode(){
+               var nodeMoi=document.createElement('h2')
+               var textNode=document.createTextNode(" thay the the moi la tung dang hoc js DNU")
+               nodeMoi.style.color='red'
+               nodeMoi.appendChild(textNode)
+               var nodeDiv=document.getElementById('domNode')
+               var nodeCU=document.getElementById('p1')
+               nodeDiv.replaceChild(nodeMoi,nodeCU)
+               nodeDiv.repl
+          }
+     </script>
+</body>
+</html>

@@ -1,6 +1,28 @@
 NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
 
 ==========================================================================================
+* Một số thuộc tính gợi nhớ:
+     - get : lấy dữ liệu
+     - set : đặt thêm dữ liệu
+     - remove: di chuyện dữ liệu { xóa dữ liệu}
+     - create: đăt thêm thuộc tính dữ liệu
+     - Value : Là giá trị
+     - Type  : Là kiểu dữ liệu
+     - Last  : đầu tiên
+     - First : cuối cùng
+     - Append: Nối thêm
+     -Insert : Chèn
+     -replace: Thay thế
+     - has : kiểm tra có phải có thuộc tính không (trong trường hợp ko có thì return false)
+     
+     ------------------------------------------------------
+     * Các thộc tính liên quan đến js:
+          - element : Yếu tố của html và js( vd: <h1> , <p> --> là một  elemnet )
+          - document: 
+          - Node    : Là đc gọi là nút trong js  vs html
+          - Text    : văn bản
+          - Child   : Các phần tử con nằm trong phần tử cha
+==========================================================================================
 * LUƯ Ý: 
           KHI THỰC HIỆN GỌI CÁC BIẾN KHÁC DÙNG DẤU +
                     VD: 
@@ -492,7 +514,20 @@ document    : Để nó tương tác với nọi dung của trang web
                     document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
                     document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
                     document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
-                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
+                         vd:       
+                                   <h1 id="heading" class="main-title">Đây là tiêu đề chính</h1>
+                                   <a href="https://www.example.com" id="myLink" target="_blank">Liên kết đến trang web</a>
+                                   const headingElement = document.getElementById("heading");
+                                   // Lấy giá trị thuộc tính id của heading
+                                   const headingId = headingElement.getAttribute("id");
+                                   console.log("ID của heading:", headingId); // Hiển thị "heading"
+
+                                   // Lấy giá trị thuộc tính class của heading
+                                   const headingClass = headingElement.getAttribute("class");
+                                   console.log("Class của heading:", headingClass); // Hiển thị "main-title" (nếu có class)
+
+
+                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử( Thay đổi thuộc tính)
                     document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
                               VD: 
                                    var tung=document.getElementById("tung");
@@ -519,11 +554,103 @@ document    : Để nó tương tác với nọi dung của trang web
                     document.URL: Trả về URL của trang hiện tại.
                     document.title: Trả về hoặc đặt tiêu đề của trang.
 
+-Cấu trúc của DOM: {Node ở đây là tên mà mình đặt } 
+               Node.innerHTML ==>Giá trị văn bản của x
+               Node.nodeName  ==>Tên của x
+               Node.nodeValue ==>Giá trị của x
+               Node.nodeType  ==>Kiểu của Node
+               Node.parentNode Node ==>cha của x
+               Node.childNodes ==>Các node con của x
+               Node. firstChild==>Tham chiếu đến đến nút con đầu tiên
+                    * Note: Trả về bất kì loại node nào | Trả về text Node trắng
+               Node. firstElementChild==>Tham chiếu đến đến nút con đầu tiên
+                    * Note: Elenment con đầu tiên bỏ qua text  và conment | có chứa khoảng trắng ....
+               
+               Node.lastChild ==>Tham chiếu đến đến nút con cuối cùng
+                    * Note: Trả về bất kì loại node nào | Trả về text Node trắng
+               Node.lastElementChild ==>Tham chiếu đến đến nút con cuối cùng
+                    * Note: Elenment con đầu tiên bỏ qua text  và conment | có chứa khoảng trắng ....
+               Node.previousSibling==> Tham chiếu đến nút anh em nằm liền kề trước với nút hiện tại.
+               Node.nextSibling==> Tham chiếu đến nút anh em nằm liền kề sau với nút hiện tại.
+               Node.attributes ==> Các node thuộc tính của x
+-Cách thêm bớt phần từ DOM:{Node là tên mik  đặt}
+               - Node.createElement('{h1,a,h2,span...}')    ==>  Tác dụng khởi tạo Element
+               - Node.createTextNode({text})                ==> Khởi tạo  Text
+               - Node.appendChild({NodeText_muon_them})     ==> Thêm Node 
+                         vd:
+                                   function themNodeMoi(){
+                                        var themNode=document.createElement('h2')
+                                        var textNode=document.createTextNode("tao la tung dang hoc js DNU")
+                                        themNode.appendChild(textNode)
+                                        var nodeDiv=document.getElementById('domNode')
+                                        nodeDiv.appendChild(themNode);
+                                   }
+               - Node.insertBefore({Node_hienco},{Node_Chen})         ==> Chèn Node vào trước hoặc sau Node_cũ
+               - Node.insertAdjacentHTML({Node_hienco},{Node_Chen})   ==> Cũng là chèn Node nhưng nó là thêm chứ HTML
+                    --> Lên tham khảo thêm  về insertAdjacentHTML
+               
+                         VD: 
+                                   <body>
+                                   <div id="parent">
+                                   <p id="child">Child Element</p>
+                                   </div>
+                                   <script>
+                                   var parent = document.getElementById('parent');
+                                   var child = document.getElementById('child');
+                                   // Sử dụng insertBefore
+                                   var newNode1 = document.createElement('h2');
+                                   newNode1.textContent = 'Inserted with insertBefore';
+                                   parent.insertBefore(newNode1, child);
 
-removeChild:
+                                   // Sử dụng insertAdjacentHTML
+                                   var newNode2 = '<h2>Inserted with insertAdjacentHTML</h2>';
+                                   child.insertAdjacentHTML('beforebegin', newNode2);
+                                   </script>
+                                   </body>
+
+               - Node.remove or  Node.removeChild ==> Xóa các phần từ trong HTML
+                         VD:
+                                        <script>
+                                        function xoa(){
+                                             var xoa=document.getElementById('anhca')
+                                             xoa.remove()
+                                        }
+                                        </script>
+               - Node.replanceChild({Node_Moi}, {Node_Cu})  ==> thay thế các text(các thẻ) này thành các text(các thẻ) khác!
+                         VD:
+                                   <div id="tkbo">
+                                   <h1 id="anhca">Anh ca klniojgjt</h1>
+                                   <div id="h1"></div>
+                                   <p id="anhhai">Anh Hai</p>
+                                   <b id="emut">Em Ut</b>
+
+                              
+                                        function thayThe(){
+                                        var hai = document.getElementById('anhhai');
+                                        var ca = document.getElementById('anhca').innerHTML;
+                                        var thayThe = document.getElementById('h1');
+
+                                        // Tạo một node DOM mới từ chuỗi HTML 'ca'
+                                        var caNode = document.createElement('div');
+                                        caNode.innerHTML = ca;
+
+                                        // Thay thế phần tử 'anhhai' bằng nội dung của phần tử 'anhca'
+                                        thayThe.replaceChild(caNode.firstChild, hai);
+                                        }
+                              OR
+                                        function thayThe(){
+                                        var hai = document.getElementById('anhhai');
+                                        var ca = document.getElementById('anhca').innerHTML;
+                                        var thayThe = document.getElementById('h1');
+
+                                        // Gán nội dung của phần tử 'anhca' vào 'h1'
+                                        thayThe.innerHTML = ca;
+                                        }
 
 
-addEventListener()  : Hiểu một cách đơn giản nó là phương pháp được đề xuất để quảnlys trình sử lý:
+
+
+addEventListener()  : Hiểu một cách đơn giản nó  là gắn các hành động ( bộ sử lý sự kiện) hoặc là phương pháp được đề xuất để quảnlys trình sử lý:
                - keyup: sử lý phím được nhấn và sau đó đc thả ra trên bàn phím.
                - click: Sự kiện này xảy ra khi một phần tử được nhấn (click) bởi người dùng.
                - mouseover và mouseout: Sự kiện mouseover xảy ra khi con trỏ chuột đi vào phần tử, trong khi sự kiện mouseout xảy ra khi con trỏ chuột rời khỏi phần tử đó.
@@ -531,7 +658,24 @@ addEventListener()  : Hiểu một cách đơn giản nó là phương pháp đ�
                - submit: Sự kiện này xảy ra khi một form được gửi đi (submit).
                - keydown và keypress: Sự kiện keydown xảy ra khi một phím được nhấn xuống, trong khi sự kiện keypress xảy ra khi một phím được nhấn và giữ (nhưng chưa thả ra).
                - focus và blur: Sự kiện focus xảy ra khi một phần tử nhận được focus, trong khi sự kiện blur xảy ra khi một phần tử mất focus.
-
+                    VD: 
+                              <body onload="loadImg()">
+                              <img id="img" class="img" name="img" src="./img/1.jpeg" alt="img" onmouseover="input()" onmouseout="output()">
+                              <script>
+                                   function input(){
+                                        document.img.src="./img/1.jpeg";
+                                   }
+                                   function output(){
+                                        document.img.src="./img/1.png";
+                                   }
+                                   function loadImg(){
+                                        var img = document.getElementById('img');
+                                        img.addEventListener('mouseover', input);
+                                        img.addEventListener('mouseout', output);
+                                   }
+                              </script>
+                         </body>
+                    
                     VD:
                          // Lắng nghe sự kiện "click" trên một nút
                          document.getElementById("clickButton").addEventListener("click", function() {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <div id="tkbo">
+          <h1 id="anhca">Anh ca klniojgjt</h1>
+          <div id="h1"></div>
+          <p id="anhhai">Anh Hai</p>
+          <b id="emut">Em Ut</b>
+          <button type="button" onclick="them()">them</button>
+          <button type="button" onclick="xoa()">xoa</button>
+          <button type="button" onclick="thayThe()">thaythe</button>
+     </div>
+     <script>
+          function them(){
+               var thanhtung=document.getElementById('h1')
+               var text=document.createTextNode('Thanhtung');
+               thanhtung.appendChild(text);
+          }
+          function xoa(){
+               var xoa=document.getElementById('anhca')
+               xoa.remove()
+          }
+          
+          function thayThe(){ 
+               var hai = document.getElementById('anhhai');
+               var ca = document.getElementById('anhca').innerHTML;
+               var thayThe = document.getElementById('anhhai');
+           
+               // Gán nội dung của phần tử 'anhca' vào 'h1'
+               thayThe.innerHTML = ca;
+           }
+           
+     </script>
+        
+</body>
+
+<!-- /*Đang hk giở phần tìm kiem phan tu con dau- cuoi 
+/* Còn nhiều phần chưa hk như : các ví dụ  tuan5.1  tuan5.5
+/* Còn phần jquery  và framwork   trong điện thoại sam sung 
+/*==> Tìm hiểu kĩ nó nằm cho  chắc 
+/*  HK XONG HTML HK TIẾP   CT& GT  C++
+ -->
+</html>

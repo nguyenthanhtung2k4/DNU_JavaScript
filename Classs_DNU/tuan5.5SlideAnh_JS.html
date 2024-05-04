@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <link rel="icon" href="./img/0.jpeg">
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Slide Anh</title>
+     <style>
+          input{
+               cursor: pointer;
+          }
+          #container{
+               width: 600px;
+               height:  400px;
+               margin: 0 auto;
+               text-align: center;
+          }
+          img{
+               width: 600px;
+               height: 300px;
+          }
+          .button-control{
+               width: 100px;
+               height: 100px;
+               color: red;
+               margin: 15px 10px;
+               border : none;
+               font-size: 20px;
+               font-size: bold;
+               outline: silver;
+          }
+          .button-control:focus{
+               background-color: aqua;
+               box-shadow: 5px 5px 5px yellow;
+               color: rebeccapurple;
+
+          }
+          label{
+               color:  blue;
+               font-size: 30px;
+               font-weight: bold;
+               background-color:  red;
+               width: 150px;
+               padding:  5px 20px;
+               line-height: 40 px;
+
+          }
+     
+     </style>
+     <script>
+          var anhAr=[];
+          var currentIndex=0;
+          function loadAnh(){
+               for(let  i=0; i<6;i++){
+                    anhAr[i]=new Image();
+                    anhAr[i].src='./img/'+i+'.jpeg'
+                    document.getElementById("xem-slide").innerText=0+"/6";
+               }
+          }
+          function First(){
+               if(currentIndex>0){
+                    currentIndex=0;
+                    document.getElementById('hoa').src=anhAr[currentIndex].src;
+                    document.getElementById('xem-slide').innerText=(currentIndex+1)+'/6';
+               }
+          }
+          function Next(){
+               if(currentIndex<5){
+                    currentIndex++
+                    document.getElementById('hoa').src=anhAr[currentIndex].src;
+                    document.getElementById('xem-slide').innerText=(currentIndex+1)+'/6'
+               }
+          }
+          function Back(){
+               if(currentIndex>0){
+                    currentIndex--
+                    document.getElementById('hoa').src=anhAr[currentIndex].src;
+                    document.getElementById('xem-slide').innerText=(currentIndex+1)+'/6'
+               }
+          }
+          function Last(){
+               if(currentIndex>5){
+                    currentIndex=5
+                    document.getElementById('hoa').src=anhAr[currentIndex].src;
+                    document.getElementById('xem-slide').innerText=(currentIndex+1)+'/6'
+               }
+          }
+     </script>
+</head>
+<body onload="loadAnh();">
+     <div id="container">
+          <img src="./img/1.png" alt="img" id="hoa">
+          <br>
+          <input type="button" value="First" class="button-control" onclick="First();">
+          <input type="button" value="Back" class="button-control" onclick="Back();">
+          <input type="button" value="Next" class="button-control" onclick="Next();">
+          <input type="button" value="Last" class="button-control" onclick="Last();">
+          <div><label for="tung" id="xem-slide"></label></div>
+     </div>
+</body>
+</html>

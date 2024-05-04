@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Hien anh</title>
+     <script>
+          function HienAnh(){
+               var anh=document.getElementById('hienanh')
+               anh.innerHTML='<img src="./img/1.jpeg" alt="img"><br><button type="button" onclick="AnAnh()">An anh</button>'
+          }
+          function AnAnh(){
+               var anh=document.getElementById('hienanh')
+               anh.innerHTML=''
+          }
+     </script>
+</head>
+<body>
+     <div id="hienanh"></div>
+     <button type="button" onclick="HienAnh()">Hien anh</button>
+     
+</body>
+</html>

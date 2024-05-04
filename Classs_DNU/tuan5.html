@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <div id="node">
+          <h1>DOM node </h1>
+          <p>Tim hieu ve DOM node HTML</p>
+          <a href="jusst.com">Trang jusst</a>
+          
+     </div>
+     <p id="ketqua"></p>
+     <script>
+          var node= document.getElementById('node');
+          var kq=document.getElementById('ketqua')
+          ketqua=`Ten Node =${node.nodeName}<br>`
+          ketqua+=`Noi dung node =${node.nodeValue}<br>`
+          ketqua+=`Ten node cha =${node.parentNode.nodeName}<br>`
+          ketqua+=`Ten node con dau tien =${node.firstElementChild.nodeName}<br>`
+          ketqua+=`noi dung node con dau tien =${node.firstElementChild.innerHTML}<br>`
+          ketqua+=`ten con thu 2 =${node.childNodes[3].nodeName}<br>`
+          ketqua+=`noi dung node con =${node.childNodes[3].childNodes[0].nodeValue}<br>`
+          document.getElementById('ketqua').innerHTML=ketqua
+     </script>
+
+</body>
+</html>

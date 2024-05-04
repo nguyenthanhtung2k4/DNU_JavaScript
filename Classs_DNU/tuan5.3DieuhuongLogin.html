@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>login Dieuhuong</title>
+     <script>
+          function laygiatri(){
+               var username="";
+               var password="";
+               var username=document.getElementById("username").value;
+               var password=document.getElementById("password").value;
+               var ketqua=document.getElementById("ketqua");
+               if(username==""){
+                    alert('Ban khong duoc de trong UserName. Nhap lai')
+                    document.getElementById('username').focus();
+     
+               }else{
+                    if(username=="tungcuacace" && password=='123'){
+                         window.location.assign('thanhcong.html')
+                    }else{
+                         alert('Ban nhap sai name va pass. Nhap lai')
+                         window.getElementById('username').value=""
+                         window.getElementById('password').value=""
+                         document.getElementById('username').focus();
+     
+                    }
+                    let kp=`Ban da nhap name ${username} <br> password ${password}`
+                    document.getElementById('ketqua').innerHTML=kq;
+               }
+          }
+     </script>
+</head>
+<body>
+     <form action="tung">
+          username: <input type="text" id="username"><br>
+          password: <input type="password" id="password"><br>
+          <input type="button" onclick="laygiatri()" value="Dang nhap">
+          <p id="ketqua">?</p>
+     </form>
+</body>
+</html>
