@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dat mua</title>
+     <style>
+          *{
+               box-sizing: border-box;
+          }
+          body{
+               margin: 0;
+               padding: 0;
+          }
+          .datmua {
+               height: auto;
+               border: 5px solid greenyellow;
+               display: flex;
+               flex-direction: column;
+               justify-content: center;
+               align-items: center;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               padding: 70px;
+               font-size: 30px;
+          }
+           
+          .ma{
+               float: right;
+               top: 60px;
+               right: 50px;
+               margin-bottom: 10px;
+               
+          }
+          .text-form{
+               margin-right: 20px;
+          }
+          .inputDat{
+               width: 350px;
+               height: 40px;
+               border: 1px solid rgb(0, 0, 0);
+               border-radius: 5px;
+               padding: 10px;
+               margin-bottom: 10px;
+               font-size: 20px;
+               font-weight: 600;
+               box-shadow: 0px 1px;
+          }
+          #loai{
+               width: 350px;
+               height: 40px;
+               font-size:23px ;
+          }
+          .inputDat-radio{
+               
+               height: 20px;
+               width: 30px;
+
+               border: 0;
+          }
+          #button{
+               width: 100px;
+               height: 60px;
+               text-align: center;
+               border: 1px solid rgb(7, 216, 202);
+               background-color: aqua;
+               border-radius: 5px;
+               padding: 10px;
+               margin-bottom: 10px;
+               font-size: 20px;
+               font-weight: 600;
+               box-shadow: 0px 1px;
+               color: red;
+               box-shadow: black 2px 3px;
+               cursor: pointer;
+               position: absolute;
+               top: 93%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               
+          }
+          .hr{
+               position: static;
+               top:90%;
+               background-color: red;
+               font-size: 20px;
+               height: 5px;
+               width: 100%;
+          }
+          #khac{
+               display: none;
+               position: static;
+               top:90%;
+               margin-top: 20px;
+               font-size: 20px;
+               height: 50px;
+               width: 100%;
+          }
+     </style>
+</head>
+<body>
+     <div class="datmua">
+          <h1>Đặt mua</h1>
+          <form action="dangnhap.html" onsubmit="return kiemtra()">
+               <div class="ma">
+                    <label class="text-form" for="datmua">Mã xe Ô tô</label>
+                    <input required id="maSp" type="text" class="inputDat" minlength="6">
+               </div><br>
+               <div class="ma">
+                    <label class="text-form" for="datmua">Tên Xe</label>
+                    <input required type="text" class="inputDat">
+               </div><br>
+               <div class="ma">
+                    <label class="text-form" for="datmua">Nhà sản xuất</label>
+                    <input name="check" id="inputDat-radio" type="radio" class="inputDat-radio" onclick="checkRadio(false)">Honda
+                    <input name="check" id="inputDat-radio" type="radio" class="inputDat-radio" onclick="checkRadio(false)">Hunydai
+                    <input name="check" id="inputDat-radio" type="radio" class="inputDat-radio" onclick="checkRadio(true)">Khác
+                    <div>
+                         <select name="check-khac" id="khac" multiple>
+                              <option value="masda">masda</option>
+                              <option value="toyota">toyota</option>
+                              <option value="range">range</option>
+                         </select>
+                    </div>
+               </div><br>
+               <div class="ma">
+                    <label class="text-form" for="datmua">Loại</label>
+                    <div>
+                    <select name="loai" id="loai" multiple required>
+                         <option value="4">4Chỗ</option>
+                         <option value="6">6Chỗ</option>
+                         <option value="8">8Chỗ</option>
+                         <option value="12">12Chỗ</option>
+                         <option value="23">23Chỗ</option>
+                         <option value="30">30Chỗ</option>
+                         <option value="40">40Chỗ</option>
+                    </select>
+                    </div>
+                    
+               </div><br>
+               <div class="ma">
+                    <label class="text-form" for="datmua">Đơn giá</label>
+                    <input pattern="[0-9]*" type="text" class="inputDat" required>
+
+               </div><br>
+               
+               
+               <div class="box" id="box"><button type="submit" onclick="kiemtra()" value="Đặt mua" id="button">Đặt mua</button></div>
+          </form>
+          <hr class="hr">
+     </div>
+     <script>
+          function kiemtra(){
+               var kiemtra=document.querySelector('input[name="check"]:checked');
+               if(!kiemtra){
+                    alert("Vui lòng điền đủ thông tin!")
+                    return false;
+               }else{
+                         return true;
+               }
+          }
+          function checkRadio(Bool){
+               if(Bool){
+                    document.getElementById('khac').style.display='block';
+               }else{
+                    document.getElementById('khac').style.display='none';
+               }
+          }
+     </script>
+</body>
+</html>

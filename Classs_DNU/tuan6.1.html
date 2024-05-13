@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>SanPham</title>
+</head>
+<body>
+     <div class="container">
+          <h2>Dat hang</h2>
+          <form action="dathang" onsubmit="return kiemtra()">
+               <div class="form-ground">
+                    <label for="form-control">
+                         <input type="radio" name="nhaSx" onclick="hienthi(false)">Apple
+                         <input type="radio" name="nhaSx" onclick="hienthi(false)">Samsung
+                         <input type="radio" name="nhaSx" onclick="hienthi(true)">Khac
+                    </label>
+               </div>
+               <div class="form-ground" id="nhaSxKhac" style="display: none;">
+                    <select name="tung" id="form-control" class="from-control">
+                         <option value="xiaomi" name="xiaomi">xiaomi</option>
+                         <option value="samsung" name="samsung">samsung</option>
+                         <option value="tung" name="tung">tung</option>
+                    </select>
+               </div>
+          </form>
+     </div>
+     <script>
+          function kiemtra() {
+               if (document.querySelector('input[name="nhaSx"]:checked').value == 'Khac') {
+                    if (document.querySelector('select[name="tung"]').value == '') {
+                         alert('Vui long chon nha san xuat');
+                         return false;
+                    }
+               }
+               return true;
+          }
+          function hienthi(bool) {
+               if (bool) {
+                    document.getElementById('nhaSxKhac').style.display = 'block';
+               } else {
+                    document.getElementById('nhaSxKhac').style.display = 'none';
+               }
+          }
+     </script>
+</body>
+</html>

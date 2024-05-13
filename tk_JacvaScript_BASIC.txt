@@ -4,8 +4,8 @@ NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lk
 * Một số thuộc tính gợi nhớ:
      - get : lấy dữ liệu
      - set : đặt thêm dữ liệu
-     - remove: di chuyện dữ liệu { xóa dữ liệu}
      - create: đăt thêm thuộc tính dữ liệu
+     - remove: di chuyện dữ liệu { xóa dữ liệu}
      - Value : Là giá trị
      - Type  : Là kiểu dữ liệu
      - Last  : đầu tiên
@@ -249,6 +249,7 @@ LÀM VIỆC VỚI MẢNG:
 
                               ==>kết quả trả về: tung 3
           Các kiểu dữ liệu  trong Mảng:
+
                length    : đếm các phần tử trong mảng
                substring(a,b) : Lấy kí tự thứ a đến b
                           vd: 
@@ -256,6 +257,7 @@ LÀM VIỆC VỚI MẢNG:
                               alert(str.substring(1,2))
                               ==>kết quả trả về: u
                toString  : Chuyển sang kiểu dữ liệu  STRING
+               stringify({chuoi_muon_chuyen_doi}) : chuyen dữ liệu arr sang json()
                join      : Lấy tất cả các mảng chuyển thành string ngoài ra ta cũng có thể ngăn cách các phần tử.
                          vd:
                                    var array=['tung',thanh','nguyen'];

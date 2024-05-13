@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Registration Form</title>
+</head>
+<body>
+    <h1>Car Registration Form</h1>
+    <form id="carRegistrationForm">
+        <label for="carCode">Car Code:</label>
+        <input type="text" id="carCode" name="carCode" required minlength="6">
+        <br>
+        <label for="carName">Car Name:</label>
+        <input type="text" id="carName" name="carName" required>
+        <br>
+        <label for="manufacturer">Manufacturer:</label>
+        <select id="manufacturer" name="manufacturer">
+            <option value="honda">Honda</option>
+            <option value="vinfast">Vinfast</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+        <div id="otherManufacturer" style="display: none;">
+            <label for="otherManufacturerInput">Other Manufacturer:</label>
+            <input type="text" id="otherManufacturerInput" name="otherManufacturerInput">
+        </div>
+        <br>
+        <label for="carType">Type:</label>
+        <input type="text" id="carType" name="carType" required>
+        <br>
+        <label for="unitPrice">Unit Price:</label>
+        <input type="number" id="unitPrice" name="unitPrice" required>
+        <br>
+        <label for="carImage">Car Image:</label>
+        <input type="file" id="carImage" name="carImage">
+        <br>
+        <button type="submit">Register Car</button>
+    </form>
+
+    <script>
+        const manufacturerSelect = document.getElementById('manufacturer');
+        const otherManufacturerInput = document.getElementById('otherManufacturerInput');
+        const otherManufacturerDiv = document.getElementById('otherManufacturer');
+
+        manufacturerSelect.addEventListener('change', (event) => {
+            if (event.target.value === 'other') {
+                otherManufacturerDiv.style.display = 'block';
+            } else {
+                otherManufacturerDiv.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
