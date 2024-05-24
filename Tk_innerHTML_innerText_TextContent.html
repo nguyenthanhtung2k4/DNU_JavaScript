@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>inner</title>
+</head>
+<body>
+  <div id="cha">cha <div class="con">con</div></div>
+  <br><br><br>
+  <div class="in"></div> <script>
+    var cha = document.getElementById('cha');
+    var con = document.getElementsByClassName('con');
+    document.write(`THANG CHA ${cha.innerText}`);
+  </script>
+</body>
+</html>

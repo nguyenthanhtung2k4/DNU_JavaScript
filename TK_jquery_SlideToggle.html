@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Jquery</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+     <button class="button">nhan vao</button>
+     <input type="text" id="input">
+     <script>
+          $(document).ready(function(){
+               $('.button').click(function(){
+                    $('#input').slideToggle(100)
+               })
+          })
+     </script>
+     <style>
+          #input{
+               display: none  ;
+               width: 200px;
+               height: 200px;
+               background-color: red;
+          }
+     </style>
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>JavaScript</title>
+</head>
+
+<body>
+     <button>nhan vao</button>
+     <input type="text" id="input">
+     <script>
+          document.querySelector('button').addEventListener('click', function() {
+               var input = document.querySelector('#input');
+               if (input.style.display === 'none' || input.style.display === '') {
+                    input.style.display = 'block';
+               } else {
+                    input.style.display = 'none';
+               }
+          });
+     </script>
+     <style>
+          #input{
+               display: none;
+               width: 200px;
+               height: 200px;
+               background-color: red;
+          }
+     </style>
+</body>
+</html> -->

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         *{
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+     }
+     label,.re{
+              font-size: 30px;
+              font-weight: bold;
+         }
+         .minmax{
+          width: 200px;
+          height: 30px;
+          margin-top: 10px;
+         }
+         button,.reset {
+          width: 100px;
+          height: 30px;
+          margin-top: 10px;
+         }
+         .form{
+          display: inline-block;
+          justify-content: center;
+          align-items: center;
+          margin:  0 auto;
+         }
+     </style>
+</head>
+<body>
+     <form class="form" action="">
+          <label for="">MAX/MIN 4 so</label><br>
+          <input class="minmax" type="number" name="a" id="a" placeholder="a" required><br>
+          <input class="minmax" type="number" name="b" id="b" placeholder="b" required><br>
+          <input class="minmax" type="number" name="c" id="c" placeholder="c" required><br>
+          <input class="minmax" type="number" name="d" id="d" placeholder="d" required><br>
+          <button type="button" onclick="re()">Max/Min</button>
+          <input class="reset" type="reset">
+          <div class="re" id="re"></div>
+     </form>
+     <script>
+          function re(){
+
+               var a, b,c,d,m;
+               a=parseFloat(document.getElementById('a').value);
+               b=parseFloat(document.getElementById('b').value);
+               c=parseFloat(document.getElementById('c').value);
+               d=parseFloat(document.getElementById('d').value);
+               m=document.getElementById('re');
+               
+               var min=Math.min(a,b,c,d);
+               var max=Math.max(a,b,c,d);
+               var tong= a+b+c+d;
+
+               
+               m.innerHTML="Ket qua: <br>"+"Tong 4so:"+tong+"<br>Min: "+min+"<br>Max: "+max;
+               
+          }    
+               
+     
+
+     </script>
+</body>
+</html>

@@ -112,7 +112,7 @@ Các hàm  về built-in
                                              document.write('<h1>thanhtung</h1>')
 
                     document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
-                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử(textContent : Lấy giá trị bị ẩn và không bị ẩn | innerText: Không lấy giá trị ẩn )
                     document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
                     document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
                     document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
@@ -137,9 +137,11 @@ Các hàm  về built-in
                -Thông tin trang:
                     document.URL: Trả về URL của trang hiện tại.
                     document.title: Trả về hoặc đặt tiêu đề của trang.
+          ==> BÊN DƯỚI FILE NÀY NÓI KĨ HƠN VỀ document (Cuộn xuống ben e dưới)
 
           5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
           6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần  theo chu kỳ  thời gian đã cho
+
 ##############################################################################################################################################################
 
 PHÉP TOÁN TỬ:
@@ -159,12 +161,33 @@ PHÉP TOÁN TỬ:
      <==            Phép  toán so sánh nhỏ hơn hoặc bằng so  sánh cả kiểu dữ liệu
      ==             Phép  toán so sánh bằng
      ===            Phép  toán so sánh bằng hoặc bằng so  sánh cả kiểu dữ liệu
-//////// Lớp toán:
+//////// Lớp toán (math):
                     Math.random() : lam ran dom cac so
+                              VD: console.log(Math.floor(Math.random()*10))
                     Math.min()    : tim so min trong tat cac so min
                     Math.max()    : tim so max trong tat cac  so
                     Math.sqrt()   : tinh so  căn 
                     Math.pow()    : so mu
+                    Math.PI       : Trả về giá trị của PI (3,14.....)
+                    Math.abs()    : Trả về giá trị đối (-4 <=> 4 ; 5<=>-5)
+                    Math.round()  : Làm TRÒN SỐ
+                              Vd:
+                                   console.log(Math.round(1.5)) // 2
+                                   console.log(Math.round(1.6)) // 2
+                                   console.log(Math.round(1.4)) // 1
+                              -->trên sô >= 0.5  thì làm tròn trên                    
+                              -->trên sô >= 0.5  thì làm tròn xuống                    
+                    
+                    Math.ceil()   : Làm tròn TRÊN
+                              Vd:
+                                   console.log(Math.ceil(4.00001)) // 5
+                                   console.log(Math.ceil(4.00000)) // 4
+                    
+                    Math.floor()  : Làm trong XUỐNG
+                              Vd:
+                                   console.log(Math.floor(5.9)) // 5
+                    ==> ROUND() , CEIL(), FLOOR() : LÀ LÀM TRÒN TRÊN HOẶC DƯỚI  PHỤ THUỘC VÀO NHU CẦU KHI  DÙNG
+
 ##############################################################################################################################################################
 SỬ LÝ CHUỖI ( STRING)
 
@@ -234,7 +257,7 @@ SỬ LÝ CHUỐI(STRING):
                     Nhưng nó là kiểu dữ liệu  string k còn là kiểu number nữa!
           Làm tròn ,  lấy  số thập  phân: fixed
                var so=10.3345634643;
-               console.log(so.toFixed(2)) ;
+               console.log(so.20042(2)) ;
                ==>kết quả trả về: 10.33
 ##############################################################################################################################################################
 LÀM VIỆC VỚI MẢNG:
@@ -478,10 +501,23 @@ TOÁN TỬ 3 NGÔI : Cách viết tắt của if , else:
           ===> Trong trường hợp viết tắt if , else là khi các câu lệnh bên trong if,else đơn giản thì lên sử dụng
           ===> Trong trường hợp các câu lệnh bên trong if ,else phức tạp phải viết hẩn ra.
 
+-Viết tắt function()
+               Vd:
+                    var a=10;
+                    var b=20;
+                    var f=(a,b)=>{return a+b}
+                    console.log(f(a,b))
+                    //  khi khong viet tat
+                    // function f(a,b){
+                    //      return a+b;
+                    // }
+                    // console.log(f(a,b))
 ##############################################################################################################################################################
 THAY ĐỔI SỰ KIỆN TRONG HTML : 
           -reload()   : Link  tham  khao  : https://www.w3schools.com/jsref/met_loc_replace.asp
-          -onclick             : Được kích hoạt khi nhấn vào chuột element          
+          -onclick             : Được kích hoạt khi nhấn vào chuột element      
+          -onChange
+          -onBlur    
           -onLoad &  Unload    : Dược kích hoạt khi ngươif dùng vào hoaej  thaots khoải  chương tunhf
           -on Focus  & onBlur & onchange : 
                     onFocus   :
@@ -496,6 +532,124 @@ THAY ĐỔI SỰ KIỆN TRONG HTML :
 
 ##############################################################################################################################################################
                          JS NÂNG CAO 
+CallBack? :  Được hiểu một cách đơn giản là mình gọi lại hàm trong một function  khác
+               Vd:
+
+               
+Array Methods: link tham khao: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49
+     forEach() : duyệt qua phần tử của mảng
+               Vd: 
+                    {Ten_Arr}.forEach(function(value,index)){
+                         console.log(index,value);
+                    }
+     every() : Kiểm tra TẤT CẢ các phần tử trong arr thỏa mãn một điều kiên:
+               Vd: 
+                    var arr[
+                         {id:1,coin:0},
+                         {id:2,coin:0}
+                    ]
+                    var kq= arr.forEach(function(value,index)){
+                         return(valua.coin===0);
+                    }
+                    console.log(kq);
+
+               ==> điều kiện trả về là bool
+     some()  : Kiểm tra một điều kiển đúng trả về là đúng
+
+               Vd:
+                    var arr[
+                         {id:1,coin:1},
+                         {id:2,coin:0}
+                    ]
+                    var kq= arr.some(function(value,index)){
+                         return(valua.coin===0);
+                    }  
+                    console.log(kg)
+               ==> điều kiện trả về là bool
+     
+     find()  : Tìm kiếm tên trong arr
+               Vd:
+                    var arr[
+                         {id:1,coin:1,name:'tung'},
+                         {id:2,coin:0,name:'thanh'}
+                         {id:3,coin:1,name:'tung'},
+                    ]
+                    var kq= arr.find(function(value,index)){
+                         return(valua.coin==='tung');
+                    }  
+                    console.log(kg)
+               ==> find chỉ trả về một kết quả DUY NHẤT và kết thúc chương trình
+
+     filter()  : Cũng giống như find()>> nhưng Filter trả về nhiều kết quả KẾT QUẢ tìm kiếm.
+               Vd:
+                    var arr[
+                         {id:1,coin:1,name:'tung'},
+                         {id:2,coin:0,name:'thanh'}
+                         {id:3,coin:1,name:'tung'},
+                    ]
+                    var kq= arr.find(function(value,index)){
+                         return(valua.coin==='tung');
+                    }  
+                    console.log(kg)
+               ==> Filter Trả về Tất Cả kết quả thỏa mãn.
+
+     map() : Thay đổi,  thêm hoặc bớt dữ liệu vào trong Arr:
+               Vd: thêm đối tượng
+                    var arr=[
+                         {id: 1,name: 'tung',  coin: 10},
+                         {id: 2,name: 'tung', coin: 10},
+                         {id: 3,name: 'tung', coin: 10},
+                    ];
+                    var tung=arr.map(value =>{
+                         return{
+                              id: value.id,
+                              name: value.name,
+                              coin: value.coin+' VND'
+                         }
+                    });
+                    console.log(tung);
+               
+               Vd: thay the  hoaxc xoa :
+                    var arr=[
+                         {id: 1,name: 'tung',  coin: 10},
+                         {id: 2,name: 'tung', coin: 10},
+                         {id: 3,name: 'tung', coin: 10},
+                    ];
+                    var tung=arr.map(value =>{
+                         return{
+                              id: value.id,
+                              coin: value.coin+' VND'
+                              thaythe:'thaythenam '+valua.name;  
+                         }
+                    });
+                    console.log(tung);
+               
+     reduce() : Tính tổng các phần tử có trong arr
+               Vd: 
+                    //  i == gia tri bat dau la 0 + a+b ==> ket qua ( giống như việc tạo vòng lặp for(i=0 ;i++))
+                    //  a == bien  luu  tru
+                    //  b == gia tri hien tai
+
+                         var arr=[
+                              {id: 1,name: 'tung',  coin: 10},
+                              {id: 2,name: 'tung', coin: 10},
+                              {id: 3,name: 'tung', coin: 10},
+                         ];
+                         let i=0;
+                         var  tung=arr.reduce(function(a,b){
+                              return a+b.coin;
+                         },i)
+                         console.log(tung);
+     
+     includes({ten},{index_so}) : Kiểm tra phần từ cụ thể trả về ==>  true | false 
+               ==> ỨNG DỤNG TRONG TÌM KIẾM TRỰC TIẾP;
+               includes({STRING_TIM},{SO_THU_TU})
+
+                    Vd:
+                    var string='toi la  tung day '
+                    var arr=['javascript','php','python','css']
+                    console.log(string.includes('tung'))
+                    console.log(arr.includes('php',2))
 
 
 

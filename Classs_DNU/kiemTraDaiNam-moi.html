@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bai kiem ta Dai Nam so 1</title>
+    <style type="text/css">
+        .container{
+            width:500px;
+            height:auto;
+            margin:0 auto;
+            border:2px solid green;
+            text-align: center;
+        }
+        .form-group{
+            margin:0px 5px;
+            clear:both;
+        }
+        label{
+            padding:5px 10px 0 0;
+            width:120px;
+            color:blue;
+            text-align:right;
+            float:left;
+            font-size:20px;
+        }
+        .form-control{
+            width:250px;
+            padding:5px 20px;
+            margin:10px 20px;
+            border:none;
+            display:block;
+            outline:solid;
+            box-shadow:3px 3px 5px red;
+            float:right;
+        }
+        .form-button{
+            width:100px;
+            padding:10px 10px;
+            margin: 10px;
+            border:none;
+            outline:none;
+            box-shadow:3px 3px 5px blue;
+            color:orangered;
+            font-size:17px;
+            font-weight:bold;
+            background-color:aqua;
+        }
+    </style>
+    <script type="text/javascript">
+        function hien_thi(visible){
+            var nhaSxkhac=document.getElementById("nhaSxKhac");
+            nhaSxkhac.style.display=visible?"":none;
+        }
+        function nhapgia(){
+            var loai=document.getElementById("mausac");
+            var gia=document.getElementById("dongia");
+            if(loai.value=="Den")
+                gia.value=25000000;
+            else
+                if(loai.value=="Trang")
+                    gia.value=26000000;
+                else
+                    gia.value=28000000
+        }
+        function kiem_tra(){
+            var masanpham=document.getElementById("ma_san_pham");
+            if(masanpham.value.length==0){
+                //document.getElementById("tb1").style.display="inline-block";
+                //document.getElementById("tb1").value="Vui lòng nhập Mã sản phẩm";
+                alert("Vui lòng nhập Mã sản phẩm");
+                return false;
+            }
+            if(masanpham.value.length<6){
+                alert("Vui lòng nhập Ma San Pham phải từ 6 ký tự trở lên");
+                return false;
+            }
+            var sanpham=document.getElementById("san_pham");
+            if(sanpham.value.length==0){
+                alert("Vui lòng nhập tên sản phẩm");
+                return false;
+            }
+            var loai=document.getElementById("loai");
+            if(loai.value.length==0){
+                alert("Vui lòng chọn loại sản phẩm");
+                return false;
+            }
+            var gia=document.getElementById("don_gia");
+            if(gia.value.length==0){
+                alert("Vui lòng nhập giá sản phẩm");
+                return false;
+            }
+            else
+                if(isNaN(gia.value)){
+                    alert("Vui lòng nhập giá Phải là số");
+                    return false;
+                }
+                else
+                    if(parseFloat(gia.value)<0){
+                        alert("Vui lòng nhập giá Phải là số dương");
+                        return false;
+                    }
+            var radios=document.getElementsByName("dia_chi");
+            if(!radios[0].checked && !radios[1].checked){
+                alert("Vui lòng chọn nơi nhận hàng");
+                return false;
+            }
+            alert("Chúc mừng bạn đã nhập đúng");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>ĐẶT HÀNG</h2>
+        <form name="dathang" onsubmit="return kiem_tra()">
+            <div class="form-group">
+                <label>Mã Hóa đơn</label>
+                <input type="text" id="ma_san_pham" class="form-control" />
+                <input type="text" id="tb1" style="display: none;" />
+            </div>
+            <div class="form-group">
+                <label>Tên hàng</label>
+                <input type="text" id="san_pham" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Nhà sản xuất</label>
+                    <div class="form-control">
+                        <input type="radio" name="nhaSx" onclick="hien_thi(false)">IBM-Lenovo
+                        <input type="radio" name="nhaSx" onclick="hien_thi(false)">HP
+                        <input type="radio" name="nhaSx" onclick="hien_thi(true)">Khác
+                    </div>
+            </div>
+            <div class="form-group" id="nhaSxKhac" style="display:none"> 
+                <select  class="form-control">
+                    <option value="ASUS" name="Hyundai">ASUS</option>
+                    <option value="ACER" name="Tesla">ACER</option>
+                    <option value="DELL" name="Chevrolet">DELL</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label> Mầu sắc</label>
+                <select id="mausac"  onchange="nhapgia();" class="form-control">
+                    <option value=""></option>
+                    <option value="Den">Đen</option>
+                    <option value="Trang">Trắng</option>
+                    <option value="Hong">Hồng</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Đơn giá</label>
+                <input type="number" id="dongia" class="form-control" />
+            </div>
+            <hr style="clear: both; margin: 35px 10px 10px; padding: 1px;" size="2px" color="blue" />
+            <div class="form-group">
+                <button class="form-button">Đặt mua</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+     <img src="./img/1.jpeg" alt="img" class="anh" id="anh">
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptas veniam unde dolores iusto, veritatis quo praesentium repudiandae quas eum aliquid sint cumque at qui quibusdam corrupti tenetur? Iure, culpa!</p>
+  <p class="tung">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum a, eos consequatur animi, enim magni dolor esse quos architecto labore amet sapiente saepe ipsum totam, alias cupiditate nemo eveniet necessitatibus.</p>
+  <button class="bam ">bấm vào</button>
+  <button class=link>fjgf</button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var tung = $('.tung');
+      var currentColor = "black"; // Keep track of the current color
+      tung.css({'color': currentColor}); // Set initial color
+      $(".bam").click(function() {
+        if (currentColor === "black") {
+          tung.css({'color': 'red'}); // Change to red on first click
+          currentColor = "red";
+        } else {
+          tung.css({'color': 'black'}); // Change back to black on second click
+          currentColor = "black";
+        }
+      });
+    
+      $('.link').click(function(){
+
+     })
+      $('#anh').mouseenter(function(){
+          var thongtin=" ten tung la tao";
+          $(this).attr("Title: ",thongtin)
+     })
+     });
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+     <!-- <div id="anh"><img src="./img/tung.jpg" alt="" id="anh1"></div> -->
+     <h2>Bấm  hoặc vào ra cion trỏ chuột vào đoạn văn này sẽ thay đôi hiệu ứng</h2>
+  <!-- <p id="p1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis, eveniet iste! Totam dolore voluptates consectetur officiis perspiciatis commodi itaque ipsum quis, doloribus omnis, cum ad repellat? Dolore sequi nulla eligendi!</p> -->
+  <script>
+    $(document).ready(function() {
+      var thongtin = "tung la tao dau";  // Declare variable inside the function block
+      $('h2').on({
+          mouseenter:function(){
+               $(this).css({"background-color":"red","color":"white"})
+          },
+          mouseleave:function(){
+               $(this).css({"background-color":"white","color":"black"})
+          },
+          click:function(){
+               $(this).css({"background-color":"blue","color":"white"})
+          }
+      })
+     });
+</script>
+</body>
+</html>
+
+//<!--  hiện thông tin sản ophaamr khi di chuột vào ảnh -->
+// $('#anh').mouseenter(function() {
+//   $(this).attr("title", thongtin);
+// });
+ //<!--  hiện alert khi di chuyển con chuột qua màn hình -->
+ // <!-- $('#p1').mouseleave(function() {
+ //  alert("tung la  tao")
+ //}); -->
+<!-- thay doi  anh
+      $('#anh').hover(function(){
+    $(this).show();
+    $(this).html('<img src="./img/tung.jpg" alt="" id="anh1">')
+})
+$('#anh').mouseleave(function(){
+    $(this).show();
+    $(this).html('<img src="./img/0.jpeg" alt="" id="anh2">')
+}) -->

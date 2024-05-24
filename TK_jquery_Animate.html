@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        #myInput {
+            display: inline-block;
+            width: 200px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+
+<button id="myButton">Toggle</button>
+<input type="text" id="myInput">
+
+<script>
+$("#myButton").click(function(){
+    var $input = $("#myInput");
+    if ($input.width() > 0) {
+        $input.animate({width: '0px'}, 500); // Thu nhỏ input
+    } else {
+        $input.animate({width: '200px'}, 500); // Mở rộng input
+    }
+});
+</script>
+
+</body>
+</html>

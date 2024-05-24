@@ -1,0 +1,91 @@
+                         TÀI LIỆU JQUERY()
+Cài thư viện jquery:  https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+$(documnet).ready(function(){}): Là một cách để chạy thực hiện chức năng khi nạp đầy  jquery()
+$(window).load(function{})     :  Là một cách để chạy  jquery() nhưng nó sẽ load hết mới thực hiện được jquery
+===> Nên dùng cách một ready()
+
+
+
+*lưu ý: Ten_goi( id,class,tags)  :  là tên mik muốn gọi hàm ra để thực hiện chương trình
+     $({Ten_goi}).hide() : ẩn  các các thẻ , claass,  id muốn;
+     $({Ten_goi}).show() : hiện  các các thẻ , claass,  id muốn;
+     $({Ten_goi}).load() : 
+          VD:
+               $(document).ready(function(){
+               $('p').css("color","red")     
+               $('.p').css('font-size','20px')  
+               })   
+     
+     $({Ten_goi}).text({text-NoiDung}) : thay  đổi nội dung cũ của HTML  sang Nội dung mới băng JQuery
+          VD:
+               <p class='p'>Nội dung cũ </p>
+               $('.p').text('Nội dung mới')
+
+========================================================================================================================================
+# Sự kiện thay đổi trong DOM:
+          .click()    : Nhấp chuột gắn hàm trong phần tử HTML (NHẤP MỘT LẦN)
+          .dblclick() : Nhấp chuột đôi gắn hàm trong phần tử HTML(NHẤP 2 LẦN)
+                         Vd:
+                              <p> click</p>
+                              <p>click on me</p>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                   $("p").click(function(){
+                                   $(this).hide();
+                                   })
+                                   })
+                              </script>
+          .mouseenter : Hàm thực hiện khi trỏ chuột vào sẽ hiện ra thông tin 
+
+
+
+
+
+
+========================================================================================================================================
+# JQUERY-HTML:  Thao tác DOM JQUERY
+          text()- Đặt hoặc trả về nội dung văn bản của các phần tử được chọn
+          html()- Đặt hoặc trả về nội dung của các phần tử đã chọn (bao gồm cả đánh dấu HTML)
+          val()- Đặt hoặc trả về giá trị của các trường biểu mẫu   
+                    VD:
+                         
+========================================================================================================================================
+
+-SlideToggle() : Hiệu ứng slide dùng jquery() | *gợi nhớ: auto ; slide; automation
+     speend: Tốc độ của slide hiện ra và ẩn đi
+     easing: Chỉ định các phần tử khác nhau về tốc độ
+     calback: hàm chuyển đổi sau khi thực thi
+
+     ==> Link tham khảo: https://www.w3schools.com/jquery/eff_toggle.asp
+
+-animate()    : Hàm dùng để thay đổi  các kích thức thu ra thu vào của hàm | *gợi nhớ: auto;automation; 
+     - THAY ĐỔI CÁC KÍCH THƯỚC NHƯ:
+               + heght
+               + widht
+               + left
+               + right
+               + top
+               + bottom ...
+
+     ==> LINK THAM KHẢO:https://www.w3schools.com/jquery/jquery_animate.asp
+     
+     VD:
+          <button id="myButton">Toggle</button>
+          <input type="text" id="myInput" style="widht:200px">
+
+          <script>
+          $("#myButton").click(function(){
+          var $input = $("#myInput");
+          if ($input.width() > 0) {
+               $input.animate({width: '0px'}, 500); // Thu nhỏ input
+          } else {
+               $input.animate({width: '200px'}, 500); // Mở rộng input
+          }
+          });
+
+==> SỰ KHÁC NHAU  GIỮA animate()  và SlideToggle() 
+               | animate là automation xong nó sẽ biến mất và không thay  đổi kích thước ( can thiệp cả css)
+               | SlideToggle có thể thay đổi kích thước của nó ngoài ra ta cũng có thể để nó hiện ( can thiệp cả css)
