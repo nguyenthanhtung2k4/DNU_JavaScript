@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <div id="anh">
+          <img src="./img/tung.jpg" alt="img" id="anh">
+     </div>
+     <script src="./jquery/jquery-3.7.1.min.js"></script>
+     <script>
+          $(document).ready(function(){
+               $('#anh').hover(function(){
+                    $(this).show();
+                    $(this).html('<img src="./img/1.jpeg" alt="img" id="anh">')
+               })
+               $('#anh').mouseleave(function(){
+                    $(this).show();
+                    $(this).html('<img src="./img/tung.jpg" alt="img" id="anh">')
+               })
+          })
+     </script>
+</body>
+</html>

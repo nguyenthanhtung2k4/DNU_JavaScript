@@ -2,6 +2,24 @@
 Cài thư viện jquery:  https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
 
+//////////////////////////////////////////////////////////////
+ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU $
+$('h1')        ==> Dùng để gọi nameTag
+$('#h1')       ==> Dùng để gọi id ra
+$('.h1')       ==> Dùng để gọi class ra
+$('.h1').css({'color':'blue'})      ==> Dùng để gọi class ra thay đổi màu sắc class này
+               Vd:
+                    <div class='h1'>tung</div>
+                    <script>
+                         $('.h1').css({'color':'blue'})
+                    </script>
+$(this)        ==> Là được dùng trong function this là thay  tên của function thôi;
+========>>>>>> Và còn rất nhiều các tên khác trong jquery  tìm hiểu trên 
+                    <tk_Cấu_trúc_Jquery.pdf>
+                    <web3school.com>
+
+
+
 $(documnet).ready(function(){}): Là một cách để chạy thực hiện chức năng khi nạp đầy  jquery()
 $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng nó sẽ load hết mới thực hiện được jquery
 ===> Nên dùng cách một ready()
@@ -9,19 +27,88 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
 
 
 *lưu ý: Ten_goi( id,class,tags)  :  là tên mik muốn gọi hàm ra để thực hiện chương trình
+     
+     
      $({Ten_goi}).hide() : ẩn  các các thẻ , claass,  id muốn;
      $({Ten_goi}).show() : hiện  các các thẻ , claass,  id muốn;
-     $({Ten_goi}).load() : 
+     $({Ten_goi}).load() : Giúp cho các Script chạy khi toàn bộ trang web đã được load xog
           VD:
                $(document).ready(function(){
                $('p').css("color","red")     
                $('.p').css('font-size','20px')  
                })   
+========================================================================================================================================
+# JQUERY-HTML:  Thao tác DOM JQUERY
+          attr() - Lấy các giá trị thuộc tính của phần tử HTML.
+                    Vd:
+                         <p><a href="https://google.com" id="w3s">google.com</a></p>
+                         <button>Show</button>
+                         <script>
+                              $(document).ready(function(){
+                                   $("button").click(function(){
+                                        $('#w3s').attr({
+                                             href:'tung.com'
+                                        })
+                                        $('#w3s').text('tung.com') })})
+                         </script>
+                    --> NGOÀI RA ATTR( CŨNG CÓ THỂ THAY ĐỔI THUỘC TÍNH VD TRÊN ĐÃ CÓ)
+
+          text()- Đặt hoặc trả về nội dung văn bản của các phần tử được chọn
+          html()- Đặt hoặc trả về nội dung của các phần tử đã chọn (bao gồm cả đánh dấu HTML)
+          val()- Đặt hoặc trả về giá trị của các trường biểu mẫu   
+                    
+                    VD: ví dụ về sử dụng cảu html(), val(), text()
+                              <p id="test">This is some <b>Blod</b>text in a paragehf</p>
+                              <input type="text" id="tung" class="tung" value="tung">
+                              <button id="btn1">Show Text</button>
+                              <button id="btn2">Show HTML</button>
+                              <button id="btn3">Show Val</button>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#btn1").click(function(){
+                                             alert('Text'+$('#test').text());
+                                             
+                                        })
+                                        $("#btn2").click(function(){
+                                             alert('HTML'+$('#test').html());
+
+                                        })
+                                        $("#btn3").click(function(){
+                                             alert('Val '+$('#tung').val());
+
+                                        })
+                                   })
+                              </script>
+                    ==> NGOÀI RA  HTML() VAL() TEXT()  CŨNG CÓ THỂ THAU ĐỔI ĐƯỢC CÁC THUỘC TÍNH GIÁ TRỊ
+                    
+                    VD: thay thế các thuộc tính và giá trị của nó
+                              <p id="test1">this is a tung</p>
+                              <p id="test2">this is a thanh</p>
+                              <p><input type="text" id="test3" value="tungday"></p>
+                              <button id="btn1">Set</button>
+                              <button id="btn2">Set HTML</button>
+                              <button id="btn3">Set Value</button>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#btn1").click(function(){
+                                             $("#test1").text("thay the tuing test1")
+                                        })
+                                        $("#btn2").click(function(){
+                                             $("#test2").html('thay the html moi')
+                                        })
+                                        $("#btn3").click(function(){
+                                             $("#test3").val('tung moi')
+                                        })})
+                              </script>               
+                        
      
      $({Ten_goi}).text({text-NoiDung}) : thay  đổi nội dung cũ của HTML  sang Nội dung mới băng JQuery
           VD:
                <p class='p'>Nội dung cũ </p>
                $('.p').text('Nội dung mới')
+========================================================================================================================================
 
 ========================================================================================================================================
 # Sự kiện thay đổi trong DOM:
@@ -38,20 +125,87 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
                                    })
                                    })
                               </script>
-          .mouseenter : Hàm thực hiện khi trỏ chuột vào sẽ hiện ra thông tin 
+          .mouseenter() : Hàm thực hiện khi trỏ chuột vào sẽ hiện ra thông tin (Thường được dùng để kết hợp vs on() )  | *Gợi ý: di chuyển chuột
+                         Vd:
+                              <img src="./img/0.jpeg" alt="img" id="tung">
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   thongtin='thong tin toi la thanh tung'
+                                   $(document).ready(function(){
+                                   $('#tung').mouseenter(function(){
+                                        $(this).attr("title",thongtin)
+                                   })})
+                    ==> Ngoài ra có thể làm mouseenter() cho các thẻ khác ngoài thẻ img nhé!
+          .mouselease() : Hàm thực hiện khi con trỏ chuột rời khỏi phần HTML  |*Gợi nhớ: rời chuột đi
+                         Vd:
+                              <p>thanh tung  hover di</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   thongtin='thong tin toi la thanh tung'
+                                   $(document).ready(function(){
+                                        $('p').mouseleave(function(){
+                                             alert("title"+thongtin)
+                                   })}) 
+          .hover()       : Thực hiện khi con chuột di vào 1 phần tử HTML | *Gợi nhớ: hover slide anh
+                         Vd:
+                              <div id="anh">
+                                   <img src="./img/tung.jpg" alt="img" id="anh">
+                              </div>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $('#anh').hover(function(){
+                                             $(this).show();
+                                             $(this).html('<img src="./img/1.jpeg" alt="img" id="anh">')
+                                        })
+                                        $('#anh').mouseleave(function(){
+                                             $(this).show();
+                                             $(this).html('<img src="./img/tung.jpg" alt="img" id="anh">')
+                                        })
+                                   })
+                              </script>
+
+                    ==>  SỬ KHÁC NHAU HOVER() VÀ MOUSEENTER():
+                                        HOVER() CHO PHÉP THAY ĐỔI ĐƯỢC TRONG PHẦN TỬ CON 
+                                        MOUSEENTER  THAY ĐỔI ĐƯỢC CHA MÀ KHÔNG THAY ĐỔI THẰNG CON, KHI DI CHUYỂN VÀO THẰNG CHA NÓ SẼ KHÔNG THAY ĐỔI ĐƯỢC VÀO THẰNG CON.
+                              ----->>>>Việc sử dụng hover() và mouseenter() sao cho phù hợp với hoàn cảnh
+          .on()          : Cho phép bạn thực hiện các thuộc tính bên trên cùng một lúc cũng có thể thực hiện 1 thuộc tính
+          
+                         Vd1: sử dung hàm on() để kết hợp click
+                              <p>tungday</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("p").on('click',function(){
+                                             $(this).hide();
+
+                                        })})
+                              </script>
+                         Vd2: sử dụng  hàm on()   kết hợp với các hàm khác
+                              <p>tungday</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("p").on({
+                                             mouseenter: function(){
+                                                  $(this).css({'color':'red'})
+                                             },
+                                             mouseleave: function(){
+                                                  $(this).css({'color':'blue'})
+                                             },
+                                             click: function(){
+                                                  $(this).css({'color':'black'})
+                                             } })})
+                              </script>
 
 
 
 
 
 
-========================================================================================================================================
-# JQUERY-HTML:  Thao tác DOM JQUERY
-          text()- Đặt hoặc trả về nội dung văn bản của các phần tử được chọn
-          html()- Đặt hoặc trả về nội dung của các phần tử đã chọn (bao gồm cả đánh dấu HTML)
-          val()- Đặt hoặc trả về giá trị của các trường biểu mẫu   
-                    VD:
-                         
+
+
+ 
 ========================================================================================================================================
 
 -SlideToggle() : Hiệu ứng slide dùng jquery() | *gợi nhớ: auto ; slide; automation

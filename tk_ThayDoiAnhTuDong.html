@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay doi Anh Tu Dong</title>
+    <style type="text.css">
+        .hinh{
+            margin: 300px;
+        }
+        .hinh img{
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hinh">
+        <img src="images/anh1.jpg" width="1200px" height="300px" id="anh" onclick="thayDoiAnh();">
+    </div>
+    <script type="text/javascript" language="javascript">
+        var index=1;
+        thayDoiAnh=function(){
+            
+            var imgs=["images/anh1.jpg","images/anh2.jpg","images/anh3.jpg","images/anh4.jpg"];
+            document.getElementById("anh").src=imgs[index];
+            index++;
+            if(index==4)
+                index=0;
+        }
+        setInterval(thayDoiAnh,2000);
+    </script>
+</body>
+</html>

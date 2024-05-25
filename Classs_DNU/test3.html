@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><a href="https://google.com" id="w3s">google.com</a></p>
+    <button>Show</button>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+               $('#w3s').attr({
+                    href:'tung.com'
+               })
+               $('#w3s').text('tung.com') })})
+    </script>
+</body>
+</html>
