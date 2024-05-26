@@ -16,6 +16,13 @@ NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lk
      - has : kiểm tra có phải có thuộc tính không (trong trường hợp ko có thì return false)
      
      ------------------------------------------------------
+     add(className): Thêm một lớp mới vào phần tử.
+     remove(className): Xóa một lớp từ phần tử.
+     toggle(className): Thêm một lớp nếu nó chưa tồn tại, hoặc xóa nếu nó đã tồn tại.
+     contains(className): Kiểm tra xem một lớp có tồn tại trên phần tử hay không.
+     
+     ------------------------------------------------------
+     
      * Các thộc tính liên quan đến js:
           - element : Yếu tố của html và js( vd: <h1> , <p> --> là một  elemnet )
           - document: 
@@ -105,7 +112,7 @@ Các hàm  về built-in
                     getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
                     querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
                     querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
-              
+
                -Thao tác với nội dung và thuộc tính HTML:
                     document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
                                         vd:
@@ -661,7 +668,24 @@ document    : Để nó tương tác với nọi dung của trang web
                     getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
                     querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
                     querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
-              
+                              - classList: đi cùng với querySelectorALL()
+                                   VD:
+                                             <body>
+                                                  <div class="item highlight">Item 1</div>
+                                                  <div class="item highlight">Item 2</div>
+                                                  <div class="item highlight">Item 3</div>
+
+                                                  <script>
+                                                       // Lấy tất cả các phần tử có lớp "item"
+                                                       let elements = document.querySelectorAll(".item");
+
+                                                       // Duyệt qua các phần tử và xóa lớp "highlight"
+                                                       elements.forEach(function(element) {
+                                                            element.classList.remove("highlight");
+                                                       });
+                                                  </script>
+
+
                -Thao tác với nội dung và thuộc tính HTML:
                     document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
                                         vd:
