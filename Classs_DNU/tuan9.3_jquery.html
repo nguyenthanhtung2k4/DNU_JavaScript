@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Truot</title>
+     <style>
+          #panel,#flip,#up{
+               padding: 5px;
+               text-align: center;
+               background-color: red;
+               border:  solid black 1px;
+          }
+          #panel {
+               padding: 50px;
+               display: none;
+          }
+     </style>
+</head>
+<body>
+     <div id="up">up</div>
+     <div id="flip">down</div>
+     <div id="panel">hello</div>
+     <script src="./jquery/jquery-3.7.1.min.js"></script>
+     <script>
+          $(document).ready(function(){
+               $('#flip').click(function(){
+                    $('#panel').slideDown("slow");
+               })
+               $('#up').click(function(){
+                    $('#panel').slideUp("slow");
+               })
+          })
+     </script>
+
+</body>
+</html>

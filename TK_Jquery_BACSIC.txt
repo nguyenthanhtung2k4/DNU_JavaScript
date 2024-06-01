@@ -3,7 +3,7 @@ Cài thư viện jquery:  https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jqu
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
 
 //////////////////////////////////////////////////////////////
-ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU $
+ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU
 $('h1')        ==> Dùng để gọi nameTag
 $('#h1')       ==> Dùng để gọi id ra
 $('.h1')       ==> Dùng để gọi class ra
@@ -30,7 +30,10 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
      
      
      $({Ten_goi}).hide() : ẩn  các các thẻ , claass,  id muốn;
+               -Ngoài ra cũng có thể sử dụng: 
+                         hide(speed,callback)  : Trong đó spead -tốc độ, callback- gọi lại:
      $({Ten_goi}).show() : hiện  các các thẻ , claass,  id muốn;
+                         show(speed,callback)  : Trong đó spead -tốc độ, callback- gọi lại:
      $({Ten_goi}).load() : Giúp cho các Script chạy khi toàn bộ trang web đã được load xog
           VD:
                $(document).ready(function(){
@@ -136,7 +139,7 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
                                         $(this).attr("title",thongtin)
                                    })})
                     ==> Ngoài ra có thể làm mouseenter() cho các thẻ khác ngoài thẻ img nhé!
-          .mouselease() : Hàm thực hiện khi con trỏ chuột rời khỏi phần HTML  |*Gợi nhớ: rời chuột đi
+          .mouseleave() : Hàm thực hiện khi con trỏ chuột rời khỏi phần HTML  |*Gợi nhớ: rời chuột đi
                          Vd:
                               <p>thanh tung  hover di</p>
                               <script src="./jquery/jquery-3.7.1.min.js"></script>
@@ -207,39 +210,185 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
 
  
 ========================================================================================================================================
+#TRƯỢT LÊN TRƯỢT XUỐNG MỜ DẦN
+     - fadeIn() : Làm hiện phần tử (làm mờ phần tử)
+     - fadeOut(): Làm ẩn phẩn tử đi
+               -->  Sự khác nhau của fadeIn,fadeOut và hide, show  là fadein,out  làm mờ dần chậm dần.
 
--SlideToggle() : Hiệu ứng slide dùng jquery() | *gợi nhớ: auto ; slide; automation
-     speend: Tốc độ của slide hiện ra và ẩn đi
-     easing: Chỉ định các phần tử khác nhau về tốc độ
-     calback: hàm chuyển đổi sau khi thực thi
+     - fadeToggle() : Là kết hợp của fadeIn và fadeout ( hiển và ẩn)
+     - fadeTo()     : Là làm độ mờ của opacity trong phần tử
 
-     ==> Link tham khảo: https://www.w3schools.com/jquery/eff_toggle.asp
+                    VD:  4 hàm trên
 
--animate()    : Hàm dùng để thay đổi  các kích thức thu ra thu vào của hàm | *gợi nhớ: auto;automation; 
-     - THAY ĐỔI CÁC KÍCH THƯỚC NHƯ:
-               + heght
-               + widht
-               + left
-               + right
-               + top
-               + bottom ...
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#hien").click(function(){
+                                             $("#div1").fadeIn();
+                                             $("#div2").fadeIn("slow");
+                                             $("#div3").fadeIn(3000);
+                                        });
+                                        $("#an").click(function(){
+                                             $("#div1").fadeOut();
+                                             $("#div2").fadeOut();
+                                             $("#div3").fadeOut();
+                                             });
+                                        $('#togle').click(function(){
+                                                  $("#div1").fadeToggle();
+                                                  $("#div2").fadeToggle();
+                                                  $("#div3").fadeToggle();    
+                                             })
+                                        $('#fadeTO').click(function(){
+                                                  $("#div1").fadeTo("slow", 0.15);
+                                                  $("#div2").fadeTo("slow", 0.4);
+                                                  $("#div3").fadeTo("slow", 0.7);    
 
-     ==> LINK THAM KHẢO:https://www.w3schools.com/jquery/jquery_animate.asp
-     
-     VD:
-          <button id="myButton">Toggle</button>
-          <input type="text" id="myInput" style="widht:200px">
+                                        })
+                                   });
+                              </script>
+                              </head>
+                              <body>
+                              <p>demo</p>
+                              <button id="fadeTO">TO</button><br><br>
+                              <button id="togle">togle</button><br><br>
+                              <button id="hien">in</button><br><br>
+                              <button id="an">out</button><br><br>
+                              <div id="div1" style="width: 80px;height: 80px;display: none;background-color: red;"></div>
+                              <br>
+                              <div id="div2" style="width: 80px;height: 80px;display: none;background-color: skyblue;"></div>
+                              <br>
+                              <div id="div3" style="width: 80px;height: 80px;display: none;background-color:yellow;"></div>
+                              <br>
+========================================================================================================================================
+#TRƯỢT LÊN TRƯỢT XUỐNG ẨN HIỆN: 
+     - slideUp()    : Là trươt lên để  ẩn nó đi
+     - slideDown()  : Là trượt xuống để hiện nội dung ra
+     - slideToggle() : Hiệu ứng Trượt lên để ẩn - trượt xuống để hiển ( Nó là kết hợp của  slideUp + slideDown) dùng jquery() | *gợi nhớ: auto ; slide; automation
+          speend: Tốc độ của slide hiện ra và ẩn đi
+          easing: Chỉ định các phần tử khác nhau về tốc độ
+          calback: hàm chuyển đổi sau khi thực thi
+                    VD:
+          
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                              <style>
+                                   .example {
+                                        width: 100px;
+                                        height: 100px;
+                                        margin: 10px;
+                                        background-color: green;
+                                   }
+                              </style>
+                              <div id="slideExample" class="example"></div>
+                              <button id="slideUpButton">Slide Up</button>
+                              <button id="slideDownButton">Slide Down</button>
+                              <button id="slideToggleButton">Slide Toggle</button>
+                              <script>
+                                   $(document).ready(function() {
+                                        $('#slideUpButton').click(function() {
+                                             $('#slideExample').slideUp('slow');
+                                        });
 
-          <script>
-          $("#myButton").click(function(){
-          var $input = $("#myInput");
-          if ($input.width() > 0) {
-               $input.animate({width: '0px'}, 500); // Thu nhỏ input
-          } else {
-               $input.animate({width: '200px'}, 500); // Mở rộng input
-          }
-          });
+                                        $('#slideDownButton').click(function() {
+                                             $('#slideExample').slideDown('slow');
+                                        });
 
-==> SỰ KHÁC NHAU  GIỮA animate()  và SlideToggle() 
-               | animate là automation xong nó sẽ biến mất và không thay  đổi kích thước ( can thiệp cả css)
-               | SlideToggle có thể thay đổi kích thước của nó ngoài ra ta cũng có thể để nó hiện ( can thiệp cả css)
+                                        $('#slideToggleButton').click(function() {
+                                             $('#slideExample').slideToggle('slow');
+                                        });
+                                   });
+                              </script>
+
+
+          ==> Sự khác nhau của SlideToggle với fadeToggle
+                              ->  Đó là nó  sẽ trượt lên và trượt xuống
+                              -> fadeToggle() cũng là để ẩn và hiện nhưng nó sẽ làm mờ dần đi rồi mới ẩn hiện.
+
+          ==> Link tham khảo: https://www.w3schools.com/jquery/eff_toggle.asp
+========================================================================================================================================
+#HOẠT HÌNH ĐỘNG AUTOMATION:
+     -animate()    : Hàm dùng để thay đổi  các kích thức thu ra thu vào của hàm dụng hiệu ứng hoạt động | *gợi nhớ: auto;automation; 
+          - THAY ĐỔI CÁC KÍCH THƯỚC NHƯ:
+                    + heght
+                    + widht
+                    + left
+                    + right
+                    + top
+                    + bottom ...
+          Cách dùng:  $(selector).animate(properties, duration, easing, complete);
+                    + properties (bắt buộc): Một đối tượng mô tả các thuộc tính CSS
+                    + duration (tùy chọn): Thời gian thực hiện hiệu ứng, có thể là:
+                    + easing (tùy chọn): Loại hiệu ứng easing để sử dụng. 
+                    + complete (tùy chọn): Một hàm callback sẽ được gọi khi hiệu ứng hoàn thành.
+                    VD: thay  doi  kich  thuoc  text:
+                         <button>bam</button>
+                         <div style="background:red; height:auto;width:300px;position:absolute;">hello</div>
+
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                         <script>
+                              
+                              $(document).ready(function() {
+                                   $('button').click(function(){
+                                   var div=$('div');
+                                   div.animate({left: '100px'},'slow');
+                                   div.animate({fontSize:"3em"},'slow');
+                                   })
+                              });
+                         </script>
+                    VD: dịch chuyển + thay  đổi opacity
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                         </head>
+                         <body>
+                         <div id="box" style="width: 100px; height: 100px; background-color: blue; position: relative;"></div>
+                         <button id="start">Start Animation</button>
+
+                         <script>
+                              $(document).ready(function() {
+                                   $('#start').click(function() {
+                                        $('#box').animate({
+                                             left: '+=100px',
+                                             opacity: 0.5
+                                        }, 1000);
+                                   });
+                              });
+                         </script> 
+
+          ==> LINK THAM KHẢO:https://www.w3schools.com/jquery/jquery_animate.asp
+          
+                    VD: thay đổi kích thước 
+                         <button id="myButton">Toggle</button>
+                         <input type="text" id="myInput" style="widht:200px">
+
+                         <script>
+                         $("#myButton").click(function(){
+                         var $input = $("#myInput");
+                         if ($input.width() > 0) {
+                              $input.animate({width: '0px'}, 500); // Thu nhỏ input
+                         } else {
+                              $input.animate({width: '200px'}, 500); // Mở rộng input
+                         }
+                         });
+
+     ==> SỰ KHÁC NHAU  GIỮA animate()  và SlideToggle() 
+                    | animate là automation xong nó sẽ biến mất và không thay  đổi kích thước ( can thiệp cả css)
+                    | SlideToggle có thể thay đổi kích thước của nó ngoài ra ta cũng có thể để nó hiện ( KHÔNG can thiệp cả css)
+
+//////////////////////////// Ngoài ra ta cũng có thể  xử lý xâu chuỗi với cùng một phần tử.
+                              VD:
+                                  <div style="background:red; height:auto;width:300px;position:absolute;">hello</div>
+                                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                   <script>
+                                        
+                                        $(document).ready(function() {
+                                             $('button').click(function(){
+                                             $('div').css({
+                                                  "background":"blue","height":"auto","width":"300px","position":"absolute",
+                                             })
+                                                  .animate({left: '100px'},'slow')
+                                                  .animate({fontSize:"3em"},'slow');
+                                             })
+                                        });
+                                   </script> 
+
+                         ==>  KHI TA SỬ LÝ XÂU CHUỖI THÌ TA CÓ THỂ RÚT NGẮN CÁC DÒNG CODE HƠN VÀ KHÔG PHẢI GỌI NÓ NHIỀU LẦN
+                              *CHÚ Ý : NÓ CHỈ CÓ THỂ DÙNG XÂU CHUỖI VỚI CÙNG MỘT PHẦN TỬ CÙNG TÊN MÀ THÔI.!
+////////////////////////////////////////////////////////////////////////////////////

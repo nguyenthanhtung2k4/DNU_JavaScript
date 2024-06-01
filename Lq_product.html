@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+</head>
+<body>
+    <h1 id="productName"></h1>
+    <img id="productImage" src="" alt="" width="300">
+    <p id="productPrice"></p>
+    <button onclick="goBack()">Go Back</button>
+
+    <script>
+        // Lấy thông tin sản phẩm từ localStorage
+        const product = JSON.parse(localStorage.getItem('selectedProduct'));
+
+        // Hiển thị thông tin sản phẩm
+        document.getElementById('productName').innerText = product.name;
+        document.getElementById('productImage').src = product.image;
+        document.getElementById('productPrice').innerText = 'Price: $' + product.price;
+
+        // Quay lại trang trước
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

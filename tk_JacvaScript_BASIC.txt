@@ -17,7 +17,9 @@ NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lk
      
      ------------------------------------------------------
      add(className): Thêm một lớp mới vào phần tử.
+     push(Name_arr_Cũ): Thêm một lớp mới vào phần tử.
      remove(className): Xóa một lớp từ phần tử.
+     delete(name_muốn_xóa): Xóa một lớp từ phần tử.
      toggle(className): Thêm một lớp nếu nó chưa tồn tại, hoặc xóa nếu nó đã tồn tại.
      contains(className): Kiểm tra xem một lớp có tồn tại trên phần tử hay không.
      
@@ -74,6 +76,11 @@ of: (for of) không hẳn là biến: NHƯNG ĐƯỢC HIỂU NÓ DÙNG TRONG FOR
                     console.log(element); // Lặp qua và in ra từng phần tử của mảng arr
                     }
 
+          ==> Tổng kết:
+               Dùng for...in khi bạn cần lặp qua các thuộc tính của một đối tượng.
+               Dùng for...of khi bạn cần lặp qua các giá trị của một đối tượng iterable như mảng, chuỗi, Map, Set, v.v.
+
+
 Kiểm tra kiểu dữ liệu:
           typeof(tung)
 Kiểm tra các dữ liệu  có đúng hay không
@@ -85,6 +92,7 @@ Kiểm tra các dữ liệu  có đúng hay không
                vd: 
                     var a;
                     a=parseFloat(prompt("number"))
+
 
 ##############################################################################################################################################################
 Các hàm  về built-in  
@@ -266,8 +274,53 @@ SỬ LÝ CHUỐI(STRING):
                var so=10.3345634643;
                console.log(so.20042(2)) ;
                ==>kết quả trả về: 10.33
+
 ##############################################################################################################################################################
-LÀM VIỆC VỚI MẢNG:
+SỬ LÝ JSON(OBJECT): Liên kết lấy dữ liệu từ html này đến html khác.
+     JSON.stringify({arr+object})
+          ==>  Ngoài ra nó JSON.stringify có thể thực hiện được lưu trữ với localStorge.setItem()
+
+          VD: json.stringify
+               const obj = { tên: "John", tuổi: 30, thành_phố: "New York" };
+               const jsonString = JSON.stringify(obj);
+               console.log(jsonString);  
+                    // Kết quả: {"tên":"John","tuổi":30,"thành_phố":"New York"}
+          VD: lấy json cần lần 
+               const obj = { tên: "John", tuổi: 30, thành_phố: "New York" };
+               const jsonString = JSON.stringify(obj, ["tên", "thành_phố"]);
+               console.log(jsonString);  
+                    // Kết quả: {"tên":"John","thành_phố":"New York"}
+
+     loadlStorage: Lưu trữ dữ liệu 
+     Item()      : Đọc dữ liệu từ loadlStorage
+          Vd: loadStorage+Item()
+
+                    // Định nghĩa một đối tượng cần lưu trữ
+                    const sinh_viên = {
+                    họ: "Nguyễn",
+                    tên: "Văn A",
+                    tuổi: 20,
+                    lớp: "12A"
+                    };
+
+                    // Chuyển đổi đối tượng thành chuỗi JSON và lưu vào localStorage
+                    localStorage.setItem('thông_tin_sinh_viên', JSON.stringify(sinh_viên));
+
+                    // Đọc dữ liệu từ localStorage
+                    const dữ_liệu = localStorage.getItem('thông_tin_sinh_viên');
+
+                    // Chuyển đổi chuỗi JSON thành đối tượng JavaScript
+                    const sinh_viên_từ_localStorage = JSON.parse(dữ_liệu);
+
+                    // In ra thông tin sinh viên từ localStorage
+                    console.log("Họ và tên:", sinh_viên_từ_localStorage.họ, sinh_viên_từ_localStorage.tên);
+                    console.log("Tuổi:", sinh_viên_từ_localStorage.tuổi);
+                    console.log("Lớp:", sinh_viên_từ_localStorage.lớp);
+
+===> Xem ví dụ  ở phần tham khảo: tk_JS_loadlStorage.Item().html
+
+##############################################################################################################################################################
+LÀM VIỆC VỚI MẢNG:(ARR , arr, mang)
 
           Cách khởi tạo:
                          vd:
@@ -293,6 +346,29 @@ LÀM VIỆC VỚI MẢNG:
                                    var array=['tung',thanh','nguyen'];
                                    console.log(array.join('-'));
                                    ===>>kết quả trả về: tung-thanh-nguyen
+               split()   : Chuyển đổi các String sang arr
+                         VD:
+                                   let str = "Hello";
+                                   let arr = str.split("");
+                                   console.log(arr);
+                                   // Output: ["H", "e", "l", "l", "o"]
+                         
+                         -> Có cách viết tắt ngắn gọn hơn đó arr là:
+                              Vd:
+                                   let str = "Hello";
+                                   let arr = [...str];
+                                   console.log(arr);
+                                   // Output: ["H", "e", "l", "l", "o"]
+               Array.form(): Chuyển đổi string sang mảng:
+                              VD:
+                                        let str = "Hello";
+                                        let arr = Array.from(str);
+
+                                        console.log(arr);
+                                        // Output: ["H", "e", "l", "l", "o"]
+
+          ===>  CÓ NHIỀU CÁC CHUYỂN ĐỔI STRING SANG MẢNG, VIỆC BẠN LỰA CHỌN CÁCH NÀO CHO PHÙ HONE MÀ THÔI.
+          
 
                shift()   : Xóa phần tử ĐẦU MẢNG và in phần tử bị  xóa
                pop()     : Xóa phần tử CUỐI MẢNG và in phần tử bị  xóa
@@ -630,7 +706,38 @@ Array Methods: link tham khao: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=
                          }
                     });
                     console.log(tung);
+
+     set()   : lọc các giá trị duy nhất (Ngoài ra nó còn làm được nhiều hơn như thế)     
+               add(value): Thêm một giá trị vào Set.
+               has(value): Kiểm tra xem một giá trị có trong Set hay không.
+               delete(value): Xóa một giá trị khỏi Set.
+               clear(): Xóa tất cả các phần tử trong Set.
+               size: Thuộc tính trả về số lượng phần tử trong Set
+
+               VD:
+                    // Mảng ban đầu có chứa các giá trị trùng lặp
+                    let arrayWithDuplicates = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10];
+
+                    // Tạo một Set từ mảng ban đầu
+                    let uniqueSet = new Set(arrayWithDuplicates);
+
+                    // Chuyển đổi Set trở lại thành mảng
+                    let uniqueArray = Array.from(uniqueSet);
+
+                    console.log(uniqueArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
                
+               VD: làm tắt hơn ví dụ  trên:
+               
+                    // Mảng ban đầu có chứa các giá trị trùng lặp
+                    let arrayWithDuplicates = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10];
+
+                    // Sử dụng Set để loại bỏ các giá trị trùng lặp và spread operator để chuyển đổi Set trở lại thành mảng
+                    let uniqueArray = [...new Set(arrayWithDuplicates)];
+
+                    console.log(uniqueArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
      reduce() : Tính tổng các phần tử có trong arr
                Vd: 
                     //  i == gia tri bat dau la 0 + a+b ==> ket qua ( giống như việc tạo vòng lặp for(i=0 ;i++))
@@ -666,6 +773,26 @@ document    : Để nó tương tác với nọi dung của trang web
                     getElementById() ===>  Trả về phần tử HTML với id cụ thể.
                     getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
                     getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    closest ==> Phương thức này trả về phần tử cha đầu tiên mà được tìm thấy theo thứ tự từ phần tử hiện tại và đi lên tới phần tử gốc (root) của cây DOM. Nếu không tìm thấy phần tử cha nào thỏa mãn điều kiện, null sẽ được trả về.
+                                   VD:
+                                      
+                                   <div id="parent">
+                                   <div>
+                                        <div id="child">
+                                             <span>Child element</span>
+                                        </div>
+                                   </div>
+                                   </div>
+
+                                   <script>
+                                   var childElement = document.getElementById('child');
+                                   var parentElement = childElement.closest('#parent');
+                                   console.log(parentElement); 
+                                   </script>
+                                   
+                                   // Output: <div id="parent">...</div>
+       
+       
                     querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
                     querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
                               - classList: đi cùng với querySelectorALL()

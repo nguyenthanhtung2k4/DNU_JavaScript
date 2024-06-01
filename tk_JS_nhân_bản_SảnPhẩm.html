@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm</title>
+    <style>
+        .product {
+            max-width: 300px;
+            border: 1px solid #ccc;
+            padding: 16px;
+            margin: 16px;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="products-container"></div>
+
+<script>
+    // Dữ liệu sản phẩm (có thể là một mảng chứa nhiều sản phẩm)
+    const products = [
+        {
+            name: "Sản phẩm 1",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 1."
+        },
+        {
+            name: "tung m 2",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 2."
+        },
+        {
+            name: "Sản phẩm 2",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 2."
+        },
+        {
+            name: "Sản phẩm 2",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 2."
+        },
+        {
+            name: "Sản phẩm 2",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 2."
+        },
+        {
+            name: "Sản phẩm 6",
+            image: "https://via.placeholder.com/150",
+            description: "Đây là mô tả của sản phẩm 2."
+        },
+        // Thêm nhiều sản phẩm khác ở đây
+    ];
+
+    const container = document.getElementById('products-container');
+
+    products.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product';
+
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.name;
+
+        const name = document.createElement('h2');
+        name.textContent = product.name;
+
+        const description = document.createElement('p');
+        description.textContent = product.description;
+
+        productDiv.appendChild(img);
+        productDiv.appendChild(name);
+        productDiv.appendChild(description);
+
+        container.appendChild(productDiv);
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tong</title>
+</head>
+<body>
+     <form action="" id="tong">
+          <input type="text" name="so1" class="so1" placeholder="so1">
+          <input type="text" name="so2" class="so2" placeholder="so2">
+          <button type="button" id="Tinh">TinhTong</button>
+     </form>
+     <div id="kq"></div>
+     <script src="./jquery/jquery-3.7.1.min.js"></script>
+     <script>
+          $(document).ready(function(){
+               $('#tinh').click(function(){
+                    so1=$('.so1').val()
+                    so2=$('.so2').val()
+                    $('#kq').text(so1+so2)
+               })
+          })
+     </script>
+</body>
+</html>
