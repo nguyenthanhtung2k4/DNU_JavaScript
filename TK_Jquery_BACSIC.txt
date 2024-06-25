@@ -3,20 +3,41 @@ Cài thư viện jquery:  https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jqu
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
 
 //////////////////////////////////////////////////////////////
-ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU
-$('h1')        ==> Dùng để gọi nameTag
-$('#h1')       ==> Dùng để gọi id ra
-$('.h1')       ==> Dùng để gọi class ra
-$('.h1').css({'color':'blue'})      ==> Dùng để gọi class ra thay đổi màu sắc class này
-               Vd:
-                    <div class='h1'>tung</div>
-                    <script>
-                         $('.h1').css({'color':'blue'})
-                    </script>
-$(this)        ==> Là được dùng trong function this là thay  tên của function thôi;
-========>>>>>> Và còn rất nhiều các tên khác trong jquery  tìm hiểu trên 
-                    <tk_Cấu_trúc_Jquery.pdf>
-                    <web3school.com>
+- LẤY THẰNG CON NẰM TRONG NẰM CHA:
+     - find({enliment}) : lấy tất cả các gía trị
+     - ep() :Lấy lần lượt các giá trị
+               VD:
+                         <div class="img-small">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         </div>
+                         <script src="./jquery/jquery-3.7.1.min.js"></script><script>
+                         $(document).ready(function(){
+                              // Chọn hình ảnh đầu tiên trong lớp img-small và gắn sự kiện mouseenter
+                              $('.img-small').find('img').eq(0).on('mouseenter', function(){
+                                   alert(12);
+                              });
+                         });
+                         </script>
+
+
+
+//////////////////////////////////////////////////////////////
+ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU $ 
+     $('h1')        ==> Dùng để gọi NAMETAG
+     $('#h1')       ==> Dùng để gọi ID ra
+     $('.h1')       ==> Dùng để gọi CLASS ra
+     $('.h1').css({'color':'blue'})      ==> Dùng để gọi class ra thay đổi màu sắc class này
+                    Vd:
+                         <div class='h1'>tung</div>
+                         <script>
+                              $('.h1').css({'color':'blue'})
+                         </script>
+     $(this)        ==> Là được dùng trong function this là thay  tên của function thôi;
+     ========>>>>>> Và còn rất nhiều các tên khác trong jquery  tìm hiểu trên 
+                         <tk_Cấu_trúc_Jquery.pdf>
+                         <web3school.com>
 
 
 
@@ -24,9 +45,10 @@ $(documnet).ready(function(){}): Là một cách để chạy thực hiện ch�
 $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng nó sẽ load hết mới thực hiện được jquery
 ===> Nên dùng cách một ready()
 
+========================================================================================================================================
+# ẨN HIỆN HTML VỚI JQUERY
 
-
-*lưu ý: Ten_goi( id,class,tags)  :  là tên mik muốn gọi hàm ra để thực hiện chương trình
+     *lưu ý: Ten_goi( id,class,tags)  :  là tên mik muốn gọi hàm ra để thực hiện chương trình
      
      
      $({Ten_goi}).hide() : ẩn  các các thẻ , claass,  id muốn;
@@ -40,6 +62,22 @@ $(window).load(function{})     :  Là một cách để chạy  jquery() nhưng 
                $('p').css("color","red")     
                $('.p').css('font-size','20px')  
                })   
+========================================================================================================================================
+# JQUERY-CSS:  
+          -CSS từng đối tượng một với jquery:
+               vd:
+                    $(document).ready(function(){
+                    $('p').css("color","red")     
+                    $('.p').css('font-size','20px')  
+                    })   
+          -CSS nhiều đối tượng css trong một với jquery:
+                    $(document).ready(function(){
+                         $('p').css({
+                              color:'red',
+                              width:200px,
+                         })
+                    })
+
 ========================================================================================================================================
 # JQUERY-HTML:  Thao tác DOM JQUERY
           attr() - Lấy các giá trị thuộc tính của phần tử HTML.

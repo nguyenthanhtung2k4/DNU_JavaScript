@@ -598,8 +598,49 @@ TOÁN TỬ 3 NGÔI : Cách viết tắt của if , else:
 ##############################################################################################################################################################
 THAY ĐỔI SỰ KIỆN TRONG HTML : 
           -reload()   : Link  tham  khao  : https://www.w3schools.com/jsref/met_loc_replace.asp
-          -onclick             : Được kích hoạt khi nhấn vào chuột element      
-          -onChange
+          -onclick    : nắng  nghe sự kiện khi người dùng click  vào.   
+          -onChange   : Nắng nghe sự  kiện nếu nó có sự  thay đổi với ban đầu nó sẽ in ra, ngoài ra nó thực thi khi k nhập nữa.
+                         VD :
+                                   <select id="mySelect" onchange="myFunction()">
+                                   <option value="Audi">Audi</option>
+                                   <option value="BMW">BMW</option>
+                                   <option value="Mercedes">Mercedes</option>
+                                   <option value="Volvo">Volvo</option>
+                                   </select>
+                                   <p id="demo"></p>
+                                   <script>
+                                        function myFunction() {
+                                        var x = document.getElementById("mySelect").value;
+                                        document.getElementById("demo").innerHTML = "You selected: " + x;
+                                        }
+                                   </script>
+                    -> onChange cũng có thể dùng  trong checked : để kiểm tra xem radio  true, false.
+          -oninput   : Khi người dùng nhập đến đâu nó sẽ lấy luôn dữ liệu đến đấy.
+                         VD:
+                              <input type="text" id="myInput" oninput="myFunction()">
+                              <p id="demo"></p>
+                              <script>
+                              function myFunction() {
+                              let text = document.getElementById("myInput").value;
+                              document.getElementById("demo").innerHTML = "You wrote: " + text;
+                              }
+                              </script>
+          -onkeydown  : Nắng nghe sự kiện các nút bàn phím (khác nhau với  onkeyup đó là khi bấm xog rồi nó mới thực hiện)
+          -onkeyup  : Nắng nghe sự kiện các nút bàn phím ( khác nhau với onkeydown đó là khi  bấm  là nó thực hiện)
+                         VD:
+                              
+                              Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+
+                              <script>
+                              function myFunction() {
+                              let x = document.getElementById("fname");
+                              x.value = x.value.toUpperCase();
+                              }
+                              </script>
+                    ==> Nó thường được sự dụng trong việc bấm nút tắt trên bàn phím để thoát hoặc vào lệnh
+          -onkeypress : Cũng là nắng nghe sự kiện trong bàn phím nhưng khi giữ nút nó vẫn sẽ chạy
+                   
+
           -onBlur    
           -onLoad &  Unload    : Dược kích hoạt khi ngươif dùng vào hoaej  thaots khoải  chương tunhf
           -on Focus  & onBlur & onchange : 
@@ -766,13 +807,15 @@ Array Methods: link tham khao: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=
                     console.log(arr.includes('php',2))
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
-document    : Để nó tương tác với nọi dung của trang web
+document (DOM)    : Để nó tương tác với nọi dung của trang web
                -DOM (DATA OBJECT MODEL):  DÙNG DOM ĐỂ  LẤY DATA  TRONG  HTML
                -Truy cập phần tử HTML:
                     getElementById() ===>  Trả về phần tử HTML với id cụ thể.
                     getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
                     getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    anchors ==> Lấy các thằng thẻ <a></a> ;<img></img> ; <form></form>
                     closest ==> Phương thức này trả về phần tử cha đầu tiên mà được tìm thấy theo thứ tự từ phần tử hiện tại và đi lên tới phần tử gốc (root) của cây DOM. Nếu không tìm thấy phần tử cha nào thỏa mãn điều kiện, null sẽ được trả về.
                                    VD:
                                       
@@ -795,7 +838,11 @@ document    : Để nó tương tác với nọi dung của trang web
        
                     querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
                     querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
-                              - classList: đi cùng với querySelectorALL()
+                    - classList: đi cùng với querySelectorALL()....
+                         -> Hiểu đơn giản là classlist là lệnh class nhưng nâng cao hơn một chút nó có thể thêm,  xóa,  thay đổi đc thuộc tính:
+                              + add : thêm
+                              + remove: xóa 
+                              + toggle:Nếu đã tồn tại thì xóa nó đi,  nếu chưa thì thêm nó vào
                                    VD:
                                              <body>
                                                   <div class="item highlight">Item 1</div>
@@ -812,6 +859,16 @@ document    : Để nó tương tác với nọi dung của trang web
                                                        });
                                                   </script>
 
+------------------------------------------------------------------------------------------------------
+               -Thao tác CSS (style) với  HTML:
+                    document.getElementId('tung').style.color='red';
+                    -> Ngoài ra ta cũng có thêm thêm nhiều thuộc tính css cùng lúc:
+                        var tung=document.getElementId('tung')
+                         Object.assign(tung.style,{
+                              color:'red',
+                              width: 200px;
+                         })
+------------------------------------------------------------------------------------------------------
 
                -Thao tác với nội dung và thuộc tính HTML:
                     document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
@@ -820,6 +877,8 @@ document    : Để nó tương tác với nọi dung của trang web
 
                     document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
                     document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                                        innerText: Lấy những text  gid nhìn thấy trong web
+                                        TextContent:Lấy những thẳng trược tiếp trong HTML
                     document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
                          vd:       
                                    <h1 id="heading" class="main-title">Đây là tiêu đề chính</h1>
@@ -860,6 +919,7 @@ document    : Để nó tương tác với nọi dung của trang web
                -Thông tin trang:
                     document.URL: Trả về URL của trang hiện tại.
                     document.title: Trả về hoặc đặt tiêu đề của trang.
+------------------------------------------------------------------------------------------------------
 
 -Cấu trúc của DOM: {Node ở đây là tên mà mình đặt } 
                Node.innerHTML ==>Giá trị văn bản của x
@@ -955,8 +1015,9 @@ document    : Để nó tương tác với nọi dung của trang web
                                         }
 
 
-
-
+##########################################################################################################
+Tài liệu tham khảo thêm: 
+     Tất cả các ham có trong Event : https://www.w3schools.com/jsref/dom_obj_event.asp
 addEventListener()  : Hiểu một cách đơn giản nó  là gắn các hành động ( bộ sử lý sự kiện) hoặc là phương pháp được đề xuất để quảnlys trình sử lý:
                - keyup: sử lý phím được nhấn và sau đó đc thả ra trên bàn phím.
                - click: Sự kiện này xảy ra khi một phần tử được nhấn (click) bởi người dùng.
