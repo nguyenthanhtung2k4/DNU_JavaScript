@@ -95,7 +95,7 @@ Kiểm tra các dữ liệu  có đúng hay không
 
 
 ##############################################################################################################################################################
-Các hàm  về built-in  
+Các hàm  về built-in  || chức nằng chính cơ bản js 
           1. Alert       : in ra  một bảng kết quả
           2. Confirm     : xác nhận độ tuổi     
           3. Consele     :in ra kết quả
@@ -320,7 +320,7 @@ SỬ LÝ JSON(OBJECT): Liên kết lấy dữ liệu từ html này đến html 
 ===> Xem ví dụ  ở phần tham khảo: tk_JS_loadlStorage.Item().html
 
 ##############################################################################################################################################################
-LÀM VIỆC VỚI MẢNG:(ARR , arr, mang)
+LÀM VIỆC VỚI MẢNG:(ARR , arr, mang, string)
 
           Cách khởi tạo:
                          vd:
