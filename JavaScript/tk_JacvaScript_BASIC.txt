@@ -779,7 +779,7 @@ Array Methods: link tham khao: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=
 
 
 
-     reduce() : Tính tổng các phần tử có trong arr
+     reduce() : Tính tổng các phần tử có trong arr (sum)
                Vd: 
                     //  i == gia tri bat dau la 0 + a+b ==> ket qua ( giống như việc tạo vòng lặp for(i=0 ;i++))
                     //  a == bien  luu  tru
