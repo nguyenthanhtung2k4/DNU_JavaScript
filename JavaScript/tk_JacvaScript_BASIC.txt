@@ -211,6 +211,11 @@ SỬ LÝ CHUỖI ( STRING)
                var ten='ten';
                Consele.log(`toi la  tung ${ten} ${tung}`)
      * lưu ý:  khi  chèn các biến vào sử dụng  $ thì phải dùng dấu mũ nghiên ` 
+          Chuỗi cần tìm: startsWith
+               vd:
+                    let text = "Hello world, welcome to the universe.";
+                    text.startsWith("Hello");
+               ==> tre
           Tìm chuỗi index: 
                vd:
                     var  tung="tung dang hoc javascript"
