@@ -1,0 +1,1094 @@
+NGUỒN VIDEO: https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
+
+==========================================================================================
+* Một số thuộc tính gợi nhớ:
+     - get : lấy dữ liệu
+     - set : đặt thêm dữ liệu
+     - create: đăt thêm thuộc tính dữ liệu
+     - remove: di chuyện dữ liệu { xóa dữ liệu}
+     - Value : Là giá trị
+     - Type  : Là kiểu dữ liệu
+     - Last  : đầu tiên
+     - First : cuối cùng
+     - Append: Nối thêm
+     -Insert : Chèn
+     -replace: Thay thế
+     - has : kiểm tra có phải có thuộc tính không (trong trường hợp ko có thì return false)
+     
+     ------------------------------------------------------
+     add(className): Thêm một lớp mới vào phần tử.
+     push(Name_arr_Cũ): Thêm một lớp mới vào phần tử.
+     remove(className): Xóa một lớp từ phần tử.
+     delete(name_muốn_xóa): Xóa một lớp từ phần tử.
+     toggle(className): Thêm một lớp nếu nó chưa tồn tại, hoặc xóa nếu nó đã tồn tại.
+     contains(className): Kiểm tra xem một lớp có tồn tại trên phần tử hay không.
+     
+     ------------------------------------------------------
+     
+     * Các thộc tính liên quan đến js:
+          - element : Yếu tố của html và js( vd: <h1> , <p> --> là một  elemnet )
+          - document: 
+          - Node    : Là đc gọi là nút trong js  vs html
+          - Text    : văn bản
+          - Child   : Các phần tử con nằm trong phần tử cha
+==========================================================================================
+* LUƯ Ý: 
+          KHI THỰC HIỆN GỌI CÁC BIẾN KHÁC DÙNG DẤU +
+                    VD: 
+                         var tung=10;
+                         string="so la: "+tung;
+
+====================================================================================================================================
+
+TÀI  LIỆU  THAM KHẢO TẠI  TRANG WEB:
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+          https://www.youtube.com/playlist?list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5
+          https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+Biến:
+var: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG HÀM MÀ NÓ ĐƯỢC KHAI BÁO( FUNCTION)
+let: dùng để khai báo các biến trong js : NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO ( IF ,FOR)
+const: dùng để khai báo các biến trong js:NÓ TỒN TẠI BÊN TRONG KHỐI MÃ NÓ ĐƯỢC KHAI BÁO GIỐNG LET (IF ,FOR)
+
+in: (for in) không hẳn là biến: NHƯNG ĐƯỢC HIỂU NÓ DÙNG ĐỂ KIỂU TRA THUỘC TÍNH ĐÓ CÓ TỒN TẠI HAY KHÔNG
+               VD:
+                    const person = {
+                    name: 'John',
+                    age: 30,
+                    city: 'New York'
+                    };
+                    console.log('name' in person); // Kết quả: true
+                    console.log('gender' in person); // Kết quả: false
+               VD2:
+                    var Object={
+                    name:'tung',
+                    age:20,
+                    adreest:'ha nam'
+               }
+               for(var key in Object){
+                    console.log(key);// dung de lay name Object
+                    console.log(Object[key]); // dung de lay  value Object
+               }
+of: (for of) không hẳn là biến: NHƯNG ĐƯỢC HIỂU NÓ DÙNG TRONG FOR OF--> dÙNG ĐỂ LẶP QUA CÁC PHẦN TỬ
+               VD:
+                    const arr = [1, 2, 3, 4, 5];
+                    for (const element of arr) {
+                    console.log(element); // Lặp qua và in ra từng phần tử của mảng arr
+                    }
+
+          ==> Tổng kết:
+               Dùng for...in khi bạn cần lặp qua các thuộc tính của một đối tượng.
+               Dùng for...of khi bạn cần lặp qua các giá trị của một đối tượng iterable như mảng, chuỗi, Map, Set, v.v.
+
+
+Kiểm tra kiểu dữ liệu:
+          typeof(tung)
+Kiểm tra các dữ liệu  có đúng hay không
+          Mảng      : tung.isArray()
+          Object    : tung.isObject()
+          Nan       : tung.isNaN()   ==>>  kieu  ta du lieu true la so ; false : la chu
+          parseFloat :  trả về số thực
+          parseInt :  trả về số nguyên
+               vd: 
+                    var a;
+                    a=parseFloat(prompt("number"))
+
+
+##############################################################################################################################################################
+Các hàm  về built-in  || chức nằng chính cơ bản js 
+          1. Alert       : in ra  một bảng kết quả
+          2. Confirm     : xác nhận độ tuổi     
+          3. Consele     :in ra kết quả
+                    Consele.log  :thường được sử dụng nhiều : nó in  ra kết quả  bình thường
+                    Consele.warn : hàm này cũng để in  ra nhưng nó  sẽ cảnh báo
+                    Consele.error: hàm này cũng để in ra nhưng nó  in  ra kết  quả lỗi
+          4. Prompt      :Nhập  vào input
+                         vd:
+                                   <script>
+                                        var so=parseFloat(prompt("Nhap so  vao"))
+                                        if(so>=1){
+                                             alert('so  nguyen')
+                                        }else{
+                                             alert('so  am ')
+                                        }
+                                   </script>
+          5. document    : Để nó tương tác với nọi dung của trang web
+               
+               -Truy cập phần tử HTML:
+                    getElementById() ===>  Trả về phần tử HTML với id cụ thể.
+                    getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
+                    getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
+                    querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
+
+               -Thao tác với nội dung và thuộc tính HTML:
+                    document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
+                                        vd:
+                                             document.write('<h1>thanhtung</h1>')
+
+                    document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử(textContent : Lấy giá trị bị ẩn và không bị ẩn | innerText: Không lấy giá trị ẩn )
+                    document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
+                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử.
+                    document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
+               
+               -Tạo và xóa phần tử HTML mới:
+
+                    createElement(): Tạo một phần tử HTML mới với tên thẻ được chỉ định.
+                    appendChild(): Thêm một phần tử con vào cuối danh sách các phần tử con của một phần tử cha.
+                    removeChild(): Xóa một phần tử con khỏi phần tử cha.
+               
+               -Xử lý sự kiện:
+                    addEventListener(): Gắn một bộ xử lý sự kiện cho một phần tử.
+                    removeEventListener(): Loại bỏ một bộ xử lý sự kiện đã được gắn với một phần tử.
+               
+               -Cookie:
+                    cookie: Thuộc tính của document cho phép bạn đọc và ghi các cookie.
+               
+               -Định vị và cuộn trang:
+                    scrollTo(): Cuộn trang đến vị trí được chỉ định.
+                    scrollBy(): Cuộn trang theo một số lượng cụ thể.
+               
+               -Thông tin trang:
+                    document.URL: Trả về URL của trang hiện tại.
+                    document.title: Trả về hoặc đặt tiêu đề của trang.
+          ==> BÊN DƯỚI FILE NÀY NÓI KĨ HƠN VỀ document (Cuộn xuống ben e dưới)
+
+          5. setTimeout  : thời gian xác nhận  để in ra kết quả in ra  một  lần
+          6. setInterval : thời gian  xác nhận  để in ra và in ra nhiều lần  theo chu kỳ  thời gian đã cho
+
+##############################################################################################################################################################
+
+PHÉP TOÁN TỬ:
+     +              Phép toán cộng
+     -              Phép toán trừ 
+     *              Phép toán nhân
+     **             Phép toán Nhân mũ
+     /              Phép  toán chia
+     %              Phép  toán lấy số  dư
+     >              Phép  toán so sánh lớn hơn
+     =              Phép  toán so sánh bằng
+     <              Phép  toán so sánh nhỏ hơn
+     !=             Phép  toán so sánh không bằng
+     >=             Phép  toán so sánh lớn hơn hoặc bằng
+     >==            Phép  toán so sánh lớn hơn hoặc bằng so  sánh cả kiểu dữ liệu
+     <=             Phép  toán so sánh nhỏ hơn
+     <==            Phép  toán so sánh nhỏ hơn hoặc bằng so  sánh cả kiểu dữ liệu
+     ==             Phép  toán so sánh bằng
+     ===            Phép  toán so sánh bằng hoặc bằng so  sánh cả kiểu dữ liệu
+//////// Lớp toán (math):
+                    Math.random() : lam ran dom cac so
+                              VD: console.log(Math.floor(Math.random()*10))
+                    Math.min()    : tim so min trong tat cac so min
+                    Math.max()    : tim so max trong tat cac  so
+                    Math.sqrt()   : tinh so  căn 
+                    Math.pow()    : so mu
+                    Math.PI       : Trả về giá trị của PI (3,14.....)
+                    Math.abs()    : Trả về giá trị đối (-4 <=> 4 ; 5<=>-5)
+                    Math.round()  : Làm TRÒN SỐ
+                              Vd:
+                                   console.log(Math.round(1.5)) // 2
+                                   console.log(Math.round(1.6)) // 2
+                                   console.log(Math.round(1.4)) // 1
+                              -->trên sô >= 0.5  thì làm tròn trên                    
+                              -->trên sô >= 0.5  thì làm tròn xuống                    
+                    
+                    Math.ceil()   : Làm tròn TRÊN
+                              Vd:
+                                   console.log(Math.ceil(4.00001)) // 5
+                                   console.log(Math.ceil(4.00000)) // 4
+                    
+                    Math.floor()  : Làm trong XUỐNG
+                              Vd:
+                                   console.log(Math.floor(5.9)) // 5
+                    ==> ROUND() , CEIL(), FLOOR() : LÀ LÀM TRÒN TRÊN HOẶC DƯỚI  PHỤ THUỘC VÀO NHU CẦU KHI  DÙNG
+
+##############################################################################################################################################################
+SỬ LÝ CHUỖI ( STRING)
+
+          ESC6: Khi viết nhiều thứ khi  in  ra ta cũng có thể in ra như sau:
+               var tung= 'thanhtung';
+               var ten='ten';
+               Consele.log(`toi la  tung ${ten} ${tung}`)
+     * lưu ý:  khi  chèn các biến vào sử dụng  $ thì phải dùng dấu mũ nghiên ` 
+          Chuỗi cần tìm: startsWith
+               vd:
+                    let text = "Hello world, welcome to the universe.";
+                    text.startsWith("Hello");
+               ==> tre
+          Tìm chuỗi index: 
+               vd:
+                    var  tung="tung dang hoc javascript"
+                    console.log(tung.index0f('tung'))
+               ==>  tung.index({tim_chuoi,so_thu_tu})
+          Tìm chuỗi bằng search: 
+               vd:
+                    var str ="Hello world!";
+                    Console.log(str.search("world"));
+               ==> tung.search({tim_chuoi})
+          ==>  Tìm kiếm bằng search KHÔNG HỖ TRỢ  TÌM  KIẾM THEO  KÍ TỰ
+                        index  HỖ  TRỢ TÌM KIẾM BẰNG KÍ  TỰ  ĐƯỢC.
+          
+          Cắt chuỗi: string.slice
+               vd:
+                    var str ="Hello world!";
+                    console.log(str.slice(0,5));
+                    -->  Kết quả trả về là: world!
+
+          Chèn chuỗi: string
+               vd:
+                    var str ="Hello  tung world! tung";
+                    console.log(str.replace({chu_muon_thay},{chu_thay_the}))
+          * Lưu ý :Khi  ta muốn  thay  thế  ta  có  thê thay  thế bằng cách thay  một chữ  hoặc  nhiều  chữ.
+               -Thay  thế  một  chữ  ta có thể thay như  sau: {chu_muon_thay},{chu_thay_the}
+               -Thay  thế  một  chữ  tất  cả giống nhau ta có thể thay  như  sau: /{chu_muon_the}/g ,{chu_muon_the}
+          Chữ  in hoa ,  in thường:
+               toUpperCase() :  Chữ in hoa
+               toLowerCase() :  Chữ in thường
+          
+          Loại bỏ khoảng trắng: trim
+               vd: 
+                    var str ="  Hello world!   ";
+                    console.str.trim()
+          Tạo  ra mảng  slpit():
+               vd:
+                    var str = "tung,thanh,nguye";
+                    console.log(str.split(','));
+                ==>kết quả trả về:[tung, thanh, nguye]
+
+          Thay  thế  vị trí: charAt hoặc  []
+               vd:
+                    var str ="Hello world!";
+                    console.log(str.charAt(1));
+                    ==> kết quả trả về: e
+               hoặc :
+                    var str ="Hello world!";
+                    console.log(str[1]);
+                    ==> kết quả trả về: e
+
+##############################################################################################################################################################
+SỬ LÝ CHUỐI(STRING):
+          Chuyển số thành  chuỗi: toString
+               vd: 
+                    var so =10;
+                    console.log(so.toString());
+
+                    ==> kết quả trả về:  10
+                    Nhưng nó là kiểu dữ liệu  string k còn là kiểu number nữa!
+          Làm tròn ,  lấy  số thập  phân: fixed
+               var so=10.3345634643;
+               console.log(so.20042(2)) ;
+               ==>kết quả trả về: 10.33
+
+##############################################################################################################################################################
+SỬ LÝ JSON(OBJECT): Liên kết lấy dữ liệu từ html này đến html khác.
+     JSON.stringify({arr+object})
+          ==>  Ngoài ra nó JSON.stringify có thể thực hiện được lưu trữ với localStorge.setItem()
+
+          VD: json.stringify
+               const obj = { tên: "John", tuổi: 30, thành_phố: "New York" };
+               const jsonString = JSON.stringify(obj);
+               console.log(jsonString);  
+                    // Kết quả: {"tên":"John","tuổi":30,"thành_phố":"New York"}
+          VD: lấy json cần lần 
+               const obj = { tên: "John", tuổi: 30, thành_phố: "New York" };
+               const jsonString = JSON.stringify(obj, ["tên", "thành_phố"]);
+               console.log(jsonString);  
+                    // Kết quả: {"tên":"John","thành_phố":"New York"}
+
+     loadlStorage: Lưu trữ dữ liệu 
+     Item()      : Đọc dữ liệu từ loadlStorage
+          Vd: loadStorage+Item()
+
+                    // Định nghĩa một đối tượng cần lưu trữ
+                    const sinh_viên = {
+                    họ: "Nguyễn",
+                    tên: "Văn A",
+                    tuổi: 20,
+                    lớp: "12A"
+                    };
+
+                    // Chuyển đổi đối tượng thành chuỗi JSON và lưu vào localStorage
+                    localStorage.setItem('thông_tin_sinh_viên', JSON.stringify(sinh_viên));
+
+                    // Đọc dữ liệu từ localStorage
+                    const dữ_liệu = localStorage.getItem('thông_tin_sinh_viên');
+
+                    // Chuyển đổi chuỗi JSON thành đối tượng JavaScript
+                    const sinh_viên_từ_localStorage = JSON.parse(dữ_liệu);
+
+                    // In ra thông tin sinh viên từ localStorage
+                    console.log("Họ và tên:", sinh_viên_từ_localStorage.họ, sinh_viên_từ_localStorage.tên);
+                    console.log("Tuổi:", sinh_viên_từ_localStorage.tuổi);
+                    console.log("Lớp:", sinh_viên_từ_localStorage.lớp);
+
+===> Xem ví dụ  ở phần tham khảo: tk_JS_loadlStorage.Item().html
+
+##############################################################################################################################################################
+LÀM VIỆC VỚI MẢNG:(ARR , arr, mang, string)
+
+          Cách khởi tạo:
+                         vd:
+                              var array=['tung',thanh','nguyen'];
+          Truy xuất Mảng:
+                         vd:
+                              var array=['tung',thanh','nguyen'];
+                              console.log(array[0],array.length)
+
+                              ==>kết quả trả về: tung 3
+          Các kiểu dữ liệu  trong Mảng:
+
+               length    : đếm các phần tử trong mảng
+               substring(a,b) : Lấy kí tự thứ a đến b
+                          vd: 
+                              var str="tung thanh nguyen"
+                              alert(str.substring(1,2))
+                              ==>kết quả trả về: u
+               toString  : Chuyển sang kiểu dữ liệu  STRING
+               stringify({chuoi_muon_chuyen_doi}) : chuyen dữ liệu arr sang json()
+               join      : Lấy tất cả các mảng chuyển thành string ngoài ra ta cũng có thể ngăn cách các phần tử.
+                         vd:
+                                   var array=['tung',thanh','nguyen'];
+                                   console.log(array.join('-'));
+                                   ===>>kết quả trả về: tung-thanh-nguyen
+               split()   : Chuyển đổi các String sang arr
+                         VD:
+                                   let str = "Hello";
+                                   let arr = str.split("");
+                                   console.log(arr);
+                                   // Output: ["H", "e", "l", "l", "o"]
+                         
+                         -> Có cách viết tắt ngắn gọn hơn đó arr là:
+                              Vd:
+                                   let str = "Hello";
+                                   let arr = [...str];
+                                   console.log(arr);
+                                   // Output: ["H", "e", "l", "l", "o"]
+               Array.form(): Chuyển đổi string sang mảng:
+                              VD:
+                                        let str = "Hello";
+                                        let arr = Array.from(str);
+
+                                        console.log(arr);
+                                        // Output: ["H", "e", "l", "l", "o"]
+
+          ===>  CÓ NHIỀU CÁC CHUYỂN ĐỔI STRING SANG MẢNG, VIỆC BẠN LỰA CHỌN CÁCH NÀO CHO PHÙ HONE MÀ THÔI.
+          
+
+               shift()   : Xóa phần tử ĐẦU MẢNG và in phần tử bị  xóa
+               pop()     : Xóa phần tử CUỐI MẢNG và in phần tử bị  xóa
+               push({pt_muon_them},{})      : Thêm phần tử mới vào trong  mảng Ở CUỐI MẢNG
+               unshift({pt_muon_them},{})   : Thêm phần tử mới vào trong  mảng Ở ĐẦU MẢNG
+                         vd:
+                                   var array=['tung',thanh','nguyen'];
+                                   array.push('dao');
+                                   console.log(array);
+                                   ==>kết quả trả về: ['tung', 'thanh', 'nguyen', 'dao']
+                         vd:  unshift làm tương tự như  vậy.
+               splice({vitri_con_tro},{so_lg_xoa_pt},{string_them_phan_tu}) 
+                         ==> Nó sẽ giúp bạn  đặt vị trí con trỏ và xóa đi  bất  kì pt nào,  cx có them  phân tu  moi  vao  mang do.
+                         vd:
+                              var tung=['thanh','tung','nguyen']; 
+                              console.log(tung.splice(1,1,'cuacace'));
+                              --> Kết quả: ['tung','cuacace','nguyen]
+               slice({vitri_dau},{vitri_cuoi}) : Nó sẽ cắt từ phần tử này đến pt kia
+                         vd:
+                              var tung=['tung','thanh','nguyen']; 
+                              console.log(tung.slice(1,2));
+                              ==>Kết quả: ['thanh']
+
+               concat    :  Kết hợp 2  mảng lại vs nhau thành  1 mảng
+                         vd: 
+                         var tung=['tung','thanh','nguyen'];
+                         var tung2=['tung','thanh','nguyen'];
+                         console.log(tung.concat(tung2))
+                         ==>Kết quả: ['tung','thanh','nguyen','tung','thanh','nguyen']
+##############################################################################################################################################################
+HÀM JAVASCRIPT: FUNCTION()  giông như def(python)  hay void(c++)
+     ------------------------------------------------
+          return : {giá_trị} --> Nó sẽ trả về bất kì kiểu dữ liệu  gì nó sẽ phụ thuôcj  vào ta định  dạng nó.
+          arguments : cho  phép  bạn  sử dụng  chuyền dữ liệu  vào function và trả về dạng  arr 
+
+     -------------------ĐỊNH  DẠNG BÊN DƯỚI-----------------------------
+               function {ten_bien}() {
+                    /// code cua ban
+               }
+     -------------------VD-----------------------------
+          VD:
+               function Arguments() {
+                    console.log(arguments)
+               }
+               /// chay function
+               function Arguments('tung','thanh','nguyen');
+          vd khác:
+               function tesst() {
+                    var so='';
+                    for (var tung of  arguments) {
+                    so +=`${tung} : `
+                    }
+                    console.log(so);
+               }
+               tesst('a','b',123,true,'c')
+##############################################################################################################################################################
+POLYFILL:  cách nó kiểu tra xem  các trình duyệt có hỗ trợ chạy  đc code không
+                         Link  tham khảo: https://youtu.be/zFO-sSfReFs?si=-GoHzrA7LeHj16iO
+                         ==>  xem để hiểu dõ hơn về Polyfill  trong Js.
+
+##############################################################################################################################################################
+Làm việc  với OBJECT: giống như json(python) 
+          - Tạo  ra một object:
+                         vd:
+                              var object={
+                                   name:'tung',
+                                   'full-name':'nguyen thanh tung',
+                              }
+                              // Truy cập vào property của Object
+                              console.log(object.name)
+                              console.log(object['full-name'])
+
+                                             Kết_quả_trả_về-->tung
+                                             Kết_quả_trả_về-->nguyen thanh tung
+          - Thêm Property vào Object:
+                            vd:
+                                object.age=25;
+                                console.log(object.age)
+
+                                        Kết_quả_trả_về-->==>25
+          - Xóa Property của Object:
+                             delete object.age;
+                             console.log(object.age)
+                                        Kết_quả_trả_về--->undefined
+          - Sửa Value của Property:
+                               object.name='thanh';
+                               console.log(object.name)
+                                        Kết_quả_trả_về-->==>'thanh'
+          - Tạo mảng trong Object:
+                           Object.defineProperty(object,"arr",{value:[1,2,3]})
+                           console.log(object.arr) 
+                                        Kết_quả_trả_về-->[1,2,3]
+          - Tạo function  trong Object:
+                          var tung{
+                              name:'tung',
+                              age: 20,
+                              t: function{
+                                   'toi la  nguyen'+this.name+'toi nam nay '+this.age;
+                              }   
+                          }
+                    *Lưu ý:  Khi ta dùng Function  thì ta lên sử dụng  THIS.{GIÁ_TRỊ_oBJECT}  TRONG FUNCTION()
+                             Thay  vì dùng tung.name trong function thì ta nên dùng THIS ví dụ  bên trên
+               
+          Tham khảo thêm : https://www.youtube.com/watch?v=FO1OMbT_k2w&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=32&pp=iAQB
+          Tham khảo thêm  file : tk_function.js
+
+     =================================================================================================================================
+          OBJECT-conSTRUCTOR: nó  giống như  struc(C++) gần như  vậy:
+                    vd:
+                         function struct(name,age,avata){
+                         this.name=name;
+                         this.age=age;
+                         this.avata=avata;
+                         }
+                         var admin= new struct('admin','20','jusst')
+                         admin.bien_new='new_admin'
+                         var canhan= new struct('canhan','20','tung')
+                         canhan.bien_canhan='new_canhan'
+                         console.log(admin,canhan)
+
+                    ===>  KẾT QUẢ TRẢ VỀ:
+                         struct {
+                         name: 'admin',
+                         age: '20',
+                         avata: 'jusst',
+                         bien_new: 'new_admin'
+                         } struct {
+                         name: 'canhan',
+                         age: '20',
+                         avata: 'tung',
+                         bien_canhan: 'new_canhan'
+                         }
+                    //  VớiViệc tạo ra như  z nó sẽ làm cho  ta  tối ưu hóa việc  viết code cx  như chuyên nghiệp  hơn.
+     =================================================================================================================================
+          OBJECT-PROTOTYPE: Nó cho  phép  bạn thực hiện ở bên ngoài để khởi tạo giá trị cho  OBJECT-CONSTRUCTOR:
+                              NÓ GIỐNG NHƯ LÀ STRUCT TRONG C++,  XEM CHI TIẾT VÍ DỤ BÊN DƯỚI.
+                         VD:
+                              function struct(name,age,avata){
+                              this.name=name;
+                              this.age=age;
+                              this.avata=avata;
+                              }
+                              struct.prototype.thanh='tung';
+                              var admin= new struct('admin','20','jusst')
+                              var canhan= new struct('canhan','20','tung')
+
+                              console.log(admin.thanh,canhan.thanh)
+                         -->  KẾT QUẢ TRẢ VỀ: tung tung
+
+                    * CHÚ Ý: Khi  dùng prototype  thì object chính sẽ thêm vào một biến và tất cả các thằng Object phụ sẽ thêm  vào biến đó 
+                              ->> xem link tham khao phia duoi
+               
+               
+               LINK THAM KHAO: https://www.youtube.com/watch?v=FO1OMbT_k2w&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=32
+
+##############################################################################################################################################################
+ĐỐI TƯỢNG DATE: LẤY GIÁ TRỊ THỜI GIAN
+          date=new Date()          :Khai  báo Date khi  dùng New để lấy giá trị ngày tháng năm
+          date= Date()             :Khai báo Date khi k  dùng New không lấy được giá trị (trả về kiểu string)
+          //  Khi ta không dùng NEW Date  thì nó sẽ lấy thời gian hiện tại của máy chính lúc nó chạy
+          //  Khi ta       dùng NEW thì ta có thể điều chỉnh thời gian được.
+
+          date.getFullYear()       :Lấy thời gian năm
+          date.getMonth()          :Lấy thời gian tháng
+          date.getDate()           :Lấy thời gian ngày
+          date.getHours()          :Lấy thời gian giờ
+          date.getMinutes()        :Lấy thời gian phút
+          date.getSeconds()        :Lấy thời gian giây
+
+          //  getFulYear: lấy 4 chữ số làm năm 0-9999
+          //  setFulYear: lấy 2 chữ số cuối làm năm 0-99
+          //  Tham khảo thêm  ở đây:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+##############################################################################################################################################################
+IF VS ELES :Sử dụng giống như  C++ 
+          vd:
+               var tung=1;
+               if (tung===1){
+               console.log('tung day')
+               }else if(tung===2){
+               console.log('tung day')
+               }else{
+               console.log('khong phai tung')
+               }
+##############################################################################################################################################################
+HAM SWITCH: 
+          VD:
+               var tung=9;
+               switch (tung){
+                    case 9:
+                         console.log("thang sinh cua tung la thang "+tung);
+                         break;
+                    case 1,2,3,4,5,6,7,8,10,11,12:
+                         console.log("khong phai thang sinh cua tung");
+                         break;
+                    default:
+                         console.log('khong co thang nao  trong nay');
+                         break;
+               }
+##############################################################################################################################################################
+TOÁN TỬ 3 NGÔI : Cách viết tắt của if , else:
+               vd: khi không viết tắt :
+
+                    var a,b;
+                    a=1;b=2;
+                    if(a>0 ){
+                         console.log(a)
+                    }else{console.log(b)}
+
+               vd: khi viết tắt: 
+                    var a,b,c;
+                    a=1;b=2;
+                    c=a>0?a:b
+          ===> Trong trường hợp viết tắt if , else là khi các câu lệnh bên trong if,else đơn giản thì lên sử dụng
+          ===> Trong trường hợp các câu lệnh bên trong if ,else phức tạp phải viết hẩn ra.
+
+-Viết tắt function()
+               Vd:
+                    var a=10;
+                    var b=20;
+                    var f=(a,b)=>{return a+b}
+                    console.log(f(a,b))
+                    //  khi khong viet tat
+                    // function f(a,b){
+                    //      return a+b;
+                    // }
+                    // console.log(f(a,b))
+##############################################################################################################################################################
+THAY ĐỔI SỰ KIỆN TRONG HTML : 
+          -reload()   : Link  tham  khao  : https://www.w3schools.com/jsref/met_loc_replace.asp
+          -onclick    : nắng  nghe sự kiện khi người dùng click  vào.   
+          -onChange   : Nắng nghe sự  kiện nếu nó có sự  thay đổi với ban đầu nó sẽ in ra, ngoài ra nó thực thi khi k nhập nữa.
+                         VD :
+                                   <select id="mySelect" onchange="myFunction()">
+                                   <option value="Audi">Audi</option>
+                                   <option value="BMW">BMW</option>
+                                   <option value="Mercedes">Mercedes</option>
+                                   <option value="Volvo">Volvo</option>
+                                   </select>
+                                   <p id="demo"></p>
+                                   <script>
+                                        function myFunction() {
+                                        var x = document.getElementById("mySelect").value;
+                                        document.getElementById("demo").innerHTML = "You selected: " + x;
+                                        }
+                                   </script>
+                    -> onChange cũng có thể dùng  trong checked : để kiểm tra xem radio  true, false.
+          -oninput   : Khi người dùng nhập đến đâu nó sẽ lấy luôn dữ liệu đến đấy.
+                         VD:
+                              <input type="text" id="myInput" oninput="myFunction()">
+                              <p id="demo"></p>
+                              <script>
+                              function myFunction() {
+                              let text = document.getElementById("myInput").value;
+                              document.getElementById("demo").innerHTML = "You wrote: " + text;
+                              }
+                              </script>
+          -onkeydown  : Nắng nghe sự kiện các nút bàn phím (khác nhau với  onkeyup đó là khi bấm xog rồi nó mới thực hiện)
+          -onkeyup  : Nắng nghe sự kiện các nút bàn phím ( khác nhau với onkeydown đó là khi  bấm  là nó thực hiện)
+                         VD:
+                              
+                              Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+
+                              <script>
+                              function myFunction() {
+                              let x = document.getElementById("fname");
+                              x.value = x.value.toUpperCase();
+                              }
+                              </script>
+                    ==> Nó thường được sự dụng trong việc bấm nút tắt trên bàn phím để thoát hoặc vào lệnh
+          -onkeypress : Cũng là nắng nghe sự kiện trong bàn phím nhưng khi giữ nút nó vẫn sẽ chạy
+                   
+
+          -onBlur    
+          -onLoad &  Unload    : Dược kích hoạt khi ngươif dùng vào hoaej  thaots khoải  chương tunhf
+          -on Focus  & onBlur & onchange : 
+                    onFocus   :
+                    onBlur    :
+                    onChange  :
+          -onMouseOver & onMouseout      :
+                    onMouseout:
+
+
+
+
+
+##############################################################################################################################################################
+                         JS NÂNG CAO 
+CallBack? :  Được hiểu một cách đơn giản là mình gọi lại hàm trong một function  khác
+               Vd:
+
+               
+Array Methods: link tham khao: https://www.youtube.com/watch?v=AT-yhX26_Ao&list=PL_-VfJajZj0VgpFpEVFzS5Z-lkXtBe-x5&index=49
+     forEach() : duyệt qua phần tử của mảng
+               Vd: 
+                    {Ten_Arr}.forEach(function(value,index)){
+                         console.log(index,value);
+                    }
+     every() : Kiểm tra TẤT CẢ các phần tử trong arr thỏa mãn một điều kiên:
+               Vd: 
+                    var arr[
+                         {id:1,coin:0},
+                         {id:2,coin:0}
+                    ]
+                    var kq= arr.forEach(function(value,index)){
+                         return(valua.coin===0);
+                    }
+                    console.log(kq);
+
+               ==> điều kiện trả về là bool
+     some()  : Kiểm tra một điều kiển đúng trả về là đúng
+
+               Vd:
+                    var arr[
+                         {id:1,coin:1},
+                         {id:2,coin:0}
+                    ]
+                    var kq= arr.some(function(value,index)){
+                         return(valua.coin===0);
+                    }  
+                    console.log(kg)
+               ==> điều kiện trả về là bool
+     
+     find()  : Tìm kiếm tên trong arr
+               Vd:
+                    var arr[
+                         {id:1,coin:1,name:'tung'},
+                         {id:2,coin:0,name:'thanh'}
+                         {id:3,coin:1,name:'tung'},
+                    ]
+                    var kq= arr.find(function(value,index)){
+                         return(valua.coin==='tung');
+                    }  
+                    console.log(kg)
+               ==> find chỉ trả về một kết quả DUY NHẤT và kết thúc chương trình
+
+     filter()  : Cũng giống như find()>> nhưng Filter trả về nhiều kết quả KẾT QUẢ tìm kiếm.
+               Vd:
+                    var arr[
+                         {id:1,coin:1,name:'tung'},
+                         {id:2,coin:0,name:'thanh'}
+                         {id:3,coin:1,name:'tung'},
+                    ]
+                    var kq= arr.find(function(value,index)){
+                         return(valua.coin==='tung');
+                    }  
+                    console.log(kg)
+               ==> Filter Trả về Tất Cả kết quả thỏa mãn.
+
+     map() : Thay đổi,  thêm hoặc bớt dữ liệu vào trong Arr:
+               Vd: thêm đối tượng
+                    var arr=[
+                         {id: 1,name: 'tung',  coin: 10},
+                         {id: 2,name: 'tung', coin: 10},
+                         {id: 3,name: 'tung', coin: 10},
+                    ];
+                    var tung=arr.map(value =>{
+                         return{
+                              id: value.id,
+                              name: value.name,
+                              coin: value.coin+' VND'
+                         }
+                    });
+                    console.log(tung);
+               
+               Vd: thay the  hoaxc xoa :
+                    var arr=[
+                         {id: 1,name: 'tung',  coin: 10},
+                         {id: 2,name: 'tung', coin: 10},
+                         {id: 3,name: 'tung', coin: 10},
+                    ];
+                    var tung=arr.map(value =>{
+                         return{
+                              id: value.id,
+                              coin: value.coin+' VND'
+                              thaythe:'thaythenam '+valua.name;  
+                         }
+                    });
+                    console.log(tung);
+
+     set()   : lọc các giá trị duy nhất (Ngoài ra nó còn làm được nhiều hơn như thế)     
+               add(value): Thêm một giá trị vào Set.
+               has(value): Kiểm tra xem một giá trị có trong Set hay không.
+               delete(value): Xóa một giá trị khỏi Set.
+               clear(): Xóa tất cả các phần tử trong Set.
+               size: Thuộc tính trả về số lượng phần tử trong Set
+
+               VD:
+                    // Mảng ban đầu có chứa các giá trị trùng lặp
+                    let arrayWithDuplicates = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10];
+
+                    // Tạo một Set từ mảng ban đầu
+                    let uniqueSet = new Set(arrayWithDuplicates);
+
+                    // Chuyển đổi Set trở lại thành mảng
+                    let uniqueArray = Array.from(uniqueSet);
+
+                    console.log(uniqueArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+               
+               VD: làm tắt hơn ví dụ  trên:
+               
+                    // Mảng ban đầu có chứa các giá trị trùng lặp
+                    let arrayWithDuplicates = [1, 2, 3, 4, 5, 5, 6, 7, 7, 8, 9, 9, 10];
+
+                    // Sử dụng Set để loại bỏ các giá trị trùng lặp và spread operator để chuyển đổi Set trở lại thành mảng
+                    let uniqueArray = [...new Set(arrayWithDuplicates)];
+
+                    console.log(uniqueArray); // Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+
+     reduce() : Tính tổng các phần tử có trong arr (sum)
+               Vd: 
+                    //  i == gia tri bat dau la 0 + a+b ==> ket qua ( giống như việc tạo vòng lặp for(i=0 ;i++))
+                    //  a == bien  luu  tru
+                    //  b == gia tri hien tai
+
+                         var arr=[
+                              {id: 1,name: 'tung',  coin: 10},
+                              {id: 2,name: 'tung', coin: 10},
+                              {id: 3,name: 'tung', coin: 10},
+                         ];
+                         let i=0;
+                         var  tung=arr.reduce(function(a,b){
+                              return a+b.coin;
+                         },i)
+                         console.log(tung);
+     
+     includes({ten},{index_so}) : Kiểm tra phần từ cụ thể trả về ==>  true | false 
+               ==> ỨNG DỤNG TRONG TÌM KIẾM TRỰC TIẾP;
+               includes({STRING_TIM},{SO_THU_TU})
+
+                    Vd:
+                    var string='toi la  tung day '
+                    var arr=['javascript','php','python','css']
+                    console.log(string.includes('tung'))
+                    console.log(arr.includes('php',2))
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+document (DOM)    : Để nó tương tác với nọi dung của trang web
+               -DOM (DATA OBJECT MODEL):  DÙNG DOM ĐỂ  LẤY DATA  TRONG  HTML
+               -Truy cập phần tử HTML:
+                    getElementById() ===>  Trả về phần tử HTML với id cụ thể.
+                    getElementsByClassName() ===>  Trả về một mảng chứa tất cả các phần tử có class cụ thể.
+                    getElementsByTagName() ===>  Trả về một mảng chứa tất cả các phần tử với tên thẻ HTML cụ thể.
+                    anchors ==> Lấy các thằng thẻ <a></a> ;<img></img> ; <form></form>
+                    closest ==> Phương thức này trả về phần tử cha đầu tiên mà được tìm thấy theo thứ tự từ phần tử hiện tại và đi lên tới phần tử gốc (root) của cây DOM. Nếu không tìm thấy phần tử cha nào thỏa mãn điều kiện, null sẽ được trả về.
+                                   VD:
+                                      
+                                   <div id="parent">
+                                   <div>
+                                        <div id="child">
+                                             <span>Child element</span>
+                                        </div>
+                                   </div>
+                                   </div>
+
+                                   <script>
+                                   var childElement = document.getElementById('child');
+                                   var parentElement = childElement.closest('#parent');
+                                   console.log(parentElement); 
+                                   </script>
+                                   
+                                   // Output: <div id="parent">...</div>
+       
+       
+                    querySelector() ===>  Trả về phần tử đầu tiên phù hợp với bộ chọn CSS được cung cấp.
+                    querySelectorAll() ===>  Trả về tất cả các phần tử phù hợp với bộ chọn CSS được cung cấp dưới dạng NodeList.
+                    - classList: đi cùng với querySelectorALL()....
+                         -> Hiểu đơn giản là classlist là lệnh class nhưng nâng cao hơn một chút nó có thể thêm,  xóa,  thay đổi đc thuộc tính:
+                              + add : thêm
+                              + remove: xóa 
+                              + toggle:Nếu đã tồn tại thì xóa nó đi,  nếu chưa thì thêm nó vào
+                                   VD:
+                                             <body>
+                                                  <div class="item highlight">Item 1</div>
+                                                  <div class="item highlight">Item 2</div>
+                                                  <div class="item highlight">Item 3</div>
+
+                                                  <script>
+                                                       // Lấy tất cả các phần tử có lớp "item"
+                                                       let elements = document.querySelectorAll(".item");
+
+                                                       // Duyệt qua các phần tử và xóa lớp "highlight"
+                                                       elements.forEach(function(element) {
+                                                            element.classList.remove("highlight");
+                                                       });
+                                                  </script>
+
+------------------------------------------------------------------------------------------------------
+               -Thao tác CSS (style) với  HTML:
+                    document.getElementId('tung').style.color='red';
+                    -> Ngoài ra ta cũng có thêm thêm nhiều thuộc tính css cùng lúc:
+                        var tung=document.getElementId('tung')
+                         Object.assign(tung.style,{
+                              color:'red',
+                              width: 200px;
+                         })
+------------------------------------------------------------------------------------------------------
+
+               -Thao tác với nội dung và thuộc tính HTML:
+                    document.write()    : Có nhiệm vụ là để viết vào html  khi nó được gọi đến:
+                                        vd:
+                                             document.write('<h1>thanhtung</h1>')
+
+                    document.innerHTML  ===> Lấy hoặc đặt HTML bên trong một phần tử.
+                    document.innerText hoặc textContent  ===> Lấy hoặc đặt văn bản của một phần tử.
+                                        innerText: Lấy những text  gid nhìn thấy trong web
+                                        TextContent:Lấy những thẳng trược tiếp trong HTML
+                    document.getAttribute()  ===> Trả về giá trị của một thuộc tính được chỉ định của một phần tử.
+                         vd:       
+                                   <h1 id="heading" class="main-title">Đây là tiêu đề chính</h1>
+                                   <a href="https://www.example.com" id="myLink" target="_blank">Liên kết đến trang web</a>
+                                   const headingElement = document.getElementById("heading");
+                                   // Lấy giá trị thuộc tính id của heading
+                                   const headingId = headingElement.getAttribute("id");
+                                   console.log("ID của heading:", headingId); // Hiển thị "heading"
+
+                                   // Lấy giá trị thuộc tính class của heading
+                                   const headingClass = headingElement.getAttribute("class");
+                                   console.log("Class của heading:", headingClass); // Hiển thị "main-title" (nếu có class)
+
+
+                    document.setAttribute()  ===> Đặt giá trị cho một thuộc tính cụ thể của một phần tử( Thay đổi thuộc tính)
+                    document.removeAttribute()  ===> Xóa một thuộc tính cụ thể khỏi một phần tử.
+                              VD: 
+                                   var tung=document.getElementById("tung");
+                                   tung.innerHTML= `<p>thanh tung</p>`;
+                                   
+               -Tạo và xóa phần tử HTML mới:
+
+                    createElement(): Tạo một phần tử HTML mới với tên thẻ được chỉ định.
+                    appendChild(): Thêm một phần tử con vào cuối danh sách các phần tử con của một phần tử cha.
+                    removeChild(): Xóa một phần tử con khỏi phần tử cha.
+               
+               -Xử lý sự kiện:
+                    addEventListener(): Gắn một bộ xử lý sự kiện cho một phần tử.
+                    removeEventListener(): Loại bỏ một bộ xử lý sự kiện đã được gắn với một phần tử.
+               
+               -Cookie:
+                    cookie: Thuộc tính của document cho phép bạn đọc và ghi các cookie.
+               
+               -Định vị và cuộn trang:
+                    scrollTo(): Cuộn trang đến vị trí được chỉ định.
+                    scrollBy(): Cuộn trang theo một số lượng cụ thể.
+               
+               -Thông tin trang:
+                    document.URL: Trả về URL của trang hiện tại.
+                    document.title: Trả về hoặc đặt tiêu đề của trang.
+------------------------------------------------------------------------------------------------------
+
+-Cấu trúc của DOM: {Node ở đây là tên mà mình đặt } 
+               Node.innerHTML ==>Giá trị văn bản của x
+               Node.nodeName  ==>Tên của x
+               Node.nodeValue ==>Giá trị của x
+               Node.nodeType  ==>Kiểu của Node
+               Node.parentNode Node ==>cha của x
+               Node.childNodes ==>Các node con của x
+               Node. firstChild==>Tham chiếu đến đến nút con đầu tiên
+                    * Note: Trả về bất kì loại node nào | Trả về text Node trắng
+               Node. firstElementChild==>Tham chiếu đến đến nút con đầu tiên
+                    * Note: Elenment con đầu tiên bỏ qua text  và conment | có chứa khoảng trắng ....
+               
+               Node.lastChild ==>Tham chiếu đến đến nút con cuối cùng
+                    * Note: Trả về bất kì loại node nào | Trả về text Node trắng
+               Node.lastElementChild ==>Tham chiếu đến đến nút con cuối cùng
+                    * Note: Elenment con đầu tiên bỏ qua text  và conment | có chứa khoảng trắng ....
+               Node.previousSibling==> Tham chiếu đến nút anh em nằm liền kề trước với nút hiện tại.
+               Node.nextSibling==> Tham chiếu đến nút anh em nằm liền kề sau với nút hiện tại.
+               Node.attributes ==> Các node thuộc tính của x
+-Cách thêm bớt phần từ DOM:{Node là tên mik  đặt}
+               - Node.createElement('{h1,a,h2,span...}')    ==>  Tác dụng khởi tạo Element
+               - Node.createTextNode({text})                ==> Khởi tạo  Text
+               - Node.appendChild({NodeText_muon_them})     ==> Thêm Node 
+                         vd:
+                                   function themNodeMoi(){
+                                        var themNode=document.createElement('h2')
+                                        var textNode=document.createTextNode("tao la tung dang hoc js DNU")
+                                        themNode.appendChild(textNode)
+                                        var nodeDiv=document.getElementById('domNode')
+                                        nodeDiv.appendChild(themNode);
+                                   }
+               - Node.insertBefore({Node_hienco},{Node_Chen})         ==> Chèn Node vào trước hoặc sau Node_cũ
+               - Node.insertAdjacentHTML({Node_hienco},{Node_Chen})   ==> Cũng là chèn Node nhưng nó là thêm chứ HTML
+                    --> Lên tham khảo thêm  về insertAdjacentHTML
+               
+                         VD: 
+                                   <body>
+                                   <div id="parent">
+                                   <p id="child">Child Element</p>
+                                   </div>
+                                   <script>
+                                   var parent = document.getElementById('parent');
+                                   var child = document.getElementById('child');
+                                   // Sử dụng insertBefore
+                                   var newNode1 = document.createElement('h2');
+                                   newNode1.textContent = 'Inserted with insertBefore';
+                                   parent.insertBefore(newNode1, child);
+
+                                   // Sử dụng insertAdjacentHTML
+                                   var newNode2 = '<h2>Inserted with insertAdjacentHTML</h2>';
+                                   child.insertAdjacentHTML('beforebegin', newNode2);
+                                   </script>
+                                   </body>
+
+               - Node.remove or  Node.removeChild ==> Xóa các phần từ trong HTML
+                         VD:
+                                        <script>
+                                        function xoa(){
+                                             var xoa=document.getElementById('anhca')
+                                             xoa.remove()
+                                        }
+                                        </script>
+               - Node.replanceChild({Node_Moi}, {Node_Cu})  ==> thay thế các text(các thẻ) này thành các text(các thẻ) khác!
+                         VD:
+                                   <div id="tkbo">
+                                   <h1 id="anhca">Anh ca klniojgjt</h1>
+                                   <div id="h1"></div>
+                                   <p id="anhhai">Anh Hai</p>
+                                   <b id="emut">Em Ut</b>
+
+                              
+                                        function thayThe(){
+                                        var hai = document.getElementById('anhhai');
+                                        var ca = document.getElementById('anhca').innerHTML;
+                                        var thayThe = document.getElementById('h1');
+
+                                        // Tạo một node DOM mới từ chuỗi HTML 'ca'
+                                        var caNode = document.createElement('div');
+                                        caNode.innerHTML = ca;
+
+                                        // Thay thế phần tử 'anhhai' bằng nội dung của phần tử 'anhca'
+                                        thayThe.replaceChild(caNode.firstChild, hai);
+                                        }
+                              OR
+                                        function thayThe(){
+                                        var hai = document.getElementById('anhhai');
+                                        var ca = document.getElementById('anhca').innerHTML;
+                                        var thayThe = document.getElementById('h1');
+
+                                        // Gán nội dung của phần tử 'anhca' vào 'h1'
+                                        thayThe.innerHTML = ca;
+                                        }
+
+
+##########################################################################################################
+Tài liệu tham khảo thêm: 
+     Tất cả các ham có trong Event : https://www.w3schools.com/jsref/dom_obj_event.asp
+addEventListener()  : Hiểu một cách đơn giản nó  là gắn các hành động ( bộ sử lý sự kiện) hoặc là phương pháp được đề xuất để quảnlys trình sử lý:
+               - keyup: sử lý phím được nhấn và sau đó đc thả ra trên bàn phím.
+               - click: Sự kiện này xảy ra khi một phần tử được nhấn (click) bởi người dùng.
+               - mouseover và mouseout: Sự kiện mouseover xảy ra khi con trỏ chuột đi vào phần tử, trong khi sự kiện mouseout xảy ra khi con trỏ chuột rời khỏi phần tử đó.
+               - change: Sự kiện này xảy ra khi giá trị của một phần tử input, select, hoặc textarea thay đổi.
+               - submit: Sự kiện này xảy ra khi một form được gửi đi (submit).
+               - keydown và keypress: Sự kiện keydown xảy ra khi một phím được nhấn xuống, trong khi sự kiện keypress xảy ra khi một phím được nhấn và giữ (nhưng chưa thả ra).
+               - focus và blur: Sự kiện focus xảy ra khi một phần tử nhận được focus, trong khi sự kiện blur xảy ra khi một phần tử mất focus.
+                    VD: 
+                              <body onload="loadImg()">
+                              <img id="img" class="img" name="img" src="./img/1.jpeg" alt="img" onmouseover="input()" onmouseout="output()">
+                              <script>
+                                   function input(){
+                                        document.img.src="./img/1.jpeg";
+                                   }
+                                   function output(){
+                                        document.img.src="./img/1.png";
+                                   }
+                                   function loadImg(){
+                                        var img = document.getElementById('img');
+                                        img.addEventListener('mouseover', input);
+                                        img.addEventListener('mouseout', output);
+                                   }
+                              </script>
+                         </body>
+                    
+                    VD:
+                         // Lắng nghe sự kiện "click" trên một nút
+                         document.getElementById("clickButton").addEventListener("click", function() {
+                         alert("Nút đã được nhấn!");
+                         });
+
+                         // Lắng nghe sự kiện "mouseover" trên một phần tử
+                         document.getElementById("mouseOverDiv").addEventListener("mouseover", function() {
+                         this.style.backgroundColor = "lightblue";
+                         });
+
+                         // Lắng nghe sự kiện "change" trên một trường input
+                         document.getElementById("textInput").addEventListener("change", function() {
+                         alert("Giá trị đã thay đổi thành: " + this.value);
+                         });
+
+                         // Lắng nghe sự kiện "submit" trên một form
+                         document.getElementById("testForm").addEventListener("submit", function(event) {
+                         event.preventDefault(); // Ngăn chặn hành động mặc định của form
+                         alert("Form đã được gửi đi!");
+                         });
+
+                         // Lắng nghe sự kiện "keydown" trên trang
+                         document.addEventListener("keydown", function(event) {
+                         console.log("Phím " + event.key + " đã được nhấn xuống.");
+                         });
+
+                         // Lắng nghe sự kiện "keypress" trên trang
+                         document.addEventListener("keypress", function(event) {
+                         console.log("Phím " + event.key + " đã được nhấn và giữ.");
+                         });
+
+                         // Lắng nghe sự kiện "focus" trên một trường input
+                         document.getElementById("focusInput").addEventListener("focus", function() {
+                         this.style.backgroundColor = "lightgreen";
+                         });
+
+                         // Lắng nghe sự kiện "blur" trên một trường input
+                         document.getElementById("blurInput").addEventListener("blur", function() {
+                         this.style.backgroundColor = "white";
+                         });
+
+

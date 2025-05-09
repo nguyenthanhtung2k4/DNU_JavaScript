@@ -1,0 +1,432 @@
+                         TÀI LIỆU JQUERY()
+Cài thư viện jquery:  https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+
+//////////////////////////////////////////////////////////////
+- LẤY THẰNG CON NẰM TRONG NẰM CHA:
+     - find({enliment}) : lấy tất cả các gía trị
+     - ep() :Lấy lần lượt các giá trị
+               VD:
+                         <div class="img-small">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         <img src="./img/products/sp1.jpg" alt="">
+                         </div>
+                         <script src="./jquery/jquery-3.7.1.min.js"></script><script>
+                         $(document).ready(function(){
+                              // Chọn hình ảnh đầu tiên trong lớp img-small và gắn sự kiện mouseenter
+                              $('.img-small').find('img').eq(0).on('mouseenter', function(){
+                                   alert(12);
+                              });
+                         });
+                         </script>
+
+
+
+//////////////////////////////////////////////////////////////
+ĐỂ SỬ DỤNG ĐC JQUERY PHẢI DÙNG DẤU $ 
+     $('h1')        ==> Dùng để gọi NAMETAG
+     $('#h1')       ==> Dùng để gọi ID ra
+     $('.h1')       ==> Dùng để gọi CLASS ra
+     $('.h1').css({'color':'blue'})      ==> Dùng để gọi class ra thay đổi màu sắc class này
+                    Vd:
+                         <div class='h1'>tung</div>
+                         <script>
+                              $('.h1').css({'color':'blue'})
+                         </script>
+     $(this)        ==> Là được dùng trong function this là thay  tên của function thôi;
+     ========>>>>>> Và còn rất nhiều các tên khác trong jquery  tìm hiểu trên 
+                         <tk_Cấu_trúc_Jquery.pdf>
+                         <web3school.com>
+
+
+
+$(documnet).ready(function(){}): Là một cách để chạy thực hiện chức năng khi nạp đầy  jquery()
+$(window).load(function{})     :  Là một cách để chạy  jquery() nhưng nó sẽ load hết mới thực hiện được jquery
+===> Nên dùng cách một ready()
+
+========================================================================================================================================
+# ẨN HIỆN HTML VỚI JQUERY
+
+     *lưu ý: Ten_goi( id,class,tags)  :  là tên mik muốn gọi hàm ra để thực hiện chương trình
+     
+     
+     $({Ten_goi}).hide() : ẩn  các các thẻ , claass,  id muốn;
+               -Ngoài ra cũng có thể sử dụng: 
+                         hide(speed,callback)  : Trong đó spead -tốc độ, callback- gọi lại:
+     $({Ten_goi}).show() : hiện  các các thẻ , claass,  id muốn;
+                         show(speed,callback)  : Trong đó spead -tốc độ, callback- gọi lại:
+     $({Ten_goi}).load() : Giúp cho các Script chạy khi toàn bộ trang web đã được load xog
+          VD:
+               $(document).ready(function(){
+               $('p').css("color","red")     
+               $('.p').css('font-size','20px')  
+               })   
+========================================================================================================================================
+# JQUERY-CSS:  
+          -CSS từng đối tượng một với jquery:
+               vd:
+                    $(document).ready(function(){
+                    $('p').css("color","red")     
+                    $('.p').css('font-size','20px')  
+                    })   
+          -CSS nhiều đối tượng css trong một với jquery:
+                    $(document).ready(function(){
+                         $('p').css({
+                              color:'red',
+                              width:200px,
+                         })
+                    })
+
+========================================================================================================================================
+# JQUERY-HTML:  Thao tác DOM JQUERY
+          attr() - Lấy các giá trị thuộc tính của phần tử HTML.
+                    Vd:
+                         <p><a href="https://google.com" id="w3s">google.com</a></p>
+                         <button>Show</button>
+                         <script>
+                              $(document).ready(function(){
+                                   $("button").click(function(){
+                                        $('#w3s').attr({
+                                             href:'tung.com'
+                                        })
+                                        $('#w3s').text('tung.com') })})
+                         </script>
+                    --> NGOÀI RA ATTR( CŨNG CÓ THỂ THAY ĐỔI THUỘC TÍNH VD TRÊN ĐÃ CÓ)
+
+          text()- Đặt hoặc trả về nội dung văn bản của các phần tử được chọn
+          html()- Đặt hoặc trả về nội dung của các phần tử đã chọn (bao gồm cả đánh dấu HTML)
+          val()- Đặt hoặc trả về giá trị của các trường biểu mẫu   
+                    
+                    VD: ví dụ về sử dụng cảu html(), val(), text()
+                              <p id="test">This is some <b>Blod</b>text in a paragehf</p>
+                              <input type="text" id="tung" class="tung" value="tung">
+                              <button id="btn1">Show Text</button>
+                              <button id="btn2">Show HTML</button>
+                              <button id="btn3">Show Val</button>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#btn1").click(function(){
+                                             alert('Text'+$('#test').text());
+                                             
+                                        })
+                                        $("#btn2").click(function(){
+                                             alert('HTML'+$('#test').html());
+
+                                        })
+                                        $("#btn3").click(function(){
+                                             alert('Val '+$('#tung').val());
+
+                                        })
+                                   })
+                              </script>
+                    ==> NGOÀI RA  HTML() VAL() TEXT()  CŨNG CÓ THỂ THAU ĐỔI ĐƯỢC CÁC THUỘC TÍNH GIÁ TRỊ
+                    
+                    VD: thay thế các thuộc tính và giá trị của nó
+                              <p id="test1">this is a tung</p>
+                              <p id="test2">this is a thanh</p>
+                              <p><input type="text" id="test3" value="tungday"></p>
+                              <button id="btn1">Set</button>
+                              <button id="btn2">Set HTML</button>
+                              <button id="btn3">Set Value</button>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#btn1").click(function(){
+                                             $("#test1").text("thay the tuing test1")
+                                        })
+                                        $("#btn2").click(function(){
+                                             $("#test2").html('thay the html moi')
+                                        })
+                                        $("#btn3").click(function(){
+                                             $("#test3").val('tung moi')
+                                        })})
+                              </script>               
+                        
+     
+     $({Ten_goi}).text({text-NoiDung}) : thay  đổi nội dung cũ của HTML  sang Nội dung mới băng JQuery
+          VD:
+               <p class='p'>Nội dung cũ </p>
+               $('.p').text('Nội dung mới')
+========================================================================================================================================
+
+========================================================================================================================================
+# Sự kiện thay đổi trong DOM:
+          .click()    : Nhấp chuột gắn hàm trong phần tử HTML (NHẤP MỘT LẦN)
+          .dblclick() : Nhấp chuột đôi gắn hàm trong phần tử HTML(NHẤP 2 LẦN)
+                         Vd:
+                              <p> click</p>
+                              <p>click on me</p>
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                   $("p").click(function(){
+                                   $(this).hide();
+                                   })
+                                   })
+                              </script>
+          .mouseenter() : Hàm thực hiện khi trỏ chuột vào sẽ hiện ra thông tin (Thường được dùng để kết hợp vs on() )  | *Gợi ý: di chuyển chuột
+                         Vd:
+                              <img src="./img/0.jpeg" alt="img" id="tung">
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   thongtin='thong tin toi la thanh tung'
+                                   $(document).ready(function(){
+                                   $('#tung').mouseenter(function(){
+                                        $(this).attr("title",thongtin)
+                                   })})
+                    ==> Ngoài ra có thể làm mouseenter() cho các thẻ khác ngoài thẻ img nhé!
+          .mouseleave() : Hàm thực hiện khi con trỏ chuột rời khỏi phần HTML  |*Gợi nhớ: rời chuột đi
+                         Vd:
+                              <p>thanh tung  hover di</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   thongtin='thong tin toi la thanh tung'
+                                   $(document).ready(function(){
+                                        $('p').mouseleave(function(){
+                                             alert("title"+thongtin)
+                                   })}) 
+          .hover()       : Thực hiện khi con chuột di vào 1 phần tử HTML | *Gợi nhớ: hover slide anh
+                         Vd:
+                              <div id="anh">
+                                   <img src="./img/tung.jpg" alt="img" id="anh">
+                              </div>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $('#anh').hover(function(){
+                                             $(this).show();
+                                             $(this).html('<img src="./img/1.jpeg" alt="img" id="anh">')
+                                        })
+                                        $('#anh').mouseleave(function(){
+                                             $(this).show();
+                                             $(this).html('<img src="./img/tung.jpg" alt="img" id="anh">')
+                                        })
+                                   })
+                              </script>
+
+                    ==>  SỬ KHÁC NHAU HOVER() VÀ MOUSEENTER():
+                                        HOVER() CHO PHÉP THAY ĐỔI ĐƯỢC TRONG PHẦN TỬ CON 
+                                        MOUSEENTER  THAY ĐỔI ĐƯỢC CHA MÀ KHÔNG THAY ĐỔI THẰNG CON, KHI DI CHUYỂN VÀO THẰNG CHA NÓ SẼ KHÔNG THAY ĐỔI ĐƯỢC VÀO THẰNG CON.
+                              ----->>>>Việc sử dụng hover() và mouseenter() sao cho phù hợp với hoàn cảnh
+          .on()          : Cho phép bạn thực hiện các thuộc tính bên trên cùng một lúc cũng có thể thực hiện 1 thuộc tính
+          
+                         Vd1: sử dung hàm on() để kết hợp click
+                              <p>tungday</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("p").on('click',function(){
+                                             $(this).hide();
+
+                                        })})
+                              </script>
+                         Vd2: sử dụng  hàm on()   kết hợp với các hàm khác
+                              <p>tungday</p>
+                              <script src="./jquery/jquery-3.7.1.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("p").on({
+                                             mouseenter: function(){
+                                                  $(this).css({'color':'red'})
+                                             },
+                                             mouseleave: function(){
+                                                  $(this).css({'color':'blue'})
+                                             },
+                                             click: function(){
+                                                  $(this).css({'color':'black'})
+                                             } })})
+                              </script>
+
+
+
+
+
+
+
+
+ 
+========================================================================================================================================
+#TRƯỢT LÊN TRƯỢT XUỐNG MỜ DẦN
+     - fadeIn() : Làm hiện phần tử (làm mờ phần tử)
+     - fadeOut(): Làm ẩn phẩn tử đi
+               -->  Sự khác nhau của fadeIn,fadeOut và hide, show  là fadein,out  làm mờ dần chậm dần.
+
+     - fadeToggle() : Là kết hợp của fadeIn và fadeout ( hiển và ẩn)
+     - fadeTo()     : Là làm độ mờ của opacity trong phần tử
+
+                    VD:  4 hàm trên
+
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                              <script>
+                                   $(document).ready(function(){
+                                        $("#hien").click(function(){
+                                             $("#div1").fadeIn();
+                                             $("#div2").fadeIn("slow");
+                                             $("#div3").fadeIn(3000);
+                                        });
+                                        $("#an").click(function(){
+                                             $("#div1").fadeOut();
+                                             $("#div2").fadeOut();
+                                             $("#div3").fadeOut();
+                                             });
+                                        $('#togle').click(function(){
+                                                  $("#div1").fadeToggle();
+                                                  $("#div2").fadeToggle();
+                                                  $("#div3").fadeToggle();    
+                                             })
+                                        $('#fadeTO').click(function(){
+                                                  $("#div1").fadeTo("slow", 0.15);
+                                                  $("#div2").fadeTo("slow", 0.4);
+                                                  $("#div3").fadeTo("slow", 0.7);    
+
+                                        })
+                                   });
+                              </script>
+                              </head>
+                              <body>
+                              <p>demo</p>
+                              <button id="fadeTO">TO</button><br><br>
+                              <button id="togle">togle</button><br><br>
+                              <button id="hien">in</button><br><br>
+                              <button id="an">out</button><br><br>
+                              <div id="div1" style="width: 80px;height: 80px;display: none;background-color: red;"></div>
+                              <br>
+                              <div id="div2" style="width: 80px;height: 80px;display: none;background-color: skyblue;"></div>
+                              <br>
+                              <div id="div3" style="width: 80px;height: 80px;display: none;background-color:yellow;"></div>
+                              <br>
+========================================================================================================================================
+#TRƯỢT LÊN TRƯỢT XUỐNG ẨN HIỆN: 
+     - slideUp()    : Là trươt lên để  ẩn nó đi
+     - slideDown()  : Là trượt xuống để hiện nội dung ra
+     - slideToggle() : Hiệu ứng Trượt lên để ẩn - trượt xuống để hiển ( Nó là kết hợp của  slideUp + slideDown) dùng jquery() | *gợi nhớ: auto ; slide; automation
+          speend: Tốc độ của slide hiện ra và ẩn đi
+          easing: Chỉ định các phần tử khác nhau về tốc độ
+          calback: hàm chuyển đổi sau khi thực thi
+                    VD:
+          
+                              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                              <style>
+                                   .example {
+                                        width: 100px;
+                                        height: 100px;
+                                        margin: 10px;
+                                        background-color: green;
+                                   }
+                              </style>
+                              <div id="slideExample" class="example"></div>
+                              <button id="slideUpButton">Slide Up</button>
+                              <button id="slideDownButton">Slide Down</button>
+                              <button id="slideToggleButton">Slide Toggle</button>
+                              <script>
+                                   $(document).ready(function() {
+                                        $('#slideUpButton').click(function() {
+                                             $('#slideExample').slideUp('slow');
+                                        });
+
+                                        $('#slideDownButton').click(function() {
+                                             $('#slideExample').slideDown('slow');
+                                        });
+
+                                        $('#slideToggleButton').click(function() {
+                                             $('#slideExample').slideToggle('slow');
+                                        });
+                                   });
+                              </script>
+
+
+          ==> Sự khác nhau của SlideToggle với fadeToggle
+                              ->  Đó là nó  sẽ trượt lên và trượt xuống
+                              -> fadeToggle() cũng là để ẩn và hiện nhưng nó sẽ làm mờ dần đi rồi mới ẩn hiện.
+
+          ==> Link tham khảo: https://www.w3schools.com/jquery/eff_toggle.asp
+========================================================================================================================================
+#HOẠT HÌNH ĐỘNG AUTOMATION:
+     -animate()    : Hàm dùng để thay đổi  các kích thức thu ra thu vào của hàm dụng hiệu ứng hoạt động | *gợi nhớ: auto;automation; 
+          - THAY ĐỔI CÁC KÍCH THƯỚC NHƯ:
+                    + heght
+                    + widht
+                    + left
+                    + right
+                    + top
+                    + bottom ...
+          Cách dùng:  $(selector).animate(properties, duration, easing, complete);
+                    + properties (bắt buộc): Một đối tượng mô tả các thuộc tính CSS
+                    + duration (tùy chọn): Thời gian thực hiện hiệu ứng, có thể là:
+                    + easing (tùy chọn): Loại hiệu ứng easing để sử dụng. 
+                    + complete (tùy chọn): Một hàm callback sẽ được gọi khi hiệu ứng hoàn thành.
+                    VD: thay  doi  kich  thuoc  text:
+                         <button>bam</button>
+                         <div style="background:red; height:auto;width:300px;position:absolute;">hello</div>
+
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                         <script>
+                              
+                              $(document).ready(function() {
+                                   $('button').click(function(){
+                                   var div=$('div');
+                                   div.animate({left: '100px'},'slow');
+                                   div.animate({fontSize:"3em"},'slow');
+                                   })
+                              });
+                         </script>
+                    VD: dịch chuyển + thay  đổi opacity
+                         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                         </head>
+                         <body>
+                         <div id="box" style="width: 100px; height: 100px; background-color: blue; position: relative;"></div>
+                         <button id="start">Start Animation</button>
+
+                         <script>
+                              $(document).ready(function() {
+                                   $('#start').click(function() {
+                                        $('#box').animate({
+                                             left: '+=100px',
+                                             opacity: 0.5
+                                        }, 1000);
+                                   });
+                              });
+                         </script> 
+
+          ==> LINK THAM KHẢO:https://www.w3schools.com/jquery/jquery_animate.asp
+          
+                    VD: thay đổi kích thước 
+                         <button id="myButton">Toggle</button>
+                         <input type="text" id="myInput" style="widht:200px">
+
+                         <script>
+                         $("#myButton").click(function(){
+                         var $input = $("#myInput");
+                         if ($input.width() > 0) {
+                              $input.animate({width: '0px'}, 500); // Thu nhỏ input
+                         } else {
+                              $input.animate({width: '200px'}, 500); // Mở rộng input
+                         }
+                         });
+
+     ==> SỰ KHÁC NHAU  GIỮA animate()  và SlideToggle() 
+                    | animate là automation xong nó sẽ biến mất và không thay  đổi kích thước ( can thiệp cả css)
+                    | SlideToggle có thể thay đổi kích thước của nó ngoài ra ta cũng có thể để nó hiện ( KHÔNG can thiệp cả css)
+
+//////////////////////////// Ngoài ra ta cũng có thể  xử lý xâu chuỗi với cùng một phần tử.
+                              VD:
+                                  <div style="background:red; height:auto;width:300px;position:absolute;">hello</div>
+                                   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                                   <script>
+                                        
+                                        $(document).ready(function() {
+                                             $('button').click(function(){
+                                             $('div').css({
+                                                  "background":"blue","height":"auto","width":"300px","position":"absolute",
+                                             })
+                                                  .animate({left: '100px'},'slow')
+                                                  .animate({fontSize:"3em"},'slow');
+                                             })
+                                        });
+                                   </script> 
+
+                         ==>  KHI TA SỬ LÝ XÂU CHUỖI THÌ TA CÓ THỂ RÚT NGẮN CÁC DÒNG CODE HƠN VÀ KHÔG PHẢI GỌI NÓ NHIỀU LẦN
+                              *CHÚ Ý : NÓ CHỈ CÓ THỂ DÙNG XÂU CHUỖI VỚI CÙNG MỘT PHẦN TỬ CÙNG TÊN MÀ THÔI.!
+////////////////////////////////////////////////////////////////////////////////////
